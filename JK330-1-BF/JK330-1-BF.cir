@@ -1,0 +1,127 @@
+* EESchema Netlist Version 1.1 (Spice format) creation date: 2013-03-25 22:11:46
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+*Sheet Name:/
+P4  0 28 22 23 24 CONN_5		
+K1  0 25 CONN_2		
+P5  99 0 100 31 101 32 102 33 103 34 104 7 105 6 98 0 HE10-16		
+P6  0 2 3 1 4 5 CONN_6		
+K2  0 28 CONN_2		
+K3  0 26 9 CONN_3		
+K4  0 11 CONN_2		
+P1  8 0 U.FL		
+P2  19 0 U.FL		
+P3  12 0 U.FL		
+K5  13 COLONETTE		
+K6  14 COLONETTE		
+K7  15 COLONETTE		
+K10  16 COLONETTE		
+K8  17 COLONETTE		
+K9  18 COLONETTE		
+*Sheet Name:/Mixer 9Mhz/
+C1  20 46 CP		
+C2  21 46 CP		
+RVAR1  45 41 46 RVAR		
+R3  39 26 1k		
+R1  9 42 1k		
+C4  44 43 1n		
+MX1  44 40 45 41 38 37 36 12 SBL-1		
+R2  43 0 1k		
+C5  39 19 1n		
+C3  42 8 1n		
+D1  42 43 DIODE		
+D2  39 43 DIODE		
+*Sheet Name:/MIC/
+Q1  35 22 0 BSS123		
+R5  22 0 R		
+C6  23 21 C		
+R4  5 23 R		
+*Sheet Name:/Filtre Passe Bas/
+C7  29 64 C		
+R6  50 65 10k		
+C9  1 0 100n		
+C8  1 0 10U		
+C11  3 0 100n		
+C10  0 3 10U		
+R12  50 54 39k//39k		
+R10  50 53 10k		
+R8  50 64 10k		
+R13  66 20 10k		
+R9  49 66 10k		
+R11  48 66 39k//39k		
+R7  65 66 10k		
+U1  65 49 48 66 0 3 1 1 0 67 67 0 3 3 0 0 50 54 53 64 MF10		
+U4  63 67 52 63 51 67 0 72 91 63 68 72 63 4 74HC74		
+U5  47 0 30 4 OSC		
+U2  30 0 0 0 0 0 0 0 0 0 63 0 63 63 55 56 57 58 59 60 61 62 52 4 74HC4059		
+U3  0 62 99 100 61 60 101 102 59 0 6 58 103 104 57 56 105 98 55 4 74HC377		
+C16  0 30 C		
+C15  4 0 C		
+C14  4 0 100n		
+C13  4 0 C		
+C12  4 0 100n		
+R14  4 62 R		
+R15  4 61 R		
+R16  4 60 R		
+R17  4 59 R		
+R18  4 58 R		
+R19  4 57 R		
+R20  4 56 R		
+R21  4 55 R		
+P7  20 64 CAVALIER		
+*Sheet Name:/NOTCH/
+R28  88 87 11k5		
+R27  86 87 11k5		
+R26  87 80 11.5k		
+R25  85 90 11.5k		
+R23  90 89 11.5k		
+R24  89 79 11.5k		
+R22  89 84 11.5k		
+U6  90 89 0 3 0 87 86 1 MC33172		
+C19  1 0 100n		
+C18  1 0 CP		
+C21  3 0 100n		
+C20  0 3 CP		
+R29  78 86 R		
+R35  85 80 11.5k		
+R33  85 69 100k		
+R31  85 88 11.5k		
+R36  71 29 11.5k		
+R32  70 71 100k		
+R34  84 71 11.5k		
+R30  79 71 11.5k		
+U7  79 70 84 71 0 3 1 1 0 72 72 0 3 3 0 0 85 80 69 88 MF10		
+U8  30 0 0 0 0 0 0 0 0 0 63 0 63 63 73 74 75 76 77 81 82 83 68 4 74HC4059		
+U9  0 83 99 100 82 81 101 102 77 0 7 76 103 104 75 74 105 98 73 4 74HC377		
+C24  4 0 100n		
+C23  4 0 100n		
+C22  4 0 100n		
+R37  4 83 R		
+R38  4 82 R		
+R39  4 81 R		
+R40  4 77 R		
+R41  4 76 R		
+R42  4 75 R		
+R43  4 74 R		
+R44  4 73 R		
+C17  78 27 C		
+P8  29 78 CAVALIER		
+*Sheet Name:/HP/
+C27  0 25 470p		
+R45  94 0 1		
+C30  28 94 100n		
+C29  92 28 470U		
+C32  93 25 NC		
+R48  92 93 NC		
+R47  92 97 470		
+R46  97 0 10		
+U10  25 96 0 92 5 TDA2003		
+C25  5 0 1000U		
+C26  0 5 100n		
+C31  97 96 100U		
+C28  95 25 15n		
+RVAR2  0 27 95 RVAR		
+
+.end
