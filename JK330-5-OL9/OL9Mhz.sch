@@ -1,9 +1,6 @@
-EESchema Schematic File Version 2  date 2013-03-30 15:42:45
+EESchema Schematic File Version 2  date 28/04/2013 22:42:08
 LIBS:power
 LIBS:CEN-SCHEMA
-LIBS:device
-LIBS:transistors
-LIBS:linear
 LIBS:OL9Mhz-cache
 EELAYER 27 0
 EELAYER END
@@ -11,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "JK330-Oscillateur Local 9Mhz"
-Date "30 mar 2013"
+Date "28 apr 2013"
 Rev "V0-10"
 Comp "F4DEB"
 Comment1 ""
@@ -99,26 +96,34 @@ $EndComp
 $Comp
 L BF996 U2
 U 1 1 514F6B5B
-P 7600 4400
-F 0 "U2" H 7500 4500 60  0000 C CNN
-F 1 "BF996" H 7650 4600 60  0000 C CNN
-F 2 "" H 7600 4400 60  0000 C CNN
-F 3 "" H 7600 4400 60  0000 C CNN
-	1    7600 4400
+P 7650 4300
+F 0 "U2" H 7550 4400 60  0000 C CNN
+F 1 "BF996" H 7700 4500 60  0000 C CNN
+F 2 "" H 7650 4300 60  0000 C CNN
+F 3 "" H 7650 4300 60  0000 C CNN
+	1    7650 4300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	5800 4500 5800 4750
 Wire Wire Line
-	7700 4550 7700 5200
+	7700 4600 7700 5100
 Wire Wire Line
-	6950 5050 6950 5200
+	7700 5100 7700 5200
+Wire Wire Line
+	6950 5050 6950 5100
+Wire Wire Line
+	6950 5100 6950 5200
 Wire Wire Line
 	6950 5100 7700 5100
 Connection ~ 7700 5100
 Connection ~ 6950 5100
 Wire Wire Line
-	5800 4500 7450 4500
+	5800 4500 6400 4500
+Wire Wire Line
+	6400 4500 6950 4500
+Wire Wire Line
+	6950 4500 7500 4500
 Wire Wire Line
 	6400 4750 6400 4500
 Connection ~ 6400 4500
@@ -215,7 +220,11 @@ F 3 "" H 7400 3500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7400 3750 7400 4350
+	7400 3750 7400 3850
+Wire Wire Line
+	7400 3850 7400 4100
+Wire Wire Line
+	7400 4100 7400 4400
 Wire Wire Line
 	6950 3850 7400 3850
 Connection ~ 7400 3850
@@ -225,7 +234,9 @@ Connection ~ 7400 4100
 Wire Wire Line
 	6650 3850 6550 3850
 Wire Wire Line
-	6550 3850 6550 4250
+	6550 3850 6550 4100
+Wire Wire Line
+	6550 4100 6550 4250
 Wire Wire Line
 	6650 4100 6550 4100
 Connection ~ 6550 4100
@@ -287,11 +298,21 @@ F 3 "" H 8800 3200 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7700 3600 7700 4250
+	7700 3600 7700 4100
 Wire Wire Line
-	7700 1700 7700 3300
+	7700 4100 7700 4250
 Wire Wire Line
-	7700 3200 8750 3200
+	7700 1700 7700 2950
+Wire Wire Line
+	7700 2950 7700 3200
+Wire Wire Line
+	7700 3200 7700 3300
+Wire Wire Line
+	7700 3200 8050 3200
+Wire Wire Line
+	8050 3200 8500 3200
+Wire Wire Line
+	8500 3200 8750 3200
 Connection ~ 7700 3200
 Wire Wire Line
 	8500 3300 8500 3200
@@ -326,9 +347,15 @@ F 3 "" H 8500 3700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9050 3200 9800 3200
+	9050 3200 9200 3200
 Wire Wire Line
-	9200 3100 9200 3350
+	9200 3200 9500 3200
+Wire Wire Line
+	9500 3200 9800 3200
+Wire Wire Line
+	9200 3100 9200 3200
+Wire Wire Line
+	9200 3200 9200 3350
 $Comp
 L +12V #PWR08
 U 1 1 514F6F27
@@ -366,7 +393,11 @@ Wire Wire Line
 	7950 4100 7700 4100
 Connection ~ 7700 4100
 Wire Wire Line
-	8250 4100 8950 4100
+	8250 4100 8400 4100
+Wire Wire Line
+	8400 4100 8700 4100
+Wire Wire Line
+	8700 4100 8950 4100
 Wire Wire Line
 	8400 4200 8400 4100
 Connection ~ 8400 4100
@@ -463,26 +494,34 @@ $EndComp
 $Comp
 L BF996 U1
 U 1 1 514F715C
-P 4000 4400
-F 0 "U1" H 3900 4500 60  0000 C CNN
-F 1 "BF996" H 4050 4600 60  0000 C CNN
-F 2 "" H 4000 4400 60  0000 C CNN
-F 3 "" H 4000 4400 60  0000 C CNN
-	1    4000 4400
+P 4050 4300
+F 0 "U1" H 3950 4400 60  0000 C CNN
+F 1 "BF996" H 4100 4500 60  0000 C CNN
+F 2 "" H 4050 4300 60  0000 C CNN
+F 3 "" H 4050 4300 60  0000 C CNN
+	1    4050 4300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	2200 4500 2200 4750
 Wire Wire Line
-	4100 4550 4100 5200
+	4100 4600 4100 5100
 Wire Wire Line
-	3350 5050 3350 5200
+	4100 5100 4100 5200
+Wire Wire Line
+	3350 5050 3350 5100
+Wire Wire Line
+	3350 5100 3350 5200
 Wire Wire Line
 	3350 5100 4100 5100
 Connection ~ 4100 5100
 Connection ~ 3350 5100
 Wire Wire Line
-	2200 4500 3850 4500
+	2200 4500 2800 4500
+Wire Wire Line
+	2800 4500 3350 4500
+Wire Wire Line
+	3350 4500 3900 4500
 Wire Wire Line
 	2800 4750 2800 4500
 Connection ~ 2800 4500
@@ -579,7 +618,11 @@ F 3 "" H 3800 3500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3800 3750 3800 4350
+	3800 3750 3800 3850
+Wire Wire Line
+	3800 3850 3800 4100
+Wire Wire Line
+	3800 4100 3800 4400
 Wire Wire Line
 	3350 3850 3800 3850
 Connection ~ 3800 3850
@@ -589,7 +632,9 @@ Connection ~ 3800 4100
 Wire Wire Line
 	3050 3850 2950 3850
 Wire Wire Line
-	2950 3850 2950 4250
+	2950 3850 2950 4100
+Wire Wire Line
+	2950 4100 2950 4250
 Wire Wire Line
 	3050 4100 2950 4100
 Connection ~ 2950 4100
@@ -618,7 +663,9 @@ F 3 "" H 4100 3350 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4100 3600 4100 4250
+	4100 3600 4100 4100
+Wire Wire Line
+	4100 4100 4100 4250
 $Comp
 L C C7
 U 1 1 514F71E5
@@ -682,7 +729,9 @@ F 3 "" H 9500 3400 60  0000 C CNN
 $EndComp
 Connection ~ 9200 3200
 Wire Wire Line
-	9200 3650 9200 3850
+	9200 3650 9200 3800
+Wire Wire Line
+	9200 3800 9200 3850
 Wire Wire Line
 	9200 4150 9200 4250
 $Comp
@@ -712,7 +761,9 @@ F 3 "" H 9500 3650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9200 3800 9800 3800
+	9200 3800 9550 3800
+Wire Wire Line
+	9550 3800 9800 3800
 Connection ~ 9200 3800
 $Comp
 L C C4
@@ -841,9 +892,9 @@ BLI/BLS
 Text Notes 1400 1750 0    60   ~ 0
 POWER\n12V
 Wire Wire Line
-	3800 4350 3850 4350
+	3800 4400 3900 4400
 Wire Wire Line
-	7400 4350 7450 4350
+	7400 4400 7500 4400
 $Comp
 L R R13
 U 1 1 514F8E93
