@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2013-03-25 22:18:17
+EESchema Schematic File Version 2  date 29/04/2013 22:12:34
 LIBS:power
 LIBS:CEN-SCHEMA
 LIBS:JK330-1-BF-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 6
 Title ""
-Date "25 mar 2013"
+Date "29 apr 2013"
 Rev ""
 Comp ""
 Comment1 ""
