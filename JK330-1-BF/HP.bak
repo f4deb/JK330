@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 29/04/2013 22:12:02
+EESchema Schematic File Version 2  date 30/04/2013 22:20:31
 LIBS:power
 LIBS:CEN-SCHEMA
 LIBS:JK330-1-BF-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 6
 Title "F4DEB"
-Date "29 apr 2013"
+Date "30 apr 2013"
 Rev "V 3.00"
 Comp "RACKANOUS"
 Comment1 "Carte  Audio"
@@ -309,8 +309,8 @@ $Comp
 L RVAR RVAR2
 U 1 1 514F756F
 P 4050 3700
-F 0 "RVAR2" V 4000 3800 50  0000 C CNN
-F 1 "RVAR" V 4100 3800 50  0000 C CNN
+F 0 "RVAR2" V 3950 3700 50  0000 C CNN
+F 1 "RVAR" V 4150 3600 50  0000 C CNN
 F 2 "" H 4050 3700 60  0000 C CNN
 F 3 "" H 4050 3700 60  0000 C CNN
 	1    4050 3700

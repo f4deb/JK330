@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 29/04/2013 22:12:34
+EESchema Schematic File Version 2  date 30/04/2013 22:23:42
 LIBS:power
 LIBS:CEN-SCHEMA
 LIBS:JK330-1-BF-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 6
 Title "F4DEB"
-Date "29 apr 2013"
+Date "30 apr 2013"
 Rev "V 3.00"
 Comp "RACKANOUS"
 Comment1 "Carte  Audio"
