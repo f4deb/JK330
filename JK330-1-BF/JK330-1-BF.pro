@@ -1,6 +1,6 @@
-update=29/04/2013 21:15:08
+update=20/05/2013 22:30:37
 version=1
-last_client=eeschema
+last_client=cvpcb
 [pcbnew]
 version=1
 PadDrlX=320
@@ -56,16 +56,12 @@ MaxLnkS=3
 ShowRat=0
 ShowMRa=1
 [pcbnew/libraries]
-LibName1=F:/electronique/git-f4deb-cen-electronic-library/CEN-PCB
-LibName2=libcms
+LibName1=libcms
+LibName2=D:/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-PCB
+LibName3=dip_sockets
 LibDir=
 [general]
 version=1
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [eeschema]
 version=1
 LibDir=
@@ -76,5 +72,9 @@ RptLab=1
 LabSize=60
 [eeschema/libraries]
 LibName1=power
-LibName2=F:/electronique/git-f4deb-cen-electronic-library/CEN-SCHEMA
-LibName3=D:/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-SCHEMA
+LibName2=D:/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-SCHEMA
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
