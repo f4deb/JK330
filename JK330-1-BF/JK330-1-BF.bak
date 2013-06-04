@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 20/05/2013 22:20:38
+EESchema Schematic File Version 2  date 20/05/2013 22:53:16
 LIBS:power
 LIBS:CEN-SCHEMA
 LIBS:JK330-1-BF-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 6
 Title ""
-Date "30 apr 2013"
+Date "20 may 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -438,10 +438,10 @@ F 3 "" H 5750 6300 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L -5VA #PWR10
+L -5VA #PWR11
 U 1 1 514F7DB1
 P 5650 6250
-F 0 "#PWR10" H 5650 6450 40  0001 C CNN
+F 0 "#PWR11" H 5650 6450 40  0001 C CNN
 F 1 "-5VA" H 5650 6400 40  0000 C CNN
 F 2 "" H 5650 6250 60  0000 C CNN
 F 3 "" H 5650 6250 60  0000 C CNN

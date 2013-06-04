@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-31 BZR 4008)-stable date = 20/05/2013 22:34:45
+Cmp-Mod V01 Created by CvPcb (2013-03-31 BZR 4008)-stable date = 04/06/2013 21:58:47
 
 BeginCmp
 TimeStamp = /514E2701/514E2FFB;
@@ -333,28 +333,28 @@ BeginCmp
 TimeStamp = /514E2701/514E2D51;
 Reference = MX1;
 ValeurCmp = SBL-1;
-IdModule  = ;
+IdModule  = SBL1;
 EndCmp
 
 BeginCmp
 TimeStamp = /514F77BA;
 Reference = P1;
 ValeurCmp = U.FL;
-IdModule  = ;
+IdModule  = UFL;
 EndCmp
 
 BeginCmp
 TimeStamp = /514F78A1;
 Reference = P2;
 ValeurCmp = U.FL;
-IdModule  = ;
+IdModule  = UFL;
 EndCmp
 
 BeginCmp
 TimeStamp = /514F7AA8;
 Reference = P3;
 ValeurCmp = U.FL;
-IdModule  = ;
+IdModule  = UFL;
 EndCmp
 
 BeginCmp
@@ -410,7 +410,7 @@ BeginCmp
 TimeStamp = /514E26E2/5180282B;
 Reference = Q3;
 ValeurCmp = BSP250;
-IdModule  = SOT23EBC;
+IdModule  = SOT223;
 EndCmp
 
 BeginCmp
@@ -424,7 +424,7 @@ BeginCmp
 TimeStamp = /514E26E2/5180281C;
 Reference = Q5;
 ValeurCmp = BSP250;
-IdModule  = SOT23EBC;
+IdModule  = SOT223;
 EndCmp
 
 BeginCmp
@@ -844,7 +844,7 @@ BeginCmp
 TimeStamp = /514F59E9/49948FAB;
 Reference = U4;
 ValeurCmp = 74HC74;
-IdModule  = ;
+IdModule  = SO14N;
 EndCmp
 
 BeginCmp

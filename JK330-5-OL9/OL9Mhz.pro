@@ -1,6 +1,6 @@
-update=28/04/2013 22:35:06
+update=02/06/2013 23:01:00
 version=1
-last_client=eeschema
+last_client=cvpcb
 [pcbnew]
 version=1
 LastNetListRead=
@@ -31,14 +31,10 @@ LibName9=dip_sockets
 LibName10=pga_sockets
 LibName11=valves
 LibName12=F:/electronique/git-f4deb-cen-electronic-library/CEN-PCB
+LibName13=D:/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-PCB
 LibDir=
 [general]
 version=1
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [eeschema]
 version=1
 LibDir=
@@ -50,3 +46,8 @@ LabSize=60
 [eeschema/libraries]
 LibName1=power
 LibName2=D:/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-SCHEMA
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms

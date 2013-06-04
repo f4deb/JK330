@@ -1,4 +1,4 @@
-update=20/05/2013 22:30:37
+update=02/06/2013 23:08:31
 version=1
 last_client=cvpcb
 [pcbnew]
@@ -59,6 +59,8 @@ ShowMRa=1
 LibName1=libcms
 LibName2=D:/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-PCB
 LibName3=dip_sockets
+LibName4=discret
+LibName5=divers
 LibDir=
 [general]
 version=1

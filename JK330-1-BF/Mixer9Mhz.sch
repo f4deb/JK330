@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 20/05/2013 22:53:16
+EESchema Schematic File Version 2  date 04/06/2013 21:43:31
 LIBS:power
 LIBS:CEN-SCHEMA
 LIBS:JK330-1-BF-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 6
 Title ""
-Date "20 may 2013"
+Date "4 jun 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -221,4 +221,27 @@ F 3 "" H 6150 4200 60  0001 C CNN
 $EndComp
 Text Notes 4900 3500 0    60   ~ 0
 Multitour
+Wire Wire Line
+	4900 4150 4900 4200
+Wire Wire Line
+	4900 4200 5200 4200
+Wire Wire Line
+	5200 4200 5200 4150
+Wire Wire Line
+	5000 4150 5000 4300
+Connection ~ 5000 4200
+Wire Wire Line
+	5100 4150 5100 4200
+Connection ~ 5100 4200
+$Comp
+L GND #PWR?
+U 1 1 51AE4B7A
+P 5000 4300
+F 0 "#PWR?" H 5000 4300 30  0001 C CNN
+F 1 "GND" H 5000 4230 30  0001 C CNN
+F 2 "" H 5000 4300 60  0000 C CNN
+F 3 "" H 5000 4300 60  0000 C CNN
+	1    5000 4300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
