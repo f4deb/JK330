@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-31 BZR 4008)-stable date = 04/06/2013 22:52:41
+Cmp-Mod V01 Created by CvPcb (2013-03-31 BZR 4008)-stable date = 09/06/2013 22:41:05
 
 BeginCmp
 TimeStamp = /514E2701/514E2FFB;
@@ -327,6 +327,13 @@ TimeStamp = /5150C257;
 Reference = K10;
 ValeurCmp = COLONETTE;
 IdModule  = COLONETTE;
+EndCmp
+
+BeginCmp
+TimeStamp = /51B4E722;
+Reference = K11;
+ValeurCmp = CONN_3;
+IdModule  = KK-3;
 EndCmp
 
 BeginCmp
@@ -806,17 +813,17 @@ IdModule  = SM0603_Resistor;
 EndCmp
 
 BeginCmp
-TimeStamp = /514E2701/514E2DD7;
-Reference = RVAR1;
-ValeurCmp = 100;
-IdModule  = POT1;
+TimeStamp = /514E26E2/51B4F16E;
+Reference = R55;
+ValeurCmp = R;
+IdModule  = SM0603_Resistor;
 EndCmp
 
 BeginCmp
-TimeStamp = /514F5DCC/514F756F;
-Reference = RVAR2;
-ValeurCmp = RVAR;
-IdModule  = POT1;
+TimeStamp = /514E2701/514E2DD7;
+Reference = RVAR1;
+ValeurCmp = 100;
+IdModule  = POT_10T_T93YB;
 EndCmp
 
 BeginCmp
@@ -886,7 +893,7 @@ BeginCmp
 TimeStamp = /514F5DCC/49949AB6;
 Reference = U10;
 ValeurCmp = TDA2003;
-IdModule  = ;
+IdModule  = TDA2003V;
 EndCmp
 
 EndListe
