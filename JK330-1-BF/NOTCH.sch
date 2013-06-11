@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 09/06/2013 23:13:58
+EESchema Schematic File Version 2  date 11/06/2013 22:16:43
 LIBS:power
 LIBS:CEN-SCHEMA
 LIBS:JK330-1-BF-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 6
 Title "F4DEB"
-Date "9 jun 2013"
+Date "11 jun 2013"
 Rev "V 3.00"
 Comp "RACKANOUS"
 Comment1 "Carte  Audio"
@@ -16,17 +16,6 @@ Comment2 "FILTRE NOTCH"
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L +5V #PWR058
-U 1 1 4A9EC139
-P 4700 7000
-F 0 "#PWR058" H 4700 7090 20  0001 C CNN
-F 1 "+5V" H 4700 7090 30  0000 C CNN
-F 2 "" H 4700 7000 60  0001 C CNN
-F 3 "" H 4700 7000 60  0001 C CNN
-	1    4700 7000
-	-1   0    0    1   
-$EndComp
 Text Notes 3100 3850 0    60   ~ 0
 U9
 Text Notes 2750 3850 0    60   ~ 0
@@ -410,28 +399,6 @@ F 2 "" H 6200 2250 60  0001 C CNN
 F 3 "" H 6200 2250 60  0001 C CNN
 	1    6200 2250
 	1    0    0    -1  
-$EndComp
-$Comp
-L +5V #PWR069
-U 1 1 5150BF88
-P 5850 5950
-F 0 "#PWR069" H 5850 6040 20  0001 C CNN
-F 1 "+5V" H 5850 6040 30  0000 C CNN
-F 2 "" H 5850 5950 60  0001 C CNN
-F 3 "" H 5850 5950 60  0001 C CNN
-	1    5850 5950
-	0    -1   -1   0   
-$EndComp
-$Comp
-L +5V #PWR070
-U 1 1 5150BF87
-P 5850 5600
-F 0 "#PWR070" H 5850 5690 20  0001 C CNN
-F 1 "+5V" H 5850 5690 30  0000 C CNN
-F 2 "" H 5850 5600 60  0001 C CNN
-F 3 "" H 5850 5600 60  0001 C CNN
-	1    5850 5600
-	0    -1   -1   0   
 $EndComp
 $Comp
 L 74HC74 U4
@@ -1139,5 +1106,38 @@ F 2 "" H 4600 4650 60  0000 C CNN
 F 3 "" H 4600 4650 60  0000 C CNN
 	1    4600 4650
 	1    0    0    -1  
+$EndComp
+$Comp
+L +5VD #PWR?
+U 1 1 51B7AA1A
+P 4700 7000
+F 0 "#PWR?" H 4700 6950 20  0001 C CNN
+F 1 "+5VD" H 4700 7100 30  0000 C CNN
+F 2 "" H 4700 7000 60  0000 C CNN
+F 3 "" H 4700 7000 60  0000 C CNN
+	1    4700 7000
+	-1   0    0    1   
+$EndComp
+$Comp
+L +5VD #PWR?
+U 1 1 51B7AA29
+P 5850 5600
+F 0 "#PWR?" H 5850 5550 20  0001 C CNN
+F 1 "+5VD" H 5850 5700 30  0000 C CNN
+F 2 "" H 5850 5600 60  0000 C CNN
+F 3 "" H 5850 5600 60  0000 C CNN
+	1    5850 5600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L +5VD #PWR?
+U 1 1 51B7AA38
+P 5850 5950
+F 0 "#PWR?" H 5850 5900 20  0001 C CNN
+F 1 "+5VD" H 5850 6050 30  0000 C CNN
+F 2 "" H 5850 5950 60  0000 C CNN
+F 3 "" H 5850 5950 60  0000 C CNN
+	1    5850 5950
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC
