@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 16/06/2013 19:23:40
+EESchema Schematic File Version 2
 LIBS:power
 LIBS:CEN-SCHEMA
 LIBS:JK330-1-BF-cache
@@ -7,11 +7,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 6
-Title ""
-Date "16 jun 2013"
-Rev ""
-Comp ""
-Comment1 ""
+Title "JK330 "
+Date "18 jun 2013"
+Rev "V0.10"
+Comp "F4DEB 2013"
+Comment1 "CARTE FI 9Mhz FILTRE BF"
 Comment2 ""
 Comment3 ""
 Comment4 ""

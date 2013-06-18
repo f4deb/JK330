@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 16/06/2013 19:24:33
+EESchema Schematic File Version 2
 LIBS:power
 LIBS:CEN-SCHEMA
 LIBS:JK330-1-BF-cache
@@ -7,11 +7,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 6
-Title "F4DEB"
-Date "16 jun 2013"
-Rev "V 3.00"
-Comp "RACKANOUS"
-Comment1 "Carte  Audio"
+Title "JK330 "
+Date "18 jun 2013"
+Rev "V0.10"
+Comp "F4DEB 2013"
+Comment1 "CARTE FI 9Mhz FILTRE BF"
 Comment2 "AMPLIFICATEUR AUDIO"
 Comment3 ""
 Comment4 ""
@@ -47,9 +47,9 @@ Wire Wire Line
 Wire Wire Line
 	6050 3750 6000 3750
 Wire Wire Line
-	6000 3750 6000 3900
+	6000 3750 6000 3950
 Wire Wire Line
-	6000 4200 6000 4300
+	6000 4150 6000 4300
 Connection ~ 6000 4300
 Wire Wire Line
 	6700 4300 6400 4300
@@ -275,17 +275,6 @@ F 3 "" H 6550 2850 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C31
-U 1 1 499499E2
-P 6000 4050
-F 0 "C31" H 6050 3950 50  0000 L CNN
-F 1 "100U" H 5750 3950 50  0000 L CNN
-F 2 "" H 6000 4050 60  0001 C CNN
-F 3 "" H 6000 4050 60  0001 C CNN
-	1    6000 4050
-	-1   0    0    1   
-$EndComp
-$Comp
 L CP C28
 U 1 1 499499D2
 P 4900 3550
@@ -312,4 +301,15 @@ Wire Wire Line
 Connection ~ 7450 3650
 Text HLabel 7600 3950 2    60   Input ~ 0
 HP2
+$Comp
+L CP C31
+U 1 1 51C0C83B
+P 6000 4050
+F 0 "C31" H 6050 4150 50  0000 L CNN
+F 1 "100u" H 6050 3950 50  0000 L CNN
+F 2 "" H 6000 4050 60  0000 C CNN
+F 3 "" H 6000 4050 60  0000 C CNN
+	1    6000 4050
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC

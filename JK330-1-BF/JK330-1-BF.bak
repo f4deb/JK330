@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 16/06/2013 19:23:40
+EESchema Schematic File Version 2
 LIBS:power
 LIBS:CEN-SCHEMA
 LIBS:JK330-1-BF-cache
@@ -7,11 +7,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 6
-Title ""
-Date "16 jun 2013"
-Rev ""
-Comp ""
-Comment1 ""
+Title "JK330 "
+Date "18 jun 2013"
+Rev "V0.10"
+Comp "F4DEB 2013"
+Comment1 "CARTE FI 9Mhz FILTRE BF"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -482,32 +482,6 @@ F 3 "" H 3500 3550 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L CONN_2 K4
-U 1 1 514F92A0
-P 2250 6750
-F 0 "K4" H 2550 6900 50  0000 C CNN
-F 1 "CONN_2" H 2600 6850 40  0000 C CNN
-F 2 "" H 2250 6750 60  0000 C CNN
-F 3 "" H 2250 6750 60  0000 C CNN
-	1    2250 6750
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2250 6650 2500 6650
-Wire Wire Line
-	2250 6750 2500 6750
-$Comp
-L GND #PWR2
-U 1 1 514F93B2
-P 2500 6750
-F 0 "#PWR2" H 2500 6750 30  0001 C CNN
-F 1 "GND" H 2500 6680 30  0001 C CNN
-F 2 "" H 2500 6750 60  0000 C CNN
-F 3 "" H 2500 6750 60  0000 C CNN
-	1    2500 6750
-	0    -1   -1   0   
-$EndComp
-$Comp
 L U.FL P1
 U 1 1 514F77BA
 P 3650 1200
@@ -646,15 +620,4 @@ Wire Wire Line
 	8600 2150 8600 2650
 Wire Wire Line
 	8600 2650 8850 2650
-$Comp
-L +12V #PWR1
-U 1 1 51B7A15D
-P 2500 6650
-F 0 "#PWR1" H 2500 6600 20  0001 C CNN
-F 1 "+12V" H 2500 6750 30  0000 C CNN
-F 2 "" H 2500 6650 60  0000 C CNN
-F 3 "" H 2500 6650 60  0000 C CNN
-	1    2500 6650
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
