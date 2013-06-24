@@ -1,9 +1,9 @@
-(kicad_pcb (version 3) (host pcbnew "(2013-03-19 BZR 4004)-stable")
+(kicad_pcb (version 3) (host pcbnew "(2013-05-31 BZR 4019)-stable")
 
   (general
     (links 176)
     (no_connects 22)
-    (area 14.4836 10.254499 73.784333 197.517501)
+    (area 23.1196 18.636499 84.706333 192.183501)
     (thickness 1.6)
     (drawings 8)
     (tracks 346)
@@ -70,7 +70,7 @@
       (layerselection 3178497)
       (usegerberextensions true)
       (excludeedgelayer true)
-      (linewidth 152400)
+      (linewidth 0.150000)
       (plotframeref false)
       (viasonmask false)
       (mode 1)
@@ -179,6 +179,11 @@
       (layers Dessus.Cu Dessus.Pate Dessus.Masque)
       (net 2 GND)
     )
+    (model ../../git-f4deb-cen-electronic-library/wings/UFL.wrl
+      (at (xyz 0 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz -90 0 0))
+    )
   )
 
   (module SM0603_Capa (layer Dessus.Cu) (tedit 5051B1EC) (tstamp 51570096)
@@ -277,6 +282,11 @@
       (layers *.Cu *.Mask Dessus.SilkS)
       (net 1 +12V)
     )
+    (model ../../git-f4deb-cen-electronic-library/wings/KK-2-H.wrl
+      (at (xyz 0 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
   )
 
   (module COLONETTE (layer Dessus.Cu) (tedit 5156F59F) (tstamp 51570078)
@@ -292,7 +302,7 @@
       (layers *.Cu)
       (net 2 GND)
     )
-    (model F:\electronique\wings\Colonette1.wrl
+    (model ../../git-f4deb-cen-electronic-library/wings/Colonette1.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -312,7 +322,7 @@
       (layers *.Cu)
       (net 2 GND)
     )
-    (model F:\electronique\wings\Colonette1.wrl
+    (model ../../git-f4deb-cen-electronic-library/wings/Colonette1.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -332,7 +342,7 @@
       (layers *.Cu)
       (net 2 GND)
     )
-    (model F:\electronique\wings\Colonette1.wrl
+    (model ../../git-f4deb-cen-electronic-library/wings/Colonette1.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -352,7 +362,7 @@
       (layers *.Cu)
       (net 2 GND)
     )
-    (model F:\electronique\wings\Colonette1.wrl
+    (model ../../git-f4deb-cen-electronic-library/wings/Colonette1.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -472,6 +482,11 @@
     (pad 3 thru_hole circle (at 0 0) (size 1.99898 1.99898) (drill 1.00076)
       (layers *.Cu *.Mask Dessus.SilkS)
       (net 7 N-0000015)
+    )
+    (model ../../git-f4deb-cen-electronic-library/wings/KK-3-H.wrl
+      (at (xyz 0 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
     )
   )
 
@@ -1475,6 +1490,11 @@
       (layers *.Cu *.Mask Dessus.SilkS)
       (net 2 GND)
     )
+    (model ../../git-f4deb-cen-electronic-library/wings/SMA-Vert.wrl
+      (at (xyz 0 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
   )
 
   (module SOT143-B (layer Dessus.Cu) (tedit 515204E2) (tstamp 5156FEC3)
@@ -1505,6 +1525,11 @@
     (pad 2 smd rect (at 1.905 0) (size 0.70104 1.524)
       (layers Dessus.Cu Dessus.Pate Dessus.Masque)
       (net 17 N-0000025)
+    )
+    (model smd/smd_transistors/sot143b.wrl
+      (at (xyz 0.035 0.05 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
     )
   )
 
