@@ -1,0 +1,157 @@
+Cmp-Mod V01 Created by CvPcb (2013-05-31 BZR 4019)-stable date = 02/07/2013 22:40:57
+
+BeginCmp
+TimeStamp = /51D1D700;
+Reference = D1001;
+ValeurCmp = LED;
+IdModule  = LED-CMS-1W;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D1D6F1;
+Reference = D1002;
+ValeurCmp = LED;
+IdModule  = LED-CMS-1W;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D1D6D3;
+Reference = D1003;
+ValeurCmp = LED;
+IdModule  = LED-CMS-1W;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D1D6E2;
+Reference = D1004;
+ValeurCmp = LED;
+IdModule  = LED-CMS-1W;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D1D74B;
+Reference = K1001;
+ValeurCmp = CONN_2;
+IdModule  = KK-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D1D7F0;
+Reference = K1002;
+ValeurCmp = CONN_2;
+IdModule  = KK-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D1D70F;
+Reference = R1001;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D1D71E;
+Reference = R1002;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D1D72D;
+Reference = R1003;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D1D75A;
+Reference = R1004;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32E96;
+Reference = R1005;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32E90;
+Reference = R1006;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32E8A;
+Reference = R1007;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32E78;
+Reference = R1008;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32E72;
+Reference = R1009;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32E65;
+Reference = R1010;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32E9C;
+Reference = R1011;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32E84;
+Reference = R1012;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32E7E;
+Reference = R1013;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32EAE;
+Reference = R1014;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32EA8;
+Reference = R1015;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D32EA2;
+Reference = R1016;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+EndListe
