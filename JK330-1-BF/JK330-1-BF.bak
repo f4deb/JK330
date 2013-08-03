@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 6
 Title "JK330 "
-Date "18 jun 2013"
+Date "18 jul 2013"
 Rev "V0.10"
 Comp "F4DEB 2013"
 Comment1 "CARTE FI 9Mhz FILTRE BF"
@@ -620,4 +620,36 @@ Wire Wire Line
 	8600 2150 8600 2650
 Wire Wire Line
 	8600 2650 8850 2650
+Wire Notes Line
+	8700 1650 8700 1600
+Wire Notes Line
+	8675 1600 8725 1600
+Wire Notes Line
+	8675 1600 8675 1525
+Wire Notes Line
+	8675 1525 8725 1525
+Wire Notes Line
+	8725 1525 8725 1600
+Wire Notes Line
+	8700 1475 8700 1525
+Wire Notes Line
+	8500 1650 8500 1475
+Wire Notes Line
+	8500 1475 8700 1475
+Wire Notes Line
+	8600 1575 8675 1575
+Wire Notes Line
+	8600 1575 8600 1650
+Wire Notes Line
+	8675 1575 8655 1560
+Wire Notes Line
+	8655 1560 8655 1590
+Wire Notes Line
+	8655 1590 8675 1575
+Wire Notes Line
+	8660 1565 8660 1585
+Wire Notes Line
+	8660 1570 8665 1575
+Wire Notes Line
+	8665 1575 8660 1580
 $EndSCHEMATC
