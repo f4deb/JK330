@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 09/08/2013 11:19:07
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 25/08/2013 18:55:41
 
 BeginCmp
 TimeStamp = /51EAFEA7;
@@ -232,24 +232,24 @@ IdModule  = WEIDMULLER2-508;
 EndCmp
 
 BeginCmp
-TimeStamp = /51EB02DA;
-Reference = K1002;
+TimeStamp = /521A22D8;
+Reference = K1003;
 ValeurCmp = CONN_2;
-IdModule  = KK-2;
+IdModule  = WEIDMULLER2-508;
 EndCmp
 
 BeginCmp
 TimeStamp = /51EAF0E0;
 Reference = L1001;
 ValeurCmp = 10U/3.4A 30%;
-IdModule  = SELFCMS2;
+IdModule  = SELF10;
 EndCmp
 
 BeginCmp
 TimeStamp = /51EAFE40;
 Reference = L1002;
 ValeurCmp = 10U/3.4A 30%;
-IdModule  = SELFCMS2;
+IdModule  = SELF10;
 EndCmp
 
 BeginCmp
@@ -445,14 +445,14 @@ BeginCmp
 TimeStamp = /51E86D55;
 Reference = U1002;
 ValeurCmp = MP2307;
-IdModule  = SO8N;
+IdModule  = SO8_WITH_EP;
 EndCmp
 
 BeginCmp
 TimeStamp = /51EAFDFE;
 Reference = U1003;
 ValeurCmp = MP2307;
-IdModule  = SO8N;
+IdModule  = SO8_WITH_EP;
 EndCmp
 
 BeginCmp
