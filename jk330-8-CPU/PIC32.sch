@@ -7,9 +7,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 4
+Sheet 3 4
 Title "JK330-CPU"
-Date "21 sep 2013"
+Date "22 sep 2013"
 Rev "V1-00"
 Comp "F4DEB"
 Comment1 ""
@@ -18,29 +18,27 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	10500 3950 9100 3950
+	9100 3950 10500 3950
 Connection ~ 9800 4850
 Wire Wire Line
 	10150 4850 10150 4800
 Connection ~ 9800 4450
 Wire Wire Line
-	10500 4500 10500 4450
+	10500 4450 10500 4500
 Wire Wire Line
-	10500 4450 9100 4450
+	9100 4450 10500 4450
 Connection ~ 9800 3950
 Wire Wire Line
 	10500 3950 10500 3900
 Connection ~ 9800 3550
 Wire Wire Line
-	10500 3600 10500 3550
+	10500 3550 10500 3600
 Wire Wire Line
 	7100 2500 7300 2500
 Wire Wire Line
 	4550 5650 2650 5650
 Wire Wire Line
 	4550 5550 2650 5550
-Wire Wire Line
-	4550 4950 2650 4950
 Wire Wire Line
 	4550 2250 2600 2250
 Wire Wire Line
@@ -63,7 +61,7 @@ Wire Wire Line
 	9100 3950 9100 3900
 Connection ~ 9450 3950
 Wire Wire Line
-	9450 4050 9450 3900
+	9450 3900 9450 4050
 Wire Wire Line
 	9450 3450 9450 3600
 Wire Wire Line
@@ -88,7 +86,7 @@ Wire Wire Line
 Wire Wire Line
 	9100 4800 9100 4850
 Wire Wire Line
-	9450 4950 9450 4800
+	9450 4800 9450 4950
 Wire Wire Line
 	7100 4250 7650 4250
 Wire Wire Line
@@ -98,15 +96,13 @@ Wire Wire Line
 Wire Wire Line
 	7100 3650 7650 3650
 Wire Bus Line
-	7750 4150 7750 3400
+	7750 3400 7750 4150
 Wire Bus Line
 	7750 3400 8400 3400
 Wire Wire Line
 	8150 2250 7100 2250
 Wire Wire Line
 	4550 2350 2600 2350
-Wire Wire Line
-	4550 4850 2650 4850
 Wire Notes Line
 	6750 3300 6750 2350
 Wire Notes Line
@@ -118,7 +114,7 @@ Wire Notes Line
 Wire Wire Line
 	7100 2400 7300 2400
 Wire Wire Line
-	10150 3600 10150 3550
+	10150 3550 10150 3600
 Connection ~ 10150 3550
 Wire Wire Line
 	10150 3900 10150 3950
@@ -212,10 +208,6 @@ F 3 "" H 4650 2050 60  0001 C CNN
 	1    4650 2050
 	1    0    0    -1  
 $EndComp
-Text HLabel 2650 4950 0    60   Input ~ 0
-U1TX
-Text HLabel 2650 4850 0    60   Input ~ 0
-U1RX
 Text HLabel 2600 2250 0    60   Input ~ 0
 PGED1
 Text HLabel 2600 2350 0    60   Input ~ 0
@@ -375,7 +367,7 @@ F 3 "" H 9100 3750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 4200 900  0    150  ~ 30
-MICRO-CONTROLLOR\n
+MICROCONTROLLER\n
 Text Notes 4650 1650 0    90   ~ 18
 PIC
 Text Notes 9250 3100 0    90   ~ 18
@@ -392,6 +384,167 @@ Text HLabel 4300 5450 0    60   Input ~ 0
 C/D
 Wire Wire Line
 	4550 2450 3850 2450
+Wire Wire Line
+	3850 2550 4550 2550
+Wire Wire Line
+	3850 2650 4550 2650
+Wire Wire Line
+	3850 2750 4550 2750
+Wire Wire Line
+	3850 2850 4550 2850
+Wire Wire Line
+	3850 2950 4550 2950
+Wire Wire Line
+	3850 3050 4550 3050
+Wire Wire Line
+	3850 3150 4550 3150
+Wire Wire Line
+	3850 3250 4550 3250
+Wire Wire Line
+	3850 3350 4550 3350
+Wire Wire Line
+	3850 3450 4550 3450
+Wire Wire Line
+	3850 3550 4550 3550
+Wire Wire Line
+	3850 3650 4550 3650
+Wire Wire Line
+	3850 3750 4550 3750
+Wire Wire Line
+	3350 3900 4550 3900
+Wire Notes Line
+	4350 4150 4350 4550
+Wire Notes Line
+	4350 4550 5200 4550
+Wire Notes Line
+	5200 4550 5200 4150
+Wire Notes Line
+	5200 4150 4350 4150
+Text Notes 4800 4250 2    60   ~ 0
+INTERNAL\n
 Text HLabel 3850 2450 0    60   Input ~ 0
-SMETER
+ADC1
+Text HLabel 3850 2550 0    60   Input ~ 0
+ADC2
+Text HLabel 3850 2650 0    60   Input ~ 0
+ADC3
+Text HLabel 3850 2750 0    60   Input ~ 0
+ADC4
+Text HLabel 3850 2850 0    60   Input ~ 0
+ADC5
+Text HLabel 3850 2950 0    60   Input ~ 0
+ADC6
+Text HLabel 3850 3050 0    60   Input ~ 0
+ADC7
+Text HLabel 3850 3150 0    60   Input ~ 0
+ADC8
+Text HLabel 3850 3250 0    60   Input ~ 0
+ADC9
+Text HLabel 3850 3350 0    60   Input ~ 0
+ADC10
+Text HLabel 3850 3550 0    60   Input ~ 0
+ADC12
+Text HLabel 3850 3450 0    60   Input ~ 0
+ADC11
+Text HLabel 3850 3650 0    60   Input ~ 0
+ADC13
+Text HLabel 3850 3750 0    60   Input ~ 0
+ADC14
+Wire Wire Line
+	2750 4050 4550 4050
+$Comp
+L CRYSTAL1 X?
+U 1 1 523F4EF1
+P 3150 3900
+F 0 "X?" H 3150 4050 60  0000 C CNN
+F 1 "32.768khz" H 3150 3750 60  0000 C CNN
+F 2 "~" H 3150 3900 60  0000 C CNN
+F 3 "~" H 3150 3900 60  0000 C CNN
+	1    3150 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 523F4F0A
+P 2750 4350
+F 0 "C?" H 2800 4450 50  0000 L CNN
+F 1 "C" H 2800 4250 50  0000 L CNN
+F 2 "~" H 2750 4350 60  0000 C CNN
+F 3 "~" H 2750 4350 60  0000 C CNN
+	1    2750 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 523F4F19
+P 3500 4350
+F 0 "C?" H 3550 4450 50  0000 L CNN
+F 1 "C" H 3550 4250 50  0000 L CNN
+F 2 "~" H 3500 4350 60  0000 C CNN
+F 3 "~" H 3500 4350 60  0000 C CNN
+	1    3500 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 4200 2750 3900
+Wire Wire Line
+	2750 3900 2950 3900
+Wire Wire Line
+	3500 4200 3500 3900
+Connection ~ 3500 3900
+Connection ~ 2750 4050
+Wire Wire Line
+	2750 4500 2750 4550
+Wire Wire Line
+	3500 4500 3500 4550
+$Comp
+L GND #PWR?
+U 1 1 523F514A
+P 2750 4550
+F 0 "#PWR?" H 2750 4550 30  0001 C CNN
+F 1 "GND" H 2750 4480 30  0001 C CNN
+F 2 "" H 2750 4550 60  0000 C CNN
+F 3 "" H 2750 4550 60  0000 C CNN
+	1    2750 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 523F5159
+P 3500 4550
+F 0 "#PWR?" H 3500 4550 30  0001 C CNN
+F 1 "GND" H 3500 4480 30  0001 C CNN
+F 2 "" H 3500 4550 60  0000 C CNN
+F 3 "" H 3500 4550 60  0000 C CNN
+	1    3500 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 4650 4250 4650
+Wire Wire Line
+	4550 4750 4250 4750
+Wire Wire Line
+	4550 5050 4250 5050
+Wire Wire Line
+	7100 5550 7600 5550
+Wire Wire Line
+	7100 5650 7600 5650
+Text HLabel 7600 5550 2    60   Input ~ 0
+U3RX
+Text HLabel 7600 5650 2    60   Input ~ 0
+U3TX
+Wire Wire Line
+	4250 4850 4550 4850
+Wire Wire Line
+	4250 4950 4550 4950
+Text HLabel 4250 4650 0    60   Input ~ 0
+OC1
+Text HLabel 4250 4750 0    60   Input ~ 0
+OC2
+Text HLabel 4250 4850 0    60   Input ~ 0
+OC3
+Text HLabel 4250 4950 0    60   Input ~ 0
+OC4
+Text HLabel 4250 5050 0    60   Input ~ 0
+OC5
 $EndSCHEMATC
