@@ -1,4 +1,4 @@
-update=24/09/2013 22:56:48
+update=15/10/2013 19:39:59
 last_client=cvpcb
 [general]
 version=1
@@ -22,6 +22,8 @@ LastNetListRead=ELECTRONICAL_MAIN_BOARD_32.net
 [pcbnew/libraries]
 LibName1=dip_sockets
 LibName2=D:/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-PCB
+LibName3=connect
+LibName4=libcms
 LibDir=
 [eeschema]
 version=1
