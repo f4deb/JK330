@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 19/10/2013 08:35:16
+Cmp-Mod V01 Created by PcbNew date = 09/11/2013 16:14:46
 
 BeginCmp
 TimeStamp = /523D5BCA/4D7A8847;
@@ -214,7 +214,7 @@ BeginCmp
 TimeStamp = /4FC53B65;
 Reference = J1001;
 ValeurCmp = RJ12;
-IdModule  = RJ12_E;
+IdModule  = RJ12;
 EndCmp
 
 BeginCmp
@@ -410,21 +410,21 @@ BeginCmp
 TimeStamp = /4FC5387D;
 Reference = P1002;
 ValeurCmp = CONN_4;
-IdModule  = SIL-3"1/2-4-D;
+IdModule  = KK-4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FCA9790;
 Reference = P1003;
 ValeurCmp = CONN_4;
-IdModule  = SIL-3"1/2-4-D;
+IdModule  = KK-4;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC53883;
 Reference = P1004;
 ValeurCmp = CONN_4;
-IdModule  = SIL-3"1/2-4-D;
+IdModule  = KK-4;
 EndCmp
 
 BeginCmp
@@ -445,21 +445,21 @@ BeginCmp
 TimeStamp = /523DC1A0;
 Reference = P1007;
 ValeurCmp = CONN_5X2;
-IdModule  = he10-10d;
+IdModule  = he10-10D;
 EndCmp
 
 BeginCmp
 TimeStamp = /52403CBB;
 Reference = P1008;
 ValeurCmp = CONN_5X2;
-IdModule  = he10-10d;
+IdModule  = he10-10D;
 EndCmp
 
 BeginCmp
 TimeStamp = /52403CCA;
 Reference = P1009;
 ValeurCmp = CONN_5X2;
-IdModule  = he10-10d;
+IdModule  = he10-10D;
 EndCmp
 
 BeginCmp
