@@ -8,7 +8,7 @@ dir_src=
 dir_bin=
 dir_tmp=
 dir_sin=
-dir_inc=C:\Program Files (x86)\Microchip\MPLAB C32 Suite\pic32mx\include\peripheral\legacy
+dir_inc=
 dir_lib=
 dir_lkr=
 [CAT_FILTERS]
@@ -18,47 +18,27 @@ filter_obj=*.o
 filter_lib=*.a
 filter_lkr=*.ld
 [CAT_SUBFOLDERS]
-subfolder_src=common.delay;common.serial;drivers.lcd;main;setup
-subfolder_inc=common.delay;common.serial;driver.lcd;setup
+subfolder_src=common.delay;drivers.lcd;main
+subfolder_inc=
 subfolder_obj=
 subfolder_lib=
 subfolder_lkr=
 [FILE_SUBFOLDERS]
-file_000=common.delay
-file_001=main
-file_002=common.serial
-file_003=common.delay
-file_004=common.serial
-file_005=setup
-file_006=.
-file_007=.
+file_000=main
+file_001=.
+file_002=.
 [GENERATED_FILES]
 file_000=no
 file_001=no
 file_002=no
-file_003=no
-file_004=no
-file_005=no
-file_006=no
-file_007=no
 [OTHER_FILES]
 file_000=no
-file_001=no
-file_002=no
-file_003=no
-file_004=no
-file_005=no
-file_006=yes
-file_007=yes
+file_001=yes
+file_002=yes
 [FILE_INFO]
-file_000=common\delay\delay.c
-file_001=main\MainJK330.c
-file_002=common\serial\serial.c
-file_003=common\delay\delay.h
-file_004=common\serial\serial.h
-file_005=setup\clockConstants.h
-file_006=C:\Program Files (x86)\Microchip\MPLAB C32 Suite\pic32mx\include\proc\p32mx795f512h.h
-file_007=C:\Program Files (x86)\Microchip\MPLAB C32 Suite\pic32mx\include\p32xxxx.h
+file_000=test\testLCDCPUV2.c
+file_001=C:\Program Files (x86)\Microchip\MPLAB C32 Suite\pic32mx\include\proc\p32mx795f512h.h
+file_002=C:\Program Files (x86)\Microchip\MPLAB C32 Suite\pic32mx\include\p32xxxx.h
 [SUITE_INFO]
 suite_guid={14495C23-81F8-43F3-8A44-859C583D7760}
 suite_state=

@@ -338,7 +338,7 @@ void initLCD (void) {
 
 	dataWriteLCD(0x00);
 
-	dataWriteLCD(0x02);
+	dataWriteLCD(0x00);
 	commandWriteLCD(adpset);
 
 
