@@ -2,7 +2,13 @@
 #include <string.h>
 #include <plib.h>
 
+#include "MainJK330.h"
+
 #include "../common/delay/delay.h"
+
+
+#include "../common/serial/serial.h"
+
 #include "../setup/clockConstants.h"
 
 
@@ -29,8 +35,8 @@
 
 // DEFINITION DES PORTS
 
-#define PORT_PC		UART2
-#define PORT_DEBUG 	UART3
+#define SERIAL_PORT_PC		UART2
+#define SERIAL_PORT_DEBUG 	UART3
 
 
 // Définition de la vitesse des ports series
@@ -38,7 +44,8 @@
 #define BAUDERATE 115200
 
 
- 
+
+static	OutputStream pcoutputStream ;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -51,8 +58,36 @@ static const char* HELLO_UART_DEBUG="JK330 with PIC32...on UART DEBUG\r\n";
 
 
 
+/********************************************************************************************************************************
+*********************************************************************************************************************************
+*************************************************************** EN TEST *********************************************************
+*********************************************************************************************************************************
+********************************************************************************************************************************/
 
 
+// *****************************************************************************
+// void SendDataBuffer(const UARTx, const char *buffer)
+// Envoie sur le port serie la chaine de caractère
+// @param	: UARTx : choix du port  
+//					UART1,UART2,UART3,UART4,UART5,UART6
+//			  buffer : chaine de caractère
+// *****************************************************************************
+void SendDataBuffer(const UARTx, const char *buffer)
+
+{
+    while(*buffer != '\n')
+    {
+		WriteCharUart(UARTx,*buffer);
+        buffer++; 
+    }
+    while(!UARTTransmissionHasCompleted(UARTx));
+}
+
+
+
+void OpenUartDefaut (void){
+	OpenUart(SERIAL_PORT_PC,BAUDERATE);
+}
 
 
 /********************************************************************************************************************************
@@ -68,9 +103,19 @@ static const char* HELLO_UART_DEBUG="JK330 with PIC32...on UART DEBUG\r\n";
 * @return : none									*
 ****************************************************/
 
-void init(void) {
-	OpenUart(PORT_PC,BAUDERATE);
-	OpenUart(PORT_DEBUG,BAUDERATE);
+void Init(void) {
+//	OpenUart(SERIAL_PORT_PC,BAUDERATE);
+//	OpenUart(SERIAL_PORT_DEBUG,BAUDERATE);
+
+	void (*toto)();
+	toto = OpenUartDefaut;
+
+	toto();
+//	OpenUartDefaut();
+
+	
+
+
 	//initLCD();
 }
 
@@ -80,24 +125,102 @@ void init(void) {
 * @param : none												*
 * @return : none											*
 ************************************************************/	
-void setup (){
+void Setup (){
 //	setupLCD();
 }
+
+
+void initOutputStream(OutputStream *outputStream){
+	outputStream->address=2;
+}
+
+
 int main(void){
 
-	OpenUart(PORT_PC,BAUDERATE);
-	OpenUart(PORT_DEBUG,BAUDERATE);
-
-
-//IMPORTANT POUR ACTIVER LE RX UART5. INFO TROUVEE SUR LE NET
-	PORTSetPinsDigitalIn(IOPORT_B,BIT_8);  
+	Setup();
+	Init();
 
 
 
-	SendDataBuffer(PORT_PC,HELLO_UART_PC);
-	SendDataBuffer(PORT_DEBUG,HELLO_UART_DEBUG);
+	
+	OutputStream *outputStream = &pcoutputStream;
+
+
+	outputStream->address=2;
+//	initOutputStream(OutputStream *outputStream);
+	initOutputStream(&pcoutputStream);
+
+
+
+
+//	appendString(getOutputStreamLogger(ALWAYS), "Homologation:");
+
+	SendDataBuffer (SERIAL_PORT_PC,HELLO_UART_PC);
+	SendDataBuffer (SERIAL_PORT_DEBUG,HELLO_UART_DEBUG);
 	
 	}
 
 
 
+////////////////////////////// MEMO
+/*
+int main(void){
+	Setup();
+	Init();
+
+	 static	OutputStream pcoutputStream ;
+	
+	OutputStream *outputStream = &pcoutputStream;
+
+	outputStream->x=0;
+
+//	appendString(getOutputStreamLogger(ALWAYS), "Homologation:");
+	SendDataBuffer (SERIAL_PORT_PC,HELLO_UART_PC);
+	SendDataBuffer (SERIAL_PORT_DEBUG,HELLO_UART_DEBUG);
+	}
+*/
+
+////////////////////////////// MEMO 
+/*
+int main(void){
+
+	Setup();
+	Init();
+
+
+	OutputStream outputStream ;
+	
+	OutputStream *pointeur = &outputStream;
+
+
+	pointeur->x=0;
+	outputStream.x=1;
+	outputStream.y=1;
+
+
+
+
+
+//	appendString(getOutputStreamLogger(ALWAYS), "Homologation:");
+
+	SendDataBuffer (SERIAL_PORT_PC,HELLO_UART_PC);
+	SendDataBuffer (SERIAL_PORT_DEBUG,HELLO_UART_DEBUG);
+	
+	}
+*/
+
+////////////////////////////// MEMO 
+
+/*
+void Init(void) {
+//	OpenUart(SERIAL_PORT_PC,BAUDERATE);
+//	OpenUart(SERIAL_PORT_DEBUG,BAUDERATE);
+
+	void (*toto)();
+	toto = OpenUartDefaut;
+
+	toto();
+//	OpenUartDefaut();
+//initLCD();
+}
+*/

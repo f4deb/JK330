@@ -27,20 +27,17 @@ void OpenUart ( const UARTx,int BaudRate)
 }
 
 // *****************************************************************************
-// void SendDataBuffer(const UARTx, const char *buffer)
-// Envoie sur le port serie la chaine de caractère
+// void WriteCharUart(const UARTx, char data)
+// Envoie sur le port serie le caractère data
 // @param	: UARTx : choix du port  
 //					UART1,UART2,UART3,UART4,UART5,UART6
-//			  buffer : chaine de caractère
+//			  data : caractère
 // *****************************************************************************
-void SendDataBuffer(const UARTx, const char *buffer)
-{
-    while(*buffer != '\n')
-    {
-        while(!UARTTransmitterIsReady(UARTx));
-        UARTSendDataByte(UARTx, *buffer);
-        buffer++; 
-    }
+void WriteCharUart(const UARTx, char data	){
+	
+	while(!UARTTransmitterIsReady(UARTx));
+	UARTSendDataByte(UARTx, data);   
+
     while(!UARTTransmissionHasCompleted(UARTx));
 }
 
@@ -48,15 +45,15 @@ void SendDataBuffer(const UARTx, const char *buffer)
 
 
 // *****************************************************************************
-// UINT32 GetMenuChoice(void)
+// UINT32 ReadCharUart (const UARTx)
 // *****************************************************************************
-UINT32 GetMenuChoice(const UARTx)
+UINT32 ReadCharUart(const UARTx)
 {
-    UINT8  menu_item;
+    UINT8  data;
 
     while(!UARTReceivedDataIsAvailable(UARTx));
-    menu_item = UARTGetDataByte(UARTx);
+    data = UARTGetDataByte(UARTx);
 
 
-    return (UINT32)menu_item;
+    return (UINT32)data;
 }

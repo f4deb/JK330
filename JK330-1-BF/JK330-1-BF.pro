@@ -1,19 +1,8 @@
-update=09/06/2013 11:20:26
+update=25/12/2013 23:11:49
 version=1
-last_client=pcbnew
+last_client=eeschema
 [general]
 version=1
-[eeschema]
-version=1
-LibDir=
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
-[eeschema/libraries]
-LibName1=power
-LibName2=D:/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-SCHEMA
 [cvpcb]
 version=1
 NetIExt=net
@@ -46,3 +35,14 @@ LibName3=dip_sockets
 LibName4=discret
 LibName5=divers
 LibName6=contrib/Potentiometer_RevB_02Aug2010
+[eeschema]
+version=1
+LibDir=
+NetFmtName=
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=60
+[eeschema/libraries]
+LibName1=power
+LibName2=D:/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-SCHEMA

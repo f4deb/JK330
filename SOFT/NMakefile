@@ -1,6 +1,6 @@
 # MPLAB IDE generated this makefile for use with Microsoft `nmake'.
 # Project: TEST ELECTRONICAL_MAIN_BOARD_32.mcp
-# Date: Sat Nov 16 12:11:13 2013
+# Date: Fri Dec 13 19:06:47 2013
 
 AS = pic32-as.exe
 CC = pic32-gcc.exe
@@ -12,15 +12,21 @@ RM = del
 "TEST ELECTRONICAL_MAIN_BOARD_32.hex" : "TEST ELECTRONICAL_MAIN_BOARD_32.elf"
 	$(HX) "TEST ELECTRONICAL_MAIN_BOARD_32.elf"
 
-"TEST ELECTRONICAL_MAIN_BOARD_32.elf" : "delay.o" "testLCD24064.o"
-	$(CC) -mdebugger -mprocessor=32MX795F512H "delay.o" "testLCD24064.o" -o"TEST ELECTRONICAL_MAIN_BOARD_32.elf" -Wl,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__MPLAB_DEBUGGER_ICD3=1,--defsym=__ICD2RAM=1,-Map="TEST ELECTRONICAL_MAIN_BOARD_32.map"
+"TEST ELECTRONICAL_MAIN_BOARD_32.elf" : "delay.o" "MainJK330.o" "serial.o" "printWriter.o"
+	$(CC) -mprocessor=32MX795F512H "delay.o" "MainJK330.o" "serial.o" "printWriter.o" -o"TEST ELECTRONICAL_MAIN_BOARD_32.elf" -Wl,--defsym=__MPLAB_BUILD=1,-Map="TEST ELECTRONICAL_MAIN_BOARD_32.map"
 
 "delay.o" : "common\delay\delay.c"
-	$(CC) -mprocessor=32MX795F512H -x c -c "common\delay\delay.c" -o"delay.o" -MMD -MF"delay.d" -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -g
+	$(CC) -mprocessor=32MX795F512H -x c -c "common\delay\delay.c" -o"delay.o" -MMD -MF"delay.d" -I"C:\Program Files (x86)\Microchip\MPLAB C32 Suite\pic32mx\include\peripheral\legacy" -g
 
-"testLCD24064.o" : "test\testLCD24064.c" "common\delay\delay.h"
-	$(CC) -mprocessor=32MX795F512H -x c -c "test\testLCD24064.c" -o"testLCD24064.o" -MMD -MF"testLCD24064.d" -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -g
+"MainJK330.o" : "main\MainJK330.c" "main\MainJK330.h" "common\delay\delay.h" "setup\clockConstants.h" "common\io\outputStream.h" "common\io\buffer.h" "common\commons.h" "common\io\inputStream.h" "common\io\outputStream.h"
+	$(CC) -mprocessor=32MX795F512H -x c -c "main\MainJK330.c" -o"MainJK330.o" -MMD -MF"MainJK330.d" -I"C:\Program Files (x86)\Microchip\MPLAB C32 Suite\pic32mx\include\peripheral\legacy" -g
+
+"serial.o" : "common\serial\serial.c" "setup\clockConstants.h" "common\serial\serial.h"
+	$(CC) -mprocessor=32MX795F512H -x c -c "common\serial\serial.c" -o"serial.o" -MMD -MF"serial.d" -I"C:\Program Files (x86)\Microchip\MPLAB C32 Suite\pic32mx\include\peripheral\legacy" -g
+
+"printWriter.o" : "common\io\printWriter.c" "common\io\printWriter.h"
+	$(CC) -mprocessor=32MX795F512H -x c -c "common\io\printWriter.c" -o"printWriter.o" -MMD -MF"printWriter.d" -I"C:\Program Files (x86)\Microchip\MPLAB C32 Suite\pic32mx\include\peripheral\legacy" -g
 
 "clean" : 
-	$(RM) "delay.o" "testLCD24064.o" "TEST ELECTRONICAL_MAIN_BOARD_32.elf" "TEST ELECTRONICAL_MAIN_BOARD_32.hex"
+	$(RM) "delay.o" "MainJK330.o" "serial.o" "printWriter.o" "TEST ELECTRONICAL_MAIN_BOARD_32.elf" "TEST ELECTRONICAL_MAIN_BOARD_32.hex"
 
