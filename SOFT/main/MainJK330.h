@@ -11,14 +11,17 @@
 //struct OutputStream;
 typedef struct OutputStream OutputStream;
 
+typedef void OpenOutputStreamFunction(OutputStream* outputStream, int param1);
 
 struct OutputStream {
     /** The address of the stream (Ex : address for I2C, serialPortIndex ...). */
-    unsigned char address;
+    OpenOutputStreamFunction* openOutputStream;
 
 };
 
 void OpenUartDefaut (void);
+
+
 
 
 void initOutputStream(OutputStream *outputStream);

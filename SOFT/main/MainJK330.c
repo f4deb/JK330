@@ -6,8 +6,13 @@
 
 #include "../common/delay/delay.h"
 
+//#include "../common/io/outputStream.h"
 
 #include "../common/serial/serial.h"
+
+#include "../device/led/led.h"
+
+#include "../drivers/lcd/lcd24064.h"
 
 #include "../setup/clockConstants.h"
 
@@ -39,13 +44,20 @@
 #define SERIAL_PORT_DEBUG 	UART3
 
 
-// Définition de la vitesse des ports series
+// D$B!)(Bfinition de la vitesse des ports series
 
 #define BAUDERATE 115200
 
 
+#define I2C_CLOCK_FREQ 				(100000)
 
-static	OutputStream pcoutputStream ;
+//D$B!)(Bfinition I2C
+
+#define BRG_VAL 0xc6	//100khz
+
+
+
+static OutputStream pcoutputStream;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -53,149 +65,169 @@ static	OutputStream pcoutputStream ;
 // *****************************************************************************
 // *****************************************************************************
 
-static const char* HELLO_UART_PC="JK330 with PIC32...on UART PC\r\n";
-static const char* HELLO_UART_DEBUG="JK330 with PIC32...on UART DEBUG\r\n";
+static const char* HELLO_UART_PC = "JK330 with PIC32...on UART PC\r\n";
+static const char* HELLO_UART_DEBUG = "JK330 with PIC32...on UART DEBUG\r\n";
 
 
 
 /********************************************************************************************************************************
-*********************************************************************************************************************************
-*************************************************************** EN TEST *********************************************************
-*********************************************************************************************************************************
-********************************************************************************************************************************/
+ *********************************************************************************************************************************
+ *************************************************************** EN TEST *********************************************************
+ *********************************************************************************************************************************
+ ********************************************************************************************************************************/
 
 
 // *****************************************************************************
 // void SendDataBuffer(const UARTx, const char *buffer)
-// Envoie sur le port serie la chaine de caractère
+// Envoie sur le port serie la chaine de caract$B!)(Bre
 // @param	: UARTx : choix du port  
 //					UART1,UART2,UART3,UART4,UART5,UART6
-//			  buffer : chaine de caractère
+//			  buffer : chaine de caract$B!)(Bre
 // *****************************************************************************
+
 void SendDataBuffer(const UARTx, const char *buffer)
-
-{
-    while(*buffer != '\n')
-    {
-		WriteCharUart(UARTx,*buffer);
-        buffer++; 
+ {
+    while (*buffer != '\n') {
+        WriteCharUart(UARTx, *buffer);
+        buffer++;
     }
-    while(!UARTTransmissionHasCompleted(UARTx));
+    while (!UARTTransmissionHasCompleted(UARTx));
 }
 
-
-
-void OpenUartDefaut (void){
-	OpenUart(SERIAL_PORT_PC,BAUDERATE);
+void OpenUartDefaut(void) {
+    OpenUart(SERIAL_PORT_PC, BAUDERATE);
 }
 
+void OpenUartDEBUGDefaut(OutputStream* outputStream, int param1) {
+    OpenUart(SERIAL_PORT_DEBUG, BAUDERATE);
+}
 
 /********************************************************************************************************************************
-*********************************************************************************************************************************
-************************************************ INITIALISATION CONFIGURATION ET MAIN *******************************************
-*********************************************************************************************************************************
-********************************************************************************************************************************/
+ *********************************************************************************************************************************
+ ************************************************ INITIALISATION CONFIGURATION ET MAIN *******************************************
+ *********************************************************************************************************************************
+ ********************************************************************************************************************************/
 
-/****************************************************
-* init												*
-* initialise les differents peripheriquesdu projet	*
-* @prarm : none										*
-* @return : none									*
-****************************************************/
+/*******************************************************************************
+ *  init									       *
+ * initialise les differents peripheriquesdu projet                             *
+ * @prarm : none                                                                *
+ * @return : none                                                               *
+ *******************************************************************************/
 
 void Init(void) {
-//	OpenUart(SERIAL_PORT_PC,BAUDERATE);
-//	OpenUart(SERIAL_PORT_DEBUG,BAUDERATE);
+    //	OpenUart(SERIAL_PORT_PC,BAUDERATE);
 
-	void (*toto)();
-	toto = OpenUartDefaut;
+    //    OpenUart(SERIAL_PORT_DEBUG,BAUDERATE);
 
-	toto();
-//	OpenUartDefaut();
+    void (*toto)();
+    toto = OpenUartDefaut;
 
-	
+    toto();
+    //	OpenUartDefaut();
 
 
-	//initLCD();
+    TestLed07(); // fais clignoter les leds de la fa$B!)(Bade
+
+    InitLCD();
 }
 
 /************************************************************
-* setup														*
-* configure les ports du PIC32 pour les fonctions du projet *
-* @param : none												*
-* @return : none											*
-************************************************************/	
-void Setup (){
-//	setupLCD();
+ * setup														*
+ * configure les ports du PIC32 pour les fonctions du projet *
+ * @param : none												*
+ * @return : none											*
+ ************************************************************/
+void Setup() {
+
+
+    OpenI2C1(I2C_ON, BRG_VAL); //Enable I2C channel
+    SetupLCD();
 }
 
 
-void initOutputStream(OutputStream *outputStream){
-	outputStream->address=2;
+//void initOutputStream(OutputStream *outputStream){
+//	outputStream->openOutputStream = openOutputStream;
+//}
+
+void initSerialOutputStream1(OutputStream* outputStream) {
+    outputStream->openOutputStream = OpenUartDEBUGDefaut;
+
 }
 
+/*
+void initSerialOutputStream1(OutputStream* outputStream) {
+    outputStream->openOutputStream = openOutputStreamSerial1;
+//    outputStream->closeOutputStream = closeOutputStreamSerial1;
+//    outputStream->writeChar = writeChar1;
+//    outputStream->flush = flushSerial;
+}
+ */
 
-int main(void){
+int main(void) {
 
-	Setup();
-	Init();
+    UINT32 actualClock;
 
-
-
-	
-	OutputStream *outputStream = &pcoutputStream;
-
-
-	outputStream->address=2;
-//	initOutputStream(OutputStream *outputStream);
-	initOutputStream(&pcoutputStream);
-
-
+    Setup();
+    Init();
 
 
-//	appendString(getOutputStreamLogger(ALWAYS), "Homologation:");
 
-	SendDataBuffer (SERIAL_PORT_PC,HELLO_UART_PC);
-	SendDataBuffer (SERIAL_PORT_DEBUG,HELLO_UART_DEBUG);
-	
-	}
+
+    OutputStream* outputStream = &pcoutputStream;
+
+
+    //	outputStream->address=1;
+    //	initOutputStream(OutputStream *outputStream);
+    //	initOutputStream(&pcoutputStream);
+
+    initSerialOutputStream1(outputStream);
+    outputStream->openOutputStream(outputStream,0);
+
+
+    //	appendString(getOutputStreamLogger(ALWAYS), "Homologation:");
+
+    SendDataBuffer(SERIAL_PORT_PC, HELLO_UART_PC);
+    SendDataBuffer(SERIAL_PORT_DEBUG, HELLO_UART_DEBUG);
+
+}
 
 
 
 ////////////////////////////// MEMO
 /*
 int main(void){
-	Setup();
-	Init();
+        Setup();
+        Init();
 
-	 static	OutputStream pcoutputStream ;
+         static	OutputStream pcoutputStream ;
 	
-	OutputStream *outputStream = &pcoutputStream;
+        OutputStream *outputStream = &pcoutputStream;
 
-	outputStream->x=0;
+        outputStream->x=0;
 
 //	appendString(getOutputStreamLogger(ALWAYS), "Homologation:");
-	SendDataBuffer (SERIAL_PORT_PC,HELLO_UART_PC);
-	SendDataBuffer (SERIAL_PORT_DEBUG,HELLO_UART_DEBUG);
-	}
-*/
+        SendDataBuffer (SERIAL_PORT_PC,HELLO_UART_PC);
+        SendDataBuffer (SERIAL_PORT_DEBUG,HELLO_UART_DEBUG);
+        }
+ */
 
 ////////////////////////////// MEMO 
 /*
 int main(void){
 
-	Setup();
-	Init();
+        Setup();
+        Init();
 
 
-	OutputStream outputStream ;
+        OutputStream outputStream ;
 	
-	OutputStream *pointeur = &outputStream;
+        OutputStream *pointeur = &outputStream;
 
 
-	pointeur->x=0;
-	outputStream.x=1;
-	outputStream.y=1;
+        pointeur->x=0;
+        outputStream.x=1;
+        outputStream.y=1;
 
 
 
@@ -203,11 +235,11 @@ int main(void){
 
 //	appendString(getOutputStreamLogger(ALWAYS), "Homologation:");
 
-	SendDataBuffer (SERIAL_PORT_PC,HELLO_UART_PC);
-	SendDataBuffer (SERIAL_PORT_DEBUG,HELLO_UART_DEBUG);
+        SendDataBuffer (SERIAL_PORT_PC,HELLO_UART_PC);
+        SendDataBuffer (SERIAL_PORT_DEBUG,HELLO_UART_DEBUG);
 	
-	}
-*/
+        }
+ */
 
 ////////////////////////////// MEMO 
 
@@ -216,11 +248,11 @@ void Init(void) {
 //	OpenUart(SERIAL_PORT_PC,BAUDERATE);
 //	OpenUart(SERIAL_PORT_DEBUG,BAUDERATE);
 
-	void (*toto)();
-	toto = OpenUartDefaut;
+        void (*toto)();
+        toto = OpenUartDefaut;
 
-	toto();
+        toto();
 //	OpenUartDefaut();
 //initLCD();
 }
-*/
+ */
