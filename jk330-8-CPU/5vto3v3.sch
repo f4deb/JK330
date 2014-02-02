@@ -1,7 +1,6 @@
 EESchema Schematic File Version 2
 LIBS:conn
 LIBS:power
-LIBS:CEN-SCHEMA
 LIBS:ELECTRONICAL_MAIN_BOARD_32-cache
 EELAYER 27 0
 EELAYER END
@@ -9,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 4
 Title "JK330-CPU"
-Date "19 oct 2013"
+Date "2 jan 2014"
 Rev "V1-00"
 Comp "F4DEB"
 Comment1 ""
