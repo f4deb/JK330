@@ -6,13 +6,25 @@
 
 #include "../common/delay/delay.h"
 
-//#include "../common/io/outputStream.h"
+#include "../common/io/outputStream.h"
+#include "../common/io/printWriter.h"
 
-#include "../common/serial/serial.h"
+#include "../common/serial/serialOutputStream.h"
 
 #include "../device/led/led.h"
 
+#include "../drivers/IO/MCP9804.h"
+
+#include "../drivers/IO/PCF8573.h"
+#include "../drivers/IO/time.h"
+
 #include "../drivers/lcd/lcd24064.h"
+#include "../drivers/lcd/lcdOutputStream.h"
+#include "../drivers/lcd/lcdProvider_24064.h"
+
+
+
+#include "../menu/menu.h"
 
 #include "../setup/clockConstants.h"
 
@@ -38,26 +50,24 @@
 #pragma config ICESEL   = ICS_PGx1      // ICE/ICD Comm Channel Select
 #pragma config DEBUG    = ON           // Debugger Disabled for Starter Kit
 
-// DEFINITION DES PORTS
 
-#define SERIAL_PORT_PC		UART2
-#define SERIAL_PORT_DEBUG 	UART3
-
-
-// D？finition de la vitesse des ports series
-
-#define BAUDERATE 115200
+#define SERIAL_PORT_PC		2
+#define SERIAL_PORT_DEBUG 	3
 
 
-#define I2C_CLOCK_FREQ 				(100000)
-
-//D？finition I2C
-
+//Definition I2C
+//#define I2C_CLOCK_FREQ 		(100000)    //100Khz
 #define BRG_VAL 0xc6	//100khz
 
-
-
 static OutputStream pcoutputStream;
+
+static OutputStream debugoutputStream;
+
+static OutputStream testoutputStream;
+
+static OutputStream lcdoutputStream;
+
+OutputStream* outputStream;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -67,8 +77,16 @@ static OutputStream pcoutputStream;
 
 static const char* HELLO_UART_PC = "JK330 with PIC32...on UART PC\r\n";
 static const char* HELLO_UART_DEBUG = "JK330 with PIC32...on UART DEBUG\r\n";
+static const char* HELLO_UART_TEST = "JK330 with PIC32...on UART TEZST\r\n";
 
+// Variable Capteur de temperature MCP9804
+int BCD1, BCD2, BCD3, BCD4;
+int BCD10;
 
+#define ACK 1
+#define NACK 0
+
+int Temperature;
 
 /********************************************************************************************************************************
  *********************************************************************************************************************************
@@ -85,8 +103,7 @@ static const char* HELLO_UART_DEBUG = "JK330 with PIC32...on UART DEBUG\r\n";
 //			  buffer : chaine de caract？re
 // *****************************************************************************
 
-void SendDataBuffer(const UARTx, const char *buffer)
- {
+void SendDataBuffer(int UARTx, const char *buffer) {
     while (*buffer != '\n') {
         WriteCharUart(UARTx, *buffer);
         buffer++;
@@ -94,13 +111,8 @@ void SendDataBuffer(const UARTx, const char *buffer)
     while (!UARTTransmissionHasCompleted(UARTx));
 }
 
-void OpenUartDefaut(void) {
-    OpenUart(SERIAL_PORT_PC, BAUDERATE);
-}
 
-void OpenUartDEBUGDefaut(OutputStream* outputStream, int param1) {
-    OpenUart(SERIAL_PORT_DEBUG, BAUDERATE);
-}
+
 
 /********************************************************************************************************************************
  *********************************************************************************************************************************
@@ -116,85 +128,175 @@ void OpenUartDEBUGDefaut(OutputStream* outputStream, int param1) {
  *******************************************************************************/
 
 void Init(void) {
-    //	OpenUart(SERIAL_PORT_PC,BAUDERATE);
 
-    //    OpenUart(SERIAL_PORT_DEBUG,BAUDERATE);
+    //Initialise l'afficheur LCD et affiche l'image d'accueil
 
-    void (*toto)();
-    toto = OpenUartDefaut;
+    outputStream = &lcdoutputStream;
+    initLcdOutputStream(outputStream);
+    outputStream->openOutputStream(outputStream, 0); //InitLCD();
 
-    toto();
-    //	OpenUartDefaut();
+        //Initialise port serie debug
+    outputStream = &debugoutputStream;
+    //initSerialOutputStream1(outputStream);
+    initSerialOutputStream(outputStream, SERIAL_PORT_DEBUG);
+    outputStream->openOutputStream(outputStream, 0);
+
+        //Initialise port serie PC
+    outputStream = &pcoutputStream;
+    //initSerialOutputStream2(outputStream);
+    initSerialOutputStream(outputStream, SERIAL_PORT_PC);
+    outputStream->openOutputStream(outputStream, 0);
 
 
-    TestLed07(); // fais clignoter les leds de la fa？ade
+  /*  //Initialise port Serie debug
+    outputStream = &debugoutputStream;
+    initSerialOutputStream(outputStream, SERIAL_PORT_DEBUG);
+    //initSerialOutputStream1(outputStream);
+    outputStream->openOutputStream(outputStream, 0);
 
-    InitLCD();
+    //Initialise port serie PC
+    outputStream = &pcoutputStream;
+    initSerialOutputStream2(outputStream);
+    outputStream->openOutputStream(outputStream, 0);
+*/
+   // fais clignoter les leds de la facade
+    InitLed07();
+
+
+
+
+    // Initialise le capteur de temperature MCP9804
+        initRegMCP9804 (0x00,0x18,0x01,0xE0,0x01,0x40,0x02,0x40); // 30C,20C,34C
+
 }
 
 /************************************************************
  * setup														*
  * configure les ports du PIC32 pour les fonctions du projet *
  * @param : none												*
- * @return : none											*
+ * @return : none											
  ************************************************************/
 void Setup() {
 
-
+    //Active CONNEXION I2C1
     OpenI2C1(I2C_ON, BRG_VAL); //Enable I2C channel
-    SetupLCD();
-}
+    //   I2C1CONbits.ACKDT=1;
+    //   I2C1CONbits.ACKEN=0;
 
-
-//void initOutputStream(OutputStream *outputStream){
-//	outputStream->openOutputStream = openOutputStream;
-//}
-
-void initSerialOutputStream1(OutputStream* outputStream) {
-    outputStream->openOutputStream = OpenUartDEBUGDefaut;
+    //Configure les PIN de control de l'afficheur MGSLS24064
+    SetupLCD_24064();
 
 }
 
-/*
-void initSerialOutputStream1(OutputStream* outputStream) {
-    outputStream->openOutputStream = openOutputStreamSerial1;
-//    outputStream->closeOutputStream = closeOutputStreamSerial1;
-//    outputStream->writeChar = writeChar1;
-//    outputStream->flush = flushSerial;
-}
- */
 
 int main(void) {
-
-    UINT32 actualClock;
-
+    //    UINT32 actualClock;
     Setup();
     Init();
 
+   outputStream = &pcoutputStream;
+   appendString(outputStream, "JK330 with PIC32...on UART PC\r");
+   outputStream = &debugoutputStream;
+   appendString(outputStream, "JK330 with PIC32...on UART DEBUG\r");
+
+   outputStream = &debugoutputStream;
+   appendString(outputStream, "Lecture PCF8573pc\r");
+   getTime(outputStream);
+   
+    clearScreen();
+    setCursorAtHome();
+
+    setCursorPosition_24064(7,39);  //raw,col
+    outputStream = &lcdoutputStream;
+    menu_P(&lcdoutputStream);
+
+    outputStream = &debugoutputStream;
+
+
+    hor.ti_hour=0x21;
+    hor.ti_min=0x34;
+    hor.ti_day=0x06;
+    hor.ti_month=0x05;
+    //setTime();
+    while (1) {
+    outputStream = &lcdoutputStream;
+    setCursorPosition_24064(0,29);
+    getTime(outputStream);
+
+    
+    setCursorPosition_24064(0,25);
+
+    appendDec(outputStream, ReadTempAmbMCP9804());
+    append(outputStream,'C');
 
 
 
-    OutputStream* outputStream = &pcoutputStream;
-
-
-    //	outputStream->address=1;
-    //	initOutputStream(OutputStream *outputStream);
-    //	initOutputStream(&pcoutputStream);
-
-    initSerialOutputStream1(outputStream);
-    outputStream->openOutputStream(outputStream,0);
-
-
-    //	appendString(getOutputStreamLogger(ALWAYS), "Homologation:");
-
-    SendDataBuffer(SERIAL_PORT_PC, HELLO_UART_PC);
-    SendDataBuffer(SERIAL_PORT_DEBUG, HELLO_UART_DEBUG);
-
+    delaymSec(1000);
+    }
 }
 
 
 
-////////////////////////////// MEMO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////// MEMO.
+
+
+/*
+   outputStream = &debugoutputStream;
+
+
+   appendString (outputStream,"TOTO\0");
+   append(outputStream,'J');
+
+ */
+
+/*    while (1) {
+
+        Temperature = ReadTempAmbMCP9804();
+        BCD10 = (Temperature / 10) ;
+        Temperature = (Temperature - (BCD10*10));
+        BCD1 = Temperature + '0' ;
+        BCD10 += '0';
+        WriteCharUart(SERIAL_PORT_DEBUG, BCD10);
+        WriteCharUart(SERIAL_PORT_DEBUG, BCD1 );
+        WriteCharUart(SERIAL_PORT_DEBUG, CR );
+        delaymSec(500);
+    }
+ */
+
+
+
+
+//	outputStream->address=1;
+//	initOutputStream(OutputStream *outputStream);
+//	initOutputStream(&pcoutputStream);
+
+
+
 /*
 int main(void){
         Setup();
@@ -255,4 +357,70 @@ void Init(void) {
 //	OpenUartDefaut();
 //initLCD();
 }
+ */
+
+/*
+    OpenI2C();
+    WriteCharI2C(0x30);
+    WriteCharI2C(0x01);
+    OpenI2C();
+    WriteCharI2C(0x31);
+    TempAmbMSB = ReadCharI2C(ACK);
+
+    TempAmbLSB = MasterReadI2C1();NotAckI2C1();IdleI2C1();
+    CloseI2C();
+
+    OpenI2C();
+    WriteCharI2C(0x30);
+    WriteCharI2C(0x02);
+    OpenI2C();
+    WriteCharI2C(0x31);//AckI2C1();
+    TempAmbMSB = MasterReadI2C1();AckI2C1();IdleI2C1();//AckI2C1();
+    TempAmbLSB = MasterReadI2C1();NotAckI2C1();IdleI2C1();
+    CloseI2C();
+
+    OpenI2C();
+    WriteCharI2C(0x30);
+    WriteCharI2C(0x03);
+    OpenI2C();
+    WriteCharI2C(0x31);//AckI2C1();
+    TempAmbMSB = MasterReadI2C1();AckI2C1();IdleI2C1();//AckI2C1();
+    TempAmbLSB = MasterReadI2C1();NotAckI2C1();IdleI2C1();
+    CloseI2C();
+
+    OpenI2C();
+    WriteCharI2C(0x30);
+    WriteCharI2C(0x04);
+    OpenI2C();
+    WriteCharI2C(0x31);//AckI2C1();
+    TempAmbMSB = MasterReadI2C1();AckI2C1();IdleI2C1();//AckI2C1();
+    TempAmbLSB = MasterReadI2C1();NotAckI2C1();IdleI2C1();
+    CloseI2C();
+
+    OpenI2C();
+    WriteCharI2C(0x30);
+    WriteCharI2C(0x05);
+    OpenI2C();
+    WriteCharI2C(0x31);//AckI2C1();
+    TempAmbMSB = MasterReadI2C1();AckI2C1();IdleI2C1();//AckI2C1();
+    TempAmbLSB = MasterReadI2C1();NotAckI2C1();IdleI2C1();
+    CloseI2C();
+
+    OpenI2C();
+    WriteCharI2C(0x30);
+    WriteCharI2C(0x06);
+    OpenI2C();
+    WriteCharI2C(0x31);//AckI2C1();
+    TempAmbMSB = MasterReadI2C1();AckI2C1();IdleI2C1();//AckI2C1();
+    TempAmbLSB = MasterReadI2C1();NotAckI2C1();IdleI2C1();
+    CloseI2C();
+
+    OpenI2C();
+    WriteCharI2C(0x30);
+    WriteCharI2C(0x07);
+    OpenI2C();
+    WriteCharI2C(0x31);//AckI2C1();
+    TempAmbMSB = MasterReadI2C1();AckI2C1();IdleI2C1();//AckI2C1();
+    TempAmbLSB = MasterReadI2C1();NotAckI2C1();IdleI2C1();
+    CloseI2C();
  */

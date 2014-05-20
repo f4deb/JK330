@@ -121,7 +121,7 @@ void AllLed07 (BOOL state){
     CloseI2C();
 }
 
-void TestLed07 (void){
+void InitLed07 (void){
     AllLed07(TRUE);delaymSec(100);
     AllLed07(FALSE);delaymSec(100);
     AllLed07(TRUE);delaymSec(100);

@@ -1,6 +1,9 @@
 #include <plib.h>
 
+#include "../SOFT/../SOFT/main/MainJK330.h"
 #include "lcd24064.h"
+
+#include "lcdOutputStream.h"
 
 
 #define bus_LCD	PORTE
@@ -99,7 +102,598 @@ const char logo [] = {
  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };// LIGNE 63
 
 
-    /* IMAGE D'origine du 68hc11
+static char currentRow;
+static char currentColumn;
+static char maxRow = 8;
+static char maxColumn = 40;
+
+
+/********************************************************
+ * busyLCD_24064												*
+ * attend que l'afficheur soit disponible				*
+ * @param : none											*
+ * @return : none 										*
+ ********************************************************/
+
+void busyLCD_24064(void) {
+    int status = 0x00;
+    TRISE = 0xFF; // BUS LCD en entr？e
+
+    wr_LCD = 1;
+    rd_LCD = 0; // LCD en lecture
+    cd_LCD = 1; // LCD en commande
+
+
+
+    while (status != 0xFF) {
+        ce_LCD = 0; // active le LCD
+        status = bus_LCD; //recupere l etat du LCD
+        status = 0b11111100 | status;
+        ce_LCD = 1; // desactive le LCD
+
+    }
+    rd_LCD = 1; // LCD en lecture
+    TRISE = 0; // BUS LCD en sortie
+}
+
+/********************************************************
+ * commandWriteLCD_24064 										*
+ * Envoie d'une commande au LCD							*
+ * @param  : data			Commande ？？ envoyer			*
+ * @return : none
+ *********************************************************/
+
+
+void commandWriteLCD_24064(int data2) {
+
+    busyLCD_24064();
+
+    bus_LCD = data2;
+    cd_LCD = 1; // LCD en commande+
+    rd_LCD = 1; // LCD en ecriture
+
+    wr_LCD = 0;
+    ce_LCD = 0; // active le LCD
+
+    //delay100us(1);
+
+    ce_LCD = 1; // desactive le LCD
+    wr_LCD = 1;
+}
+
+/********************************************************
+ * dataWriteLCD_24064 											*
+ * Envoie d'une data au LCD								*
+ * @param  : data			data ？？ envoyer				*
+ * @return : none										*
+ *********************************************************/
+
+
+void dataWriteLCD_24064(int data1) {
+
+    busyLCD_24064();
+
+    bus_LCD = data1;
+    cd_LCD = 0; // LCD en data
+    rd_LCD = 1; // LCD en ecriture
+
+    wr_LCD = 0;
+    ce_LCD = 0; // active le LCD
+
+    //delay100us(1);
+
+    ce_LCD = 1; // desactive le LCD
+    wr_LCD = 1;
+
+    //delay100us(1);
+}
+
+
+/********************************************************
+ * dataReadLCD_24064 					*
+ * Lit la DATA poinee par l'ADP				*
+ * @param  : none                                      	*
+ * @return : c = data					*
+ *******************************************************/
+char dataReadLCD_24064 (void) {
+    char c;
+    busyLCD_24064();
+
+
+    cd_LCD = 0; // LCD en data
+    wr_LCD = 1;
+    rd_LCD = 0; // LCD en lecture
+delay100us(1);
+
+    ce_LCD = 0; // active le LCD
+    delay100us(1);
+    //delay100us(1);
+    c = bus_LCD;
+
+    ce_LCD = 1; // desactive le LCD
+    wr_LCD = 1;
+
+    //delay100us(1);
+    return (c);
+}
+
+/************************************
+ * ClrTexteLCD_24064                       *
+ * Efface la zone memoire TEXTE      *
+ * @prarm : none                     *
+ * @return : none                    *
+ ************************************/
+void ClrTexteLCD_24064(void) {
+    int i;
+    dataWriteLCD_24064(0x00);
+
+    dataWriteLCD_24064(0x00);
+    commandWriteLCD_24064(adpset);
+
+    commandWriteLCD_24064(awron);
+    for (i = 0; i < 320; i++) {
+        dataWriteLCD_24064(0x00);
+    }
+
+    commandWriteLCD_24064(awroff);
+
+}
+
+/************************************
+ * ClrGraphLCD_24064                       *
+ * Efface la zone memoire GRAPHIQUE  *
+ * @prarm : none                     *
+ * @return : none                    *
+ ************************************/
+void ClrGraphLCD_24064(void) {
+    int i;
+    dataWriteLCD_24064(0x00);
+    dataWriteLCD_24064(0x02);
+    commandWriteLCD_24064(adpset);
+
+    commandWriteLCD_24064(awron);
+    for (i = 0; i < 0xa00; i++) {
+        dataWriteLCD_24064(0x00);
+    }
+
+    commandWriteLCD_24064(awroff);
+}
+
+/*************************************
+ * SetGraph_24064                          *
+ * Passe en mode graphique           *
+ * @prarm : none                     *
+ * @return : none                    *
+ ************************************/
+void SetGraph_24064(void) {
+    commandWriteLCD_24064(0x80);
+    commandWriteLCD_24064(0x98);
+}
+
+/*************************************
+ * SetGrTx_24064                           *
+ * Passe en mode graphique + Texte   *
+ * @prarm : none                     *
+ * @return : none                    *
+ ************************************/
+void SetGrTx_24064(void) {
+    commandWriteLCD_24064(0x81);
+    commandWriteLCD_24064(0x9C);
+}
+
+/*************************************
+ * SetTxt_24064                           *
+ * Passe en mode Texte   *
+ * @prarm : none                     *
+ * @return : none                    *
+ ************************************/
+void SetTxt_24064_24064(void) {
+    commandWriteLCD_24064(0x84);
+    commandWriteLCD_24064(0x94);
+}
+
+/************************************
+ * InitLCD_24064							*
+ * initialise l afficheur			*
+ * @prarm : none						*
+ * @return : none					*
+ ************************************/
+void InitLCD_24064(void) {
+    int i;
+
+
+
+    // adresse de base text area = 0x0000
+    dataWriteLCD_24064(0x00); //low adresse
+    dataWriteLCD_24064(0x00); //high adresse
+    commandWriteLCD_24064(txhome);
+
+    //fixe nombre de colonne texte a 40 (0x28)
+    dataWriteLCD_24064(0x28);
+    dataWriteLCD_24064(0x00);
+    commandWriteLCD_24064(txarea);
+
+    //fixe adresse graphique ？ 0x0200
+    dataWriteLCD_24064(0x00);
+    dataWriteLCD_24064(0x02);
+    commandWriteLCD_24064(grhome);
+
+    //Fixe nombre de colonne texte en mode graphique a 40 (0x28)
+    dataWriteLCD_24064(0x28);
+    dataWriteLCD_24064(0x00);
+    commandWriteLCD_24064(grarea);
+
+    // LCD mode "OR"
+    commandWriteLCD_24064(0x81);
+
+    // fixe zone de charactere personnel
+    dataWriteLCD_24064(0x03); //03 Adresse CG-RAM = 1C00h ( Valeur decaler de 3 fois ？？？gauche)
+    dataWriteLCD_24064(0x01);
+    commandWriteLCD_24064(offset);
+
+    //nombre de ligne pour le curseur
+    commandWriteLCD_24064(0xA1);
+
+
+    //Active afficheur
+
+    commandWriteLCD_24064(0x94);
+
+
+    ClrTexteLCD_24064();
+    ClrGraphLCD_24064();
+
+    SetGrTx_24064();
+    dataWriteLCD_24064(0x00);
+    dataWriteLCD_24064(0x00);
+    commandWriteLCD_24064(adpset);
+//    commandWriteLCD_24064(awron);
+
+//    dataWriteLCD_24064(0x28);
+//    dataWriteLCD_24064('E');
+//    dataWriteLCD_24064('L');
+//    dataWriteLCD_24064('L');
+//    dataWriteLCD_24064('O');
+
+//    commandWriteLCD_24064(awroff);
+
+    //aff graphique
+    dataWriteLCD_24064(0x00);
+    dataWriteLCD_24064(0x02);
+    commandWriteLCD_24064(adpset);
+
+    commandWriteLCD_24064(awron);
+
+    for (i = 0; i < 2560; i++) {
+        dataWriteLCD_24064(logo[i]);
+    }
+    commandWriteLCD_24064(awroff);
+}
+
+/**************************
+ * SetupLCD_24064
+ * configure les ports du PIC32 pour les fonctions du LCD
+ * @param : none
+ * @return : none
+ **************************/
+void SetupLCD_24064() {
+
+    TRISE = 0; // BUS LCD en sortie
+
+    TRISFbits.TRISF0 = 0; //WR en sortie
+    TRISFbits.TRISF1 = 0; //RD en sortie
+    TRISFbits.TRISF3 = 0; //CE en sortie
+
+    TRISDbits.TRISD11 = 0; //CD en sortie
+
+    wr_LCD = 1;
+    rd_LCD = 1;
+    cd_LCD = 1;
+    ce_LCD = 1;
+}
+
+/**************************
+ * setCursorPosition_24064
+ * positionne le curseur
+ * @param : row = ligne du curseur
+ *          col = colonne du curseur
+ * @return : none
+ **************************/
+void setCursorPosition_24064 (int row, int col){
+int adp;
+
+    adp = col+ ((row+1)*40)-40;
+    dataWriteLCD_24064(adp & 0xFF);
+    dataWriteLCD_24064((adp & 0xFF00)>>8);
+    commandWriteLCD_24064(adpset);
+    dataWriteLCD_24064(col);
+    dataWriteLCD_24064(row);
+    commandWriteLCD_24064(0x21);
+    currentColumn = col;
+    currentRow = row;
+}
+
+/**************************
+ * clearTextLine_24064
+ * efface la ligne de texte defini et place le curseur sur la ligne suivante
+ * @param : row = ligne ？ effacer
+ * @return : none
+ **************************/
+void clearTextLine_24064(int row){
+    int i;
+    setCursorPosition_24064(row,0);
+    for (i=0 ; i<40 ; i++) {
+        commandWriteLCD_24064(awron);
+        dataWriteLCD_24064( ' ' - (0x20) );
+        commandWriteLCD_24064(awroff);
+    }
+}
+
+/**************************
+ * scrolltText_24064
+ * fait defiller la zone texte  et place le curseur sur la derniere ligne
+ * @param : none
+ * @return : none
+ **************************/
+void scrolltText_24064 (void ){
+    //TEST SHIFTUP
+    int i,j;
+    char bufferLCD [40];
+    int currentRow;
+    int currentcolumn;
+
+    for (j=0 ; j<7 ; j++){
+        setCursorPosition_24064(j+1,0);  //raw,col
+        commandWriteLCD_24064(0xB1);   //auto read
+        for (i=0 ; i<40 ; i++){
+            bufferLCD[i]=(dataReadLCD_24064())+0x20;
+        }
+        commandWriteLCD_24064(0xB2);
+
+        setCursorPosition_24064(j,0);  //raw,col
+        for (i=0 ; i<40 ; i++){
+            commandWriteLCD_24064(awron);
+            dataWriteLCD_24064( bufferLCD[i] - (0x20) );
+            commandWriteLCD_24064(awroff);
+            //writeCharLCD_24064(bufferLCD[i]);
+        }
+    }
+    clearTextLine_24064(7);
+    setCursorPosition_24064(7,0);  //raw,col
+}
+
+/**************************
+ * writeCharLCD_24064
+ * affiche un caractere dans la zone TEXT ？ la position du curseur
+ * @param : c = caractere a afficher
+ * @return : none
+ **************************/
+void writeCharLCD_24064 (char c){
+
+    commandWriteLCD_24064(awron);
+    dataWriteLCD_24064( c - (0x20) );
+    commandWriteLCD_24064(awroff);
+
+    currentColumn ++;
+    if (currentColumn >= maxColumn) {
+        currentColumn = 0;
+        currentRow ++;
+    }
+    if (currentRow >= maxRow) {
+        scrolltText_24064();
+    }
+    dataWriteLCD_24064(currentColumn); //colonne
+    dataWriteLCD_24064(currentRow); //ligne
+    commandWriteLCD_24064(0x21); // set curseur pointeur
+}
+
+
+/**************************
+ * clearScreen_24064
+ * efface l'afficheur graphique et texte
+ * @param : none
+ * @return : none
+ **************************/
+void clearScreen_24064 (void){
+    ClrGraphLCD_24064();
+    ClrTexteLCD_24064();
+    setCursorPosition_24064(0,0);
+}
+
+
+/**************************
+ * setCursorAtHome_24064
+ * positionne le curseur en 0,0
+ * @param : none
+ * @return : none
+ **************************/
+void setCursorAtHome_24064 (void){
+    setCursorPosition_24064(0,0);
+}
+
+/**************************
+ * hideCursor_24064
+ * efface le curseur clignotant
+ * @param : none
+ * @return : none
+ **************************/
+void hideCursor_24064 (void){
+
+}
+
+/**************************
+ * showUnderlineCursor_24064
+ * affiche le curseur clignotant
+ * @param : none
+ * @return : none
+ **************************/
+void showUnderlineCursor_24064 (void){
+    commandWriteLCD_24064(0xA0);
+    commandWriteLCD_24064(0x9F);
+}
+
+void setPixel_24064(int x,int y){
+    int i,j;
+    int pix;
+    i = (((y*240)+x)/6)+ad_base_graph;  //Calcul de la posiotion du curseur
+    dataWriteLCD_24064(i & 0x00FF);
+    dataWriteLCD_24064((i & 0xFF00)>>8);
+    commandWriteLCD_24064(adpset);      //Envoie la position du curseur
+
+    // lit les six points au curseur
+    commandWriteLCD_24064(0xC5);   //read
+    pix=(dataReadLCD_24064());
+    commandWriteLCD_24064(0xB2);
+
+
+    i=x%6;              //calcul du numero du point de 0 a 5
+
+    switch (i) {        //prepar le point a afficher
+        case 0 : j = 0b00100000 | pix;break;
+        case 1 : j = 0b00010000 | pix;break;
+        case 2 : j = 0b00001000 | pix;break;
+        case 3 : j = 0b00000100 | pix;break;
+        case 4 : j = 0b00000010 | pix;break;
+        case 5 : j = 0b00000001 | pix;break;
+    }
+    
+    commandWriteLCD_24064(awron);
+        dataWriteLCD_24064(j);
+    commandWriteLCD_24064(awroff);      //Affiche le point selectionne
+}
+
+void line_24064(int x1,int y1,int x2,int y2){
+    // Algorithme de trac？ de segment de Bresenham
+    signed int dx,dy,y,x;
+    signed int e;
+
+    dx = x2-x1;
+    dy = y2-y1;
+
+    // si la droite est
+    if (dy < 0){
+        e = x2;
+        x2 = x1;
+        x1 = e;
+        e = y2;
+        y2 = y1;
+        y1 = e;
+        dx = x2-x1;
+        dy = y2-y1;
+    }
+
+    if (dx == 0){
+        // ligne vertical
+        if (y2 < y1) {
+            y = y1;
+            y1 = y2;
+            y2=y;
+        }
+        while (y1 < y2+1){
+            setPixel (x1,y1);
+            y1++;
+        }
+    }
+    else if (dy == 0){
+        // ligne horizontal
+        if (x2 < x1) {
+            x = x1;
+            x1 = x2;
+            x2=x;
+        }
+        while (x1 < x2+1){
+            setPixel (x1,y1);
+            x1++;
+        }
+    }
+    else if (dx > 0){
+        if (dx > 0){
+        // vecteur oblique dans le 1er quadran
+
+            if (dx >= dy){
+                // vecteur diagonal ou oblique proche de l’horizontale, dans le 1er octant
+                e = x2-x1;
+                dx = e << 2;                // dx = dx * 2
+                dy = (y2-y1) << 2;          // dy = dy * 2
+                while (x1 < x2) {
+                    setPixel (x1,y1);
+                    x1++;
+                    e = e-dy;
+                    if (e<=0){
+                        y1++;
+                        e = e+dx;
+                    }
+                    setPixel (x1,y1);
+                }                    
+            }
+            else {
+                // vecteur diagonal ou oblique proche de l’horizontale, dans le 2eme octant
+                
+                e = y2-y1;
+                dy = e << 2;                // dx = dx * 2
+                dx = (x2-x1) << 2;          // dy = dy * 2
+                while (y1 < y2) {
+                    setPixel (x1,y1);
+                    y1++;
+                    e = e-dx;
+                    if (e<=0){
+                        x1++;
+                        e = e+dy;
+                    }
+                    setPixel (x1,y1);
+                }
+            }
+        }} ///////////
+        
+    else if (dx < 0){
+        if (dx < 0){
+            
+        // vecteur oblique dans le 2er quadran
+
+            if (-dx >= dy){
+   
+            // vecteur diagonal ou oblique proche de l’horizontale, dans le 3eme octant
+                e = x1-x2;
+                dx = e << 2;                // dx = dx * 2
+                dy = (y2-y1) << 2;          // dy = dy * 2
+                while (x2 < x1) {
+                    setPixel (x1,y1);
+                    x1--;
+                    e = e-dy;
+                    if (e<=0){
+                        y1++;
+                        e = e+dx;
+                    }
+                    setPixel (x1,y1);
+                }                    
+            }
+            else {
+                // vecteur diagonal ou oblique proche de l’horizontale, dans le 4eme octant
+                
+                e = y2-y1;
+                dy = e << 2;                // dx = dx * 2
+                dx = (x1-x2) << 2;          // dy = dy * 2
+                while (y1 < y2) {
+                    setPixel (x1,y1);
+                    y1++;
+                    e = e-dx;
+                    if (e<=0){
+                        x1--;
+                        e = e+dy;
+                    }
+                    setPixel (x1,y1);
+                }
+            }
+        }
+
+    }
+
+
+}
+
+/*MEMO
+
+    IMAGE D'origine du 68hc11
     0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15,
     0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01,
 //    0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x22,
@@ -166,270 +760,6 @@ const char logo [] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x3f, 0x3f, 0x3f, 0x3f, 0x3f, 0x3f, 0x3f, 0x3d, 0x37, 0x1a, 0x2e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, //Ligne 63
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}; //Ligne 64
 */
-
-
-int pos_x;
-int pos_y;
-
-/********************************************************
- * busyLCD												*
- * attend que l'afficheur soit disponible				*
- * @param : none											*
- * @return : none 										*
- ********************************************************/
-
-void busyLCD(void) {
-    int status = 0x00;
-    TRISE = 0xFF; // BUS LCD en entr？e
-
-    wr_LCD = 1;
-    rd_LCD = 0; // LCD en lecture
-    cd_LCD = 1; // LCD en commande
-
-
-
-    while (status != 0xFF) {
-        ce_LCD = 0; // active le LCD
-        status = bus_LCD; //recupere l etat du LCD
-        status = 0b11111100 | status;
-        ce_LCD = 1; // desactive le LCD
-
-    }
-    rd_LCD = 1; // LCD en lecture
-    TRISE = 0; // BUS LCD en sortie
-}
-
-/********************************************************
- * commandWriteLCD 										*
- * Envoie d'une commande au LCD							*
- * @param  : data			Commande ？？ envoyer			*
- * @return : none
- *********************************************************/
-
-
-void commandWriteLCD(int data2) {
-
-    busyLCD();
-
-    bus_LCD = data2;
-    cd_LCD = 1; // LCD en commande+
-    rd_LCD = 1; // LCD en ecriture
-
-    wr_LCD = 0;
-    ce_LCD = 0; // active le LCD
-
-    //delay100us(1);
-
-    ce_LCD = 1; // desactive le LCD
-    wr_LCD = 1;
-}
-
-/********************************************************
- * dataWriteLCD 											*
- * Envoie d'une data au LCD								*
- * @param  : data			data ？？ envoyer				*
- * @return : none										*
- *********************************************************/
-
-
-void dataWriteLCD(int data1) {
-
-    busyLCD();
-
-    bus_LCD = data1;
-    cd_LCD = 0; // LCD en data
-    rd_LCD = 1; // LCD en ecriture
-
-    wr_LCD = 0;
-    ce_LCD = 0; // active le LCD
-
-    //delay100us(1);
-
-    ce_LCD = 1; // desactive le LCD
-    wr_LCD = 1;
-
-    //delay100us(1);
-}
-
-/************************************
- * ClrTexteLCD                       *
- * Efface la zone memoire TEXTE      *
- * @prarm : none                     *
- * @return : none                    *
- ************************************/
-void ClrTexteLCD(void) {
-    int i;
-    dataWriteLCD(0x00);
-
-    dataWriteLCD(0x00);
-    commandWriteLCD(adpset);
-
-    commandWriteLCD(awron);
-    for (i = 0; i < 320; i++) {
-        dataWriteLCD(0x00);
-    }
-
-    commandWriteLCD(awroff);
-
-}
-
-/************************************
- * ClrGraphLCD                       *
- * Efface la zone memoire GRAPHIQUE  *
- * @prarm : none                     *
- * @return : none                    *
- ************************************/
-void ClrGraphLCD(void) {
-    int i;
-    dataWriteLCD(0x00);
-
-    dataWriteLCD(0x02);
-    commandWriteLCD(adpset);
-
-    commandWriteLCD(awron);
-    for (i = 0; i < 0xa00; i++) {
-        dataWriteLCD(0x00);
-    }
-
-    commandWriteLCD(awroff);
-}
-
-/*************************************
- * SetGraph                          *
- * Passe en mode graphique           *
- * @prarm : none                     *
- * @return : none                    *
- ************************************/
-void SetGraph(void) {
-    commandWriteLCD(0x80);
-    commandWriteLCD(0x98);
-}
-
-/*************************************
- * SetGrTx                           *
- * Passe en mode graphique + Texte   *
- * @prarm : none                     *
- * @return : none                    *
- ************************************/
-void SetGrTx(void) {
-    commandWriteLCD(0x81);
-    commandWriteLCD(0x9C);
-}
-
-/*************************************
- * SetTxt                           *
- * Passe en mode Texte   *
- * @prarm : none                     *
- * @return : none                    *
- ************************************/
-void SetTxt(void) {
-    commandWriteLCD(0x84);
-    commandWriteLCD(0x94);
-}
-
-/************************************
- * InitLCD							*
- * initialise l afficheur			*
- * @prarm : none						*
- * @return : none					*
- ************************************/
-void InitLCD(void) {
-    int i;
-    pos_x = 0;
-    pos_y = 0;
-
-
-    // adresse de base text area = 0x0000
-    dataWriteLCD(0x00); //low adresse
-    dataWriteLCD(0x00); //high adresse
-    commandWriteLCD(txhome);
-
-    //fixe nombre de colonne texte a 40 (0x28)
-    dataWriteLCD(0x28);
-    dataWriteLCD(0x00);
-    commandWriteLCD(txarea);
-
-    //fixe adresse graphique ？ 0x0200
-    dataWriteLCD(0x00);
-    dataWriteLCD(0x02);
-    commandWriteLCD(grhome);
-
-    //Fixe nombre de colonne texte en mode graphique a 40 (0x28)
-    dataWriteLCD(0x28);
-    dataWriteLCD(0x00);
-    commandWriteLCD(grarea);
-
-    // LCD mode "OR"
-    commandWriteLCD(0x81);
-
-    // fixe zone de charactere personnel
-    dataWriteLCD(0x03); //03 Adresse CG-RAM = 1C00h ( Valeur decaler de 3 fois ？？？gauche)
-    dataWriteLCD(0x01);
-    commandWriteLCD(offset);
-
-    //nombre de ligne pour le curseur
-    commandWriteLCD(0xA1);
-
-
-    //Active afficheur
-
-    commandWriteLCD(0x94);
-
-
-    ClrTexteLCD();
-    ClrGraphLCD();
-
-    SetGrTx();
-    dataWriteLCD(0x00);
-
-    dataWriteLCD(0x00);
-    commandWriteLCD(adpset);
-    commandWriteLCD(awron);
-
-//    dataWriteLCD(0x28);
-//    dataWriteLCD('E');
-//    dataWriteLCD('L');
-//    dataWriteLCD('L');
-//    dataWriteLCD('O');
-
-    commandWriteLCD(awroff);
-
-    //aff graphique
-    dataWriteLCD(0x00);
-    dataWriteLCD(0x02);
-    commandWriteLCD(adpset);
-
-    commandWriteLCD(awron);
-
-    for (i = 0; i < 2560; i++) {
-        dataWriteLCD(logo[i]);
-    }
-    commandWriteLCD(awroff);
-}
-
-/**************************
- * setupLCD
- * configure les ports du PIC32 pour les fonctions du LCD
- * @param : none
- * @return : none
- **************************/
-void SetupLCD() {
-
-    TRISE = 0; // BUS LCD en sortie
-
-    TRISFbits.TRISF0 = 0; //WR en sortie
-    TRISFbits.TRISF1 = 0; //RD en sortie
-    TRISFbits.TRISF3 = 0; //CE en sortie
-
-    TRISDbits.TRISD11 = 0; //CD en sortie
-
-    wr_LCD = 1;
-    rd_LCD = 1;
-    cd_LCD = 1;
-    ce_LCD = 1;
-}
-
-
 
 
 

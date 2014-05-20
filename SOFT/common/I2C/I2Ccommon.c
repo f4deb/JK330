@@ -1,3 +1,4 @@
+
 #include <plib.h>
 
 #include "I2Ccommon.h"
@@ -17,3 +18,18 @@ void CloseI2C (void){
     StopI2C1();//Send the Stop condition
     IdleI2C1();//Wait to complete
 }
+
+unsigned char   ReadCharI2C (BOOL ACKNL){
+    char  data = MasterReadI2C1();
+    if (ACKNL == TRUE){
+        AckI2C1();
+    }
+    else {
+        NotAckI2C1();
+    }
+
+    IdleI2C1();
+    //delaymSec(100);
+    return data;
+}
+

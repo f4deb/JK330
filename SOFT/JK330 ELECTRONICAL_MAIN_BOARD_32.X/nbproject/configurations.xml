@@ -14,18 +14,31 @@
         <itemPath>../common/I2C/I2Ccommon.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="common.io" projectFiles="true">
+        <itemPath>../common/io/outputStream.h</itemPath>
+        <itemPath>../common/io/printWriter.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f5" displayName="common.serial" projectFiles="true">
         <itemPath>../common/serial/serial.h</itemPath>
+        <itemPath>../common/serial/serialOutputStream.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f6" displayName="device.led" projectFiles="true">
         <itemPath>../device/led/led.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f10" displayName="driver.io" projectFiles="true">
+        <itemPath>../drivers/IO/MCP9804.h</itemPath>
+        <itemPath>../drivers/IO/PCF8573.h</itemPath>
+        <itemPath>../drivers/IO/time.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f7" displayName="driver.lcd" projectFiles="true">
         <itemPath>../drivers/lcd/lcd24064.h</itemPath>
+        <itemPath>../drivers/lcd/lcdOutputStream.h</itemPath>
+        <itemPath>../drivers/lcd/lcdProvider_24064.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f9" displayName="main" projectFiles="true">
         <itemPath>../main/MainJK330.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f11" displayName="menu" projectFiles="true">
+        <itemPath>../menu/menu.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f8" displayName="setup" projectFiles="true">
         <itemPath>../setup/clockConstants.h</itemPath>
@@ -48,18 +61,30 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="common.io" projectFiles="true">
         <itemPath>../common/io/printWriter.c</itemPath>
+        <itemPath>../common/io/outputStream.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="common.serial" projectFiles="true">
         <itemPath>../common/serial/serial.c</itemPath>
+        <itemPath>../common/serial/serialOutputStream.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="device.led" projectFiles="true">
         <itemPath>../device/led/led.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f6" displayName="driver.io" projectFiles="true">
+        <itemPath>../drivers/IO/MCP9804.c</itemPath>
+        <itemPath>../drivers/IO/PCF8573.c</itemPath>
+        <itemPath>../drivers/IO/time.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="drivers.lcd" displayName="drivers.lcd" projectFiles="true">
         <itemPath>../drivers/lcd/lcd24064.c</itemPath>
+        <itemPath>../drivers/lcd/lcdOutputStream.c</itemPath>
+        <itemPath>../drivers/lcd/lcdProvider_24064.c</itemPath>
       </logicalFolder>
       <logicalFolder name="main" displayName="main" projectFiles="true">
         <itemPath>../main/MainJK330.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7" displayName="menu" projectFiles="true">
+        <itemPath>../menu/menu.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f5" displayName="setup" projectFiles="true">
       </logicalFolder>

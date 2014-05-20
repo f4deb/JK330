@@ -13,9 +13,8 @@
 /** instruction cycle frequency. */
 #define FCY ((FOSC * FPLLMUL) / FPLLIDIV  / 4)
 
-
-// calcul de la fréquence du bus
-#define	GetSystemClock() 			(FOSC)
+// calcul de la fr$B!)(Bquence du bus
+#define	GetSystemClock() 		(FOSC)
 #define	GetPeripheralClock()		(GetSystemClock()/(1 << OSCCONbits.PBDIV))
 #define	GetInstructionClock()		(GetSystemClock())
 

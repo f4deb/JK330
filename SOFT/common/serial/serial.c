@@ -19,19 +19,35 @@
 //******************************************************
 void OpenUart ( const UARTx,int BaudRate)
 {
-	UARTConfigure(UARTx, UART_ENABLE_PINS_TX_RX_ONLY);
+    UARTConfigure(UARTx, UART_ENABLE_PINS_TX_RX_ONLY);
     UARTSetFifoMode(UARTx, UART_INTERRUPT_ON_TX_NOT_FULL | UART_INTERRUPT_ON_RX_NOT_EMPTY);
     UARTSetLineControl(UARTx, UART_DATA_SIZE_8_BITS | UART_PARITY_NONE | UART_STOP_BITS_1);
     UARTSetDataRate(UARTx, GetPeripheralClock(), BaudRate);
     UARTEnable(UARTx, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
 }
 
+//******************************************************
+// void CloseUart ( const UARTx)
+// Fermeture  d'un port serie
+// @param 	: UARTx : choix du port
+//                  UART1,UART2,UART3,UART4,UART5,UART6
+//
+//******************************************************
+void CloseUart ( const UARTx)
+{
+    UARTConfigure(UARTx, UART_ENABLE_PINS_TX_RX_ONLY);
+    UARTSetFifoMode(UARTx, UART_INTERRUPT_ON_TX_NOT_FULL | UART_INTERRUPT_ON_RX_NOT_EMPTY);
+    UARTSetLineControl(UARTx, UART_DATA_SIZE_8_BITS | UART_PARITY_NONE | UART_STOP_BITS_1);
+    UARTSetDataRate(UARTx, GetPeripheralClock(), 115200);
+    UARTEnable(UARTx, UART_DISABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
+}
+
 // *****************************************************************************
 // void WriteCharUart(const UARTx, char data)
-// Envoie sur le port serie le caractère data
+// Envoie sur le port serie le caract$B!)(Bre data
 // @param	: UARTx : choix du port  
 //					UART1,UART2,UART3,UART4,UART5,UART6
-//			  data : caractère
+//			  data : caract$B!)(Bre
 // *****************************************************************************
 void WriteCharUart(const UARTx, char data	){
 	

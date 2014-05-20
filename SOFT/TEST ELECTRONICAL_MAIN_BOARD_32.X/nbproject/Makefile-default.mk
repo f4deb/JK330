@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/serial/serial.c ../device/led/led.c ../test/testI2C32PCF8574.c
+SOURCEFILES_QUOTED_IF_SPACED=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/pwm/pwmPic32.c ../common/pwm/motorPwm.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/PCF8573.c ../drivers/IO/time.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../mainCEN/MainCEN.c ../menu/menu.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/637770267/I2Ccommon.o.d ${OBJECTDIR}/_ext/1544592837/printWriter.o.d ${OBJECTDIR}/_ext/1922645879/serial.o.d ${OBJECTDIR}/_ext/1041058175/led.o.d ${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/637730607/pwmPic32.o ${OBJECTDIR}/_ext/637730607/motorPwm.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/PCF8573.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/849511804/MainCEN.o ${OBJECTDIR}/_ext/760809394/menu.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1309593678/delay.o.d ${OBJECTDIR}/_ext/637770267/I2Ccommon.o.d ${OBJECTDIR}/_ext/1544592837/printWriter.o.d ${OBJECTDIR}/_ext/1544592837/outputStream.o.d ${OBJECTDIR}/_ext/637730607/pwmPic32.o.d ${OBJECTDIR}/_ext/637730607/motorPwm.o.d ${OBJECTDIR}/_ext/1922645879/serial.o.d ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d ${OBJECTDIR}/_ext/1041058175/led.o.d ${OBJECTDIR}/_ext/1225983975/MCP9804.o.d ${OBJECTDIR}/_ext/1225983975/PCF8573.o.d ${OBJECTDIR}/_ext/1225983975/time.o.d ${OBJECTDIR}/_ext/649236794/lcd24064.o.d ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d ${OBJECTDIR}/_ext/849511804/MainCEN.o.d ${OBJECTDIR}/_ext/760809394/menu.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o
+OBJECTFILES=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/637730607/pwmPic32.o ${OBJECTDIR}/_ext/637730607/motorPwm.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/PCF8573.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/849511804/MainCEN.o ${OBJECTDIR}/_ext/760809394/menu.o
 
 # Source Files
-SOURCEFILES=../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/serial/serial.c ../device/led/led.c ../test/testI2C32PCF8574.c
+SOURCEFILES=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/pwm/pwmPic32.c ../common/pwm/motorPwm.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/PCF8573.c ../drivers/IO/time.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../mainCEN/MainCEN.c ../menu/menu.c
 
 
 CFLAGS=
@@ -91,6 +91,11 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/_ext/1309593678/delay.o: ../common/delay/delay.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1309593678 
+	@${RM} ${OBJECTDIR}/_ext/1309593678/delay.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1309593678/delay.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1309593678/delay.o.d" -o ${OBJECTDIR}/_ext/1309593678/delay.o ../common/delay/delay.c   
+	
 ${OBJECTDIR}/_ext/637770267/I2Ccommon.o: ../common/I2C/I2Ccommon.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/637770267 
 	@${RM} ${OBJECTDIR}/_ext/637770267/I2Ccommon.o.d 
@@ -101,22 +106,82 @@ ${OBJECTDIR}/_ext/1544592837/printWriter.o: ../common/io/printWriter.c  nbprojec
 	@${RM} ${OBJECTDIR}/_ext/1544592837/printWriter.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1544592837/printWriter.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1544592837/printWriter.o.d" -o ${OBJECTDIR}/_ext/1544592837/printWriter.o ../common/io/printWriter.c   
 	
+${OBJECTDIR}/_ext/1544592837/outputStream.o: ../common/io/outputStream.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1544592837 
+	@${RM} ${OBJECTDIR}/_ext/1544592837/outputStream.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1544592837/outputStream.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1544592837/outputStream.o.d" -o ${OBJECTDIR}/_ext/1544592837/outputStream.o ../common/io/outputStream.c   
+	
+${OBJECTDIR}/_ext/637730607/pwmPic32.o: ../common/pwm/pwmPic32.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/637730607 
+	@${RM} ${OBJECTDIR}/_ext/637730607/pwmPic32.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/637730607/pwmPic32.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/637730607/pwmPic32.o.d" -o ${OBJECTDIR}/_ext/637730607/pwmPic32.o ../common/pwm/pwmPic32.c   
+	
+${OBJECTDIR}/_ext/637730607/motorPwm.o: ../common/pwm/motorPwm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/637730607 
+	@${RM} ${OBJECTDIR}/_ext/637730607/motorPwm.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/637730607/motorPwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/637730607/motorPwm.o.d" -o ${OBJECTDIR}/_ext/637730607/motorPwm.o ../common/pwm/motorPwm.c   
+	
 ${OBJECTDIR}/_ext/1922645879/serial.o: ../common/serial/serial.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/1922645879 
 	@${RM} ${OBJECTDIR}/_ext/1922645879/serial.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1922645879/serial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1922645879/serial.o.d" -o ${OBJECTDIR}/_ext/1922645879/serial.o ../common/serial/serial.c   
+	
+${OBJECTDIR}/_ext/1922645879/serialOutputStream.o: ../common/serial/serialOutputStream.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1922645879 
+	@${RM} ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d" -o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ../common/serial/serialOutputStream.c   
 	
 ${OBJECTDIR}/_ext/1041058175/led.o: ../device/led/led.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/1041058175 
 	@${RM} ${OBJECTDIR}/_ext/1041058175/led.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1041058175/led.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1041058175/led.o.d" -o ${OBJECTDIR}/_ext/1041058175/led.o ../device/led/led.c   
 	
-${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o: ../test/testI2C32PCF8574.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/760600703 
-	@${RM} ${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o.d" -o ${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o ../test/testI2C32PCF8574.c   
+${OBJECTDIR}/_ext/1225983975/MCP9804.o: ../drivers/IO/MCP9804.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/MCP9804.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/MCP9804.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1225983975/MCP9804.o.d" -o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ../drivers/IO/MCP9804.c   
+	
+${OBJECTDIR}/_ext/1225983975/PCF8573.o: ../drivers/IO/PCF8573.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/PCF8573.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/PCF8573.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1225983975/PCF8573.o.d" -o ${OBJECTDIR}/_ext/1225983975/PCF8573.o ../drivers/IO/PCF8573.c   
+	
+${OBJECTDIR}/_ext/1225983975/time.o: ../drivers/IO/time.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/time.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/time.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1225983975/time.o.d" -o ${OBJECTDIR}/_ext/1225983975/time.o ../drivers/IO/time.c   
+	
+${OBJECTDIR}/_ext/649236794/lcd24064.o: ../drivers/lcd/lcd24064.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/649236794 
+	@${RM} ${OBJECTDIR}/_ext/649236794/lcd24064.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/649236794/lcd24064.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/649236794/lcd24064.o.d" -o ${OBJECTDIR}/_ext/649236794/lcd24064.o ../drivers/lcd/lcd24064.c   
+	
+${OBJECTDIR}/_ext/649236794/lcdOutputStream.o: ../drivers/lcd/lcdOutputStream.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/649236794 
+	@${RM} ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d" -o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ../drivers/lcd/lcdOutputStream.c   
+	
+${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o: ../drivers/lcd/lcdProvider_24064.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/649236794 
+	@${RM} ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d" -o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ../drivers/lcd/lcdProvider_24064.c   
+	
+${OBJECTDIR}/_ext/849511804/MainCEN.o: ../mainCEN/MainCEN.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/849511804 
+	@${RM} ${OBJECTDIR}/_ext/849511804/MainCEN.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/849511804/MainCEN.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/849511804/MainCEN.o.d" -o ${OBJECTDIR}/_ext/849511804/MainCEN.o ../mainCEN/MainCEN.c   
+	
+${OBJECTDIR}/_ext/760809394/menu.o: ../menu/menu.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/760809394 
+	@${RM} ${OBJECTDIR}/_ext/760809394/menu.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/760809394/menu.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/760809394/menu.o.d" -o ${OBJECTDIR}/_ext/760809394/menu.o ../menu/menu.c   
 	
 else
+${OBJECTDIR}/_ext/1309593678/delay.o: ../common/delay/delay.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1309593678 
+	@${RM} ${OBJECTDIR}/_ext/1309593678/delay.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1309593678/delay.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1309593678/delay.o.d" -o ${OBJECTDIR}/_ext/1309593678/delay.o ../common/delay/delay.c   
+	
 ${OBJECTDIR}/_ext/637770267/I2Ccommon.o: ../common/I2C/I2Ccommon.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/637770267 
 	@${RM} ${OBJECTDIR}/_ext/637770267/I2Ccommon.o.d 
@@ -127,20 +192,75 @@ ${OBJECTDIR}/_ext/1544592837/printWriter.o: ../common/io/printWriter.c  nbprojec
 	@${RM} ${OBJECTDIR}/_ext/1544592837/printWriter.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1544592837/printWriter.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1544592837/printWriter.o.d" -o ${OBJECTDIR}/_ext/1544592837/printWriter.o ../common/io/printWriter.c   
 	
+${OBJECTDIR}/_ext/1544592837/outputStream.o: ../common/io/outputStream.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1544592837 
+	@${RM} ${OBJECTDIR}/_ext/1544592837/outputStream.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1544592837/outputStream.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1544592837/outputStream.o.d" -o ${OBJECTDIR}/_ext/1544592837/outputStream.o ../common/io/outputStream.c   
+	
+${OBJECTDIR}/_ext/637730607/pwmPic32.o: ../common/pwm/pwmPic32.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/637730607 
+	@${RM} ${OBJECTDIR}/_ext/637730607/pwmPic32.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/637730607/pwmPic32.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/637730607/pwmPic32.o.d" -o ${OBJECTDIR}/_ext/637730607/pwmPic32.o ../common/pwm/pwmPic32.c   
+	
+${OBJECTDIR}/_ext/637730607/motorPwm.o: ../common/pwm/motorPwm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/637730607 
+	@${RM} ${OBJECTDIR}/_ext/637730607/motorPwm.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/637730607/motorPwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/637730607/motorPwm.o.d" -o ${OBJECTDIR}/_ext/637730607/motorPwm.o ../common/pwm/motorPwm.c   
+	
 ${OBJECTDIR}/_ext/1922645879/serial.o: ../common/serial/serial.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/1922645879 
 	@${RM} ${OBJECTDIR}/_ext/1922645879/serial.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1922645879/serial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1922645879/serial.o.d" -o ${OBJECTDIR}/_ext/1922645879/serial.o ../common/serial/serial.c   
+	
+${OBJECTDIR}/_ext/1922645879/serialOutputStream.o: ../common/serial/serialOutputStream.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1922645879 
+	@${RM} ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d" -o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ../common/serial/serialOutputStream.c   
 	
 ${OBJECTDIR}/_ext/1041058175/led.o: ../device/led/led.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/1041058175 
 	@${RM} ${OBJECTDIR}/_ext/1041058175/led.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1041058175/led.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1041058175/led.o.d" -o ${OBJECTDIR}/_ext/1041058175/led.o ../device/led/led.c   
 	
-${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o: ../test/testI2C32PCF8574.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/760600703 
-	@${RM} ${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o.d 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o.d" -o ${OBJECTDIR}/_ext/760600703/testI2C32PCF8574.o ../test/testI2C32PCF8574.c   
+${OBJECTDIR}/_ext/1225983975/MCP9804.o: ../drivers/IO/MCP9804.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/MCP9804.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/MCP9804.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1225983975/MCP9804.o.d" -o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ../drivers/IO/MCP9804.c   
+	
+${OBJECTDIR}/_ext/1225983975/PCF8573.o: ../drivers/IO/PCF8573.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/PCF8573.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/PCF8573.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1225983975/PCF8573.o.d" -o ${OBJECTDIR}/_ext/1225983975/PCF8573.o ../drivers/IO/PCF8573.c   
+	
+${OBJECTDIR}/_ext/1225983975/time.o: ../drivers/IO/time.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/time.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/time.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1225983975/time.o.d" -o ${OBJECTDIR}/_ext/1225983975/time.o ../drivers/IO/time.c   
+	
+${OBJECTDIR}/_ext/649236794/lcd24064.o: ../drivers/lcd/lcd24064.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/649236794 
+	@${RM} ${OBJECTDIR}/_ext/649236794/lcd24064.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/649236794/lcd24064.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/649236794/lcd24064.o.d" -o ${OBJECTDIR}/_ext/649236794/lcd24064.o ../drivers/lcd/lcd24064.c   
+	
+${OBJECTDIR}/_ext/649236794/lcdOutputStream.o: ../drivers/lcd/lcdOutputStream.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/649236794 
+	@${RM} ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d" -o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ../drivers/lcd/lcdOutputStream.c   
+	
+${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o: ../drivers/lcd/lcdProvider_24064.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/649236794 
+	@${RM} ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d" -o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ../drivers/lcd/lcdProvider_24064.c   
+	
+${OBJECTDIR}/_ext/849511804/MainCEN.o: ../mainCEN/MainCEN.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/849511804 
+	@${RM} ${OBJECTDIR}/_ext/849511804/MainCEN.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/849511804/MainCEN.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/849511804/MainCEN.o.d" -o ${OBJECTDIR}/_ext/849511804/MainCEN.o ../mainCEN/MainCEN.c   
+	
+${OBJECTDIR}/_ext/760809394/menu.o: ../menu/menu.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/760809394 
+	@${RM} ${OBJECTDIR}/_ext/760809394/menu.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/760809394/menu.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/760809394/menu.o.d" -o ${OBJECTDIR}/_ext/760809394/menu.o ../menu/menu.c   
 	
 endif
 

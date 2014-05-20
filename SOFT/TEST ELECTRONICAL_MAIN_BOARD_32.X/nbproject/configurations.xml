@@ -16,19 +16,37 @@
         <itemPath>../common/I2C/I2Ccommon.h</itemPath>
       </logicalFolder>
       <logicalFolder name="common.io" displayName="common.io" projectFiles="true">
+        <itemPath>../common/io/outputStream.h</itemPath>
+        <itemPath>../common/io/printWriter.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="common.pwm" projectFiles="true">
+        <itemPath>../common/pwm/pwmPic32.h</itemPath>
+        <itemPath>../common/pwm/motorPwm.h</itemPath>
       </logicalFolder>
       <logicalFolder name="common.serial"
                      displayName="common.serial"
                      projectFiles="true">
         <itemPath>../common/serial/serial.h</itemPath>
+        <itemPath>../common/serial/serialOutputStream.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="device.led" projectFiles="true">
         <itemPath>../device/led/led.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f3" displayName="driver.io" projectFiles="true">
+        <itemPath>../drivers/IO/MCP9804.h</itemPath>
+        <itemPath>../drivers/IO/PCF8573.h</itemPath>
+        <itemPath>../drivers/IO/time.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="driver.lcd" displayName="driver.lcd" projectFiles="true">
+        <itemPath>../drivers/lcd/lcd24064.h</itemPath>
+        <itemPath>../drivers/lcd/lcdOutputStream.h</itemPath>
+        <itemPath>../drivers/lcd/lcdProvider_24064.h</itemPath>
       </logicalFolder>
       <logicalFolder name="main" displayName="main" projectFiles="true">
-        <itemPath>../main/MainJK330.h</itemPath>
+        <itemPath>../mainCEN/MainCEN.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="menu" projectFiles="true">
+        <itemPath>../menu/menu.h</itemPath>
       </logicalFolder>
       <logicalFolder name="setup" displayName="setup" projectFiles="true">
         <itemPath>../setup/clockConstants.h</itemPath>
@@ -44,25 +62,43 @@
       <logicalFolder name="common.delay"
                      displayName="common.delay"
                      projectFiles="true">
+        <itemPath>../common/delay/delay.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="common.I2C" projectFiles="true">
         <itemPath>../common/I2C/I2Ccommon.c</itemPath>
       </logicalFolder>
       <logicalFolder name="common.io" displayName="common.io" projectFiles="true">
         <itemPath>../common/io/printWriter.c</itemPath>
+        <itemPath>../common/io/outputStream.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="common.pwm" projectFiles="true">
+        <itemPath>../common/pwm/pwmPic32.c</itemPath>
+        <itemPath>../common/pwm/motorPwm.c</itemPath>
       </logicalFolder>
       <logicalFolder name="common.serial"
                      displayName="common.serial"
                      projectFiles="true">
         <itemPath>../common/serial/serial.c</itemPath>
+        <itemPath>../common/serial/serialOutputStream.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="device.led" projectFiles="true">
         <itemPath>../device/led/led.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f3" displayName="driver.io" projectFiles="true">
+        <itemPath>../drivers/IO/MCP9804.c</itemPath>
+        <itemPath>../drivers/IO/PCF8573.c</itemPath>
+        <itemPath>../drivers/IO/time.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="drivers.lcd" displayName="drivers.lcd" projectFiles="true">
+        <itemPath>../drivers/lcd/lcd24064.c</itemPath>
+        <itemPath>../drivers/lcd/lcdOutputStream.c</itemPath>
+        <itemPath>../drivers/lcd/lcdProvider_24064.c</itemPath>
       </logicalFolder>
       <logicalFolder name="main" displayName="main" projectFiles="true">
-        <itemPath>../test/testI2C32PCF8574.c</itemPath>
+        <itemPath>../mainCEN/MainCEN.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="menu" projectFiles="true">
+        <itemPath>../menu/menu.c</itemPath>
       </logicalFolder>
       <logicalFolder name="setup" displayName="setup" projectFiles="true">
       </logicalFolder>

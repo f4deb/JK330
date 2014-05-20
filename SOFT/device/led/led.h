@@ -15,3 +15,7 @@ void Led5 (BOOL state);
 void Led6 (BOOL state);
 
 void Led7 (BOOL state);
+
+void AllLed07 (BOOL state);
+
+void InitLed07 (void);

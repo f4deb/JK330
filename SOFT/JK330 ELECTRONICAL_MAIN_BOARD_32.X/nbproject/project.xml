@@ -9,6 +9,7 @@
             <cpp-extensions/>
             <header-extensions>h</header-extensions>
             <sourceEncoding>x-windows-iso2022jp</sourceEncoding>
+            <asminc-extensions/>
             <make-dep-projects/>
         </data>
     </configuration>

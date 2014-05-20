@@ -8,8 +8,7 @@
  * @author svanacker
  */
 
-// forward declaration
-struct OutputStream;
+//struct OutputStream;
 typedef struct OutputStream OutputStream;
 
 /**
@@ -35,13 +34,11 @@ typedef void WriteCharFunction(OutputStream* outputStream, char c);
  */
 typedef void FlushFunction(OutputStream* outputStream);
 
-/**
- * Defines the contract for an output stream (SERIAL, I2C ...)
- */
+
 struct OutputStream {
     /** The address of the stream (Ex : address for I2C, serialPortIndex ...). */
     unsigned char address;
-    /** The function which must be called to open the stream. */
+    /** The address of the stream (Ex : address for I2C, serialPortIndex ...). */
     OpenOutputStreamFunction* openOutputStream;
     /** The function which must be called to close the stream. */
     CloseOutputStreamFunction* closeOutputStream;
@@ -53,16 +50,30 @@ struct OutputStream {
     int* object;
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Initialize an outputStream.
  */
-void initOutputStream(OutputStream* outputStream,
+/*void initOutputStream(OutputStream* outputStream,
         OpenOutputStreamFunction* openOutputStream,
         CloseOutputStreamFunction* closeOutputStream,
         WriteCharFunction* writeChar,
         FlushFunction* flush,
         int* object);
-
+*/
 
 #endif
 
