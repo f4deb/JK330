@@ -1,0 +1,150 @@
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = sam. 22 mars 2014 23:12:24 CET
+
+BeginCmp
+TimeStamp = /532DCE2B;
+Reference = C1;
+ValeurCmp = CP;
+IdModule  = SM2112L;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DCE3A;
+Reference = C2;
+ValeurCmp = C;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DCEB6;
+Reference = C3;
+ValeurCmp = C;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DDFE1;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LED-BI;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DDD33;
+Reference = IC1;
+ValeurCmp = PC817;
+IdModule  = DIP-4__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DC228;
+Reference = J1;
+ValeurCmp = RJ12;
+IdModule  = RJ12_CMS;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DC152;
+Reference = J2;
+ValeurCmp = JACK_MONO_F;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DC161;
+Reference = J3;
+ValeurCmp = JACK_MONO_F;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DC170;
+Reference = J4;
+ValeurCmp = DB9;
+IdModule  = DB9FC;
+EndCmp
+
+BeginCmp
+TimeStamp = /532E0A7C;
+Reference = K1;
+ValeurCmp = CONN_2;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DE3A9;
+Reference = P1;
+ValeurCmp = CAVALIER;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DD821;
+Reference = P2;
+ValeurCmp = CAVALIER;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DF8C6;
+Reference = P3;
+ValeurCmp = CAVALIER;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DDE4D;
+Reference = R1;
+ValeurCmp = 1k;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DDFC8;
+Reference = R2;
+ValeurCmp = R;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DD893;
+Reference = R3;
+ValeurCmp = R;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DE240;
+Reference = R4;
+ValeurCmp = R;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DCDC7;
+Reference = RVAR1;
+ValeurCmp = RVAR;
+IdModule  = RV2;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DF8D5;
+Reference = RVAR2;
+ValeurCmp = RVAR;
+IdModule  = RV2;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DCACA;
+Reference = T1;
+ValeurCmp = TRANSFO2;
+IdModule  = TR_AUDIO;
+EndCmp
+
+BeginCmp
+TimeStamp = /532DCB1B;
+Reference = T2;
+ValeurCmp = TRANSFO2;
+IdModule  = TR_AUDIO;
+EndCmp
+
+EndListe
