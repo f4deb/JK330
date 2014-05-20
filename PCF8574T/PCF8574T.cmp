@@ -1,0 +1,115 @@
+Cmp-Mod V01 Created by PcbNew date = dim. 09 mars 2014 22:20:35 CET
+
+BeginCmp
+TimeStamp = /531B8812;
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B8821;
+Reference = C2;
+ValeurCmp = 100n;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B87EF;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LED-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B7A41;
+Reference = P1;
+ValeurCmp = CONN_4;
+IdModule  = KK-4;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B7AC1;
+Reference = P2;
+ValeurCmp = CONN_8X2;
+IdModule  = he10-16d;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B87D6;
+Reference = R1;
+ValeurCmp = 1k;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B7F8E;
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B82BC;
+Reference = R3;
+ValeurCmp = 10k;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B7FA7;
+Reference = R4;
+ValeurCmp = 10k;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B82C2;
+Reference = R5;
+ValeurCmp = 10k;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B7FB6;
+Reference = R6;
+ValeurCmp = 10k;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B82C8;
+Reference = R7;
+ValeurCmp = 10k;
+IdModule  = SM0603_Resistor;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B7F50;
+Reference = SW1;
+ValeurCmp = SWITCH_X_4;
+IdModule  = SWCMS4;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B7F61;
+Reference = SW2;
+ValeurCmp = SWITCH_X_4;
+IdModule  = SWCMS4;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B7A0F;
+Reference = U1;
+ValeurCmp = PCF8574T;
+IdModule  = SO16W;
+EndCmp
+
+BeginCmp
+TimeStamp = /531B7A1E;
+Reference = U2;
+ValeurCmp = PCF8574T;
+IdModule  = SO16W;
+EndCmp
+
+EndListe
