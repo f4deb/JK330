@@ -10,5 +10,7 @@
 
 
 
+void motor(int mot);
+
 #endif	/* MOTORPWM_H */
 

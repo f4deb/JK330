@@ -173,35 +173,34 @@ section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 .text                   0x9d000000         0x1290        4752  App's exec code 
 .rodata                 0x9d001290          0xa00        2560  Read-only const 
-.text                   0x9d001c90         0x21a8        8616  App's exec code 
-.text.general_exception 0x9d003e38           0xdc         220   
-.text                   0x9d003f14           0xc4         196  App's exec code 
-.text.UARTEnable        0x9d003fd8           0x80         128   
-.text.IdleI2C1          0x9d004058           0x74         116   
-.text                   0x9d0040cc           0x6c         108  App's exec code 
-.text.MasterWriteI2C1   0x9d004138           0x60          96   
-.text.UARTSetDataRate   0x9d004198           0x5c          92   
-.rodata                 0x9d0041f4           0x58          88  Read-only const 
-.text.main_entry        0x9d00424c           0x4c          76   
-.text                   0x9d004298           0x44          68  App's exec code 
-.text.UARTGetDataRate   0x9d0042dc           0x40          64   
-.text.MasterReadI2C1    0x9d00431c           0x40          64   
-.dinit                  0x9d00435c           0x40          64   
-.text.UARTConfigure     0x9d00439c           0x3c          60   
-.text.UARTSetAddress    0x9d0043d8           0x3c          60   
-.text.UARTWatchForAddre 0x9d004414           0x38          56   
-.text._bootstrap_except 0x9d00444c           0x38          56   
-.text._general_exceptio 0x9d004484           0x38          56   
-.text                   0x9d0044bc           0x34          52  App's exec code 
-.vector_default         0x9d0044f0           0x30          48   
-.text.UARTSetFifoMode   0x9d004520           0x28          40   
-.text.UARTSetLineContro 0x9d004548           0x28          40   
-.rodata                 0x9d004570           0x3c          60  Read-only const 
-.text                   0x9d0045ac           0x18          24  App's exec code 
-.rodata                 0x9d0045c4            0x8           8  Read-only const 
-.text._on_reset         0x9d0045cc            0x8           8   
-.text._on_bootstrap     0x9d0045d4            0x8           8   
-      Total kseg0_program_mem used  :      0x45dc       17884  3.4% of 0x80000
+.text                   0x9d001c90         0x24c8        9416  App's exec code 
+.text.general_exception 0x9d004158           0xdc         220   
+.text                   0x9d004234           0xc4         196  App's exec code 
+.text.UARTEnable        0x9d0042f8           0x80         128   
+.text.IdleI2C1          0x9d004378           0x74         116   
+.text                   0x9d0043ec           0x6c         108  App's exec code 
+.text.MasterWriteI2C1   0x9d004458           0x60          96   
+.text.UARTSetDataRate   0x9d0044b8           0x5c          92   
+.rodata                 0x9d004514           0x58          88  Read-only const 
+.text.main_entry        0x9d00456c           0x4c          76   
+.text                   0x9d0045b8           0x44          68  App's exec code 
+.text.UARTGetDataRate   0x9d0045fc           0x40          64   
+.text.MasterReadI2C1    0x9d00463c           0x40          64   
+.dinit                  0x9d00467c           0x40          64   
+.text.UARTConfigure     0x9d0046bc           0x3c          60   
+.text.UARTSetAddress    0x9d0046f8           0x3c          60   
+.text.UARTWatchForAddre 0x9d004734           0x38          56   
+.text._bootstrap_except 0x9d00476c           0x38          56   
+.text._general_exceptio 0x9d0047a4           0x38          56   
+.vector_default         0x9d0047dc           0x30          48   
+.text.UARTSetFifoMode   0x9d00480c           0x28          40   
+.text.UARTSetLineContro 0x9d004834           0x28          40   
+.rodata                 0x9d00485c           0x3c          60  Read-only const 
+.text                   0x9d004898           0x18          24  App's exec code 
+.rodata                 0x9d0048b0            0x8           8  Read-only const 
+.text._on_reset         0x9d0048b8            0x8           8   
+.text._on_bootstrap     0x9d0048c0            0x8           8   
+      Total kseg0_program_mem used  :      0x48c8       18632  3.6% of 0x80000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -285,7 +284,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception 
          Total kseg1_boot_mem used  :       0x1f0         496  42.5% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x49dc       18908  3.6% of 0x81e00
+         Total Program Memory used  :      0x4cc8       19656  3.7% of 0x81e00
         --------------------------------------------------------------------------
 
 
@@ -1249,176 +1248,176 @@ END GROUP
                 0x00000358       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
 .debug_pubnames
-                0x00000000      0xa76
+                0x00000000      0xa9a
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000       0x3b build/default/production/_ext/1309593678/delay.o
  .debug_pubnames
                 0x0000003b       0x4c build/default/production/_ext/637770267/I2Ccommon.o
  .debug_pubnames
-                0x00000087       0xd1 build/default/production/_ext/1544592837/printWriter.o
+                0x00000087       0xdf build/default/production/_ext/1544592837/printWriter.o
  .debug_pubnames
-                0x00000158       0x27 build/default/production/_ext/1544592837/outputStream.o
+                0x00000166       0x27 build/default/production/_ext/1544592837/outputStream.o
  .debug_pubnames
-                0x0000017f       0x1e build/default/production/_ext/637730607/pwmPic32.o
+                0x0000018d       0x1e build/default/production/_ext/637730607/pwmPic32.o
  .debug_pubnames
-                0x0000019d       0x26 build/default/production/_ext/637730607/motorPwm.o
+                0x000001ab       0x3c build/default/production/_ext/637730607/motorPwm.o
  .debug_pubnames
-                0x000001c3       0x50 build/default/production/_ext/1922645879/serial.o
+                0x000001e7       0x50 build/default/production/_ext/1922645879/serial.o
  .debug_pubnames
-                0x00000213      0x13f build/default/production/_ext/1922645879/serialOutputStream.o
+                0x00000237      0x13f build/default/production/_ext/1922645879/serialOutputStream.o
  .debug_pubnames
-                0x00000352       0x7f build/default/production/_ext/1041058175/led.o
+                0x00000376       0x7f build/default/production/_ext/1041058175/led.o
  .debug_pubnames
-                0x000003d1       0xd9 build/default/production/_ext/1225983975/MCP9804.o
+                0x000003f5       0xd9 build/default/production/_ext/1225983975/MCP9804.o
  .debug_pubnames
-                0x000004aa       0x3c build/default/production/_ext/1225983975/PCF8573.o
+                0x000004ce       0x3c build/default/production/_ext/1225983975/PCF8573.o
  .debug_pubnames
-                0x000004e6       0x32 build/default/production/_ext/1225983975/time.o
+                0x0000050a       0x32 build/default/production/_ext/1225983975/time.o
  .debug_pubnames
-                0x00000518      0x1e7 build/default/production/_ext/649236794/lcd24064.o
+                0x0000053c      0x1e7 build/default/production/_ext/649236794/lcd24064.o
  .debug_pubnames
-                0x000006ff       0x61 build/default/production/_ext/649236794/lcdOutputStream.o
+                0x00000723       0x61 build/default/production/_ext/649236794/lcdOutputStream.o
  .debug_pubnames
-                0x00000760       0x89 build/default/production/_ext/649236794/lcdProvider_24064.o
+                0x00000784       0x89 build/default/production/_ext/649236794/lcdProvider_24064.o
  .debug_pubnames
-                0x000007e9       0x85 build/default/production/_ext/849511804/MainCEN.o
+                0x0000080d       0x85 build/default/production/_ext/849511804/MainCEN.o
  .debug_pubnames
-                0x0000086e       0x1d build/default/production/_ext/760809394/menu.o
+                0x00000892       0x1d build/default/production/_ext/760809394/menu.o
  .debug_pubnames
-                0x0000088b       0xb1 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x000008af       0xb1 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
  .debug_pubnames
-                0x0000093c       0x1f /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
+                0x00000960       0x1f /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
  .debug_pubnames
-                0x0000095b       0x25 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
+                0x0000097f       0x25 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
  .debug_pubnames
-                0x00000980       0x26 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
+                0x000009a4       0x26 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
  .debug_pubnames
-                0x000009a6       0x33 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+                0x000009ca       0x33 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
  .debug_pubnames
-                0x000009d9       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+                0x000009fd       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
  .debug_pubnames
-                0x000009f9       0x24 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+                0x00000a1d       0x24 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
  .debug_pubnames
-                0x00000a1d       0x31 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+                0x00000a41       0x31 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
  .debug_pubnames
-                0x00000a4e       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+                0x00000a72       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_info     0x00000000    0x107da
+.debug_info     0x00000000    0x10987
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x14d build/default/production/_ext/1309593678/delay.o
  .debug_info    0x0000014d     0x1280 build/default/production/_ext/637770267/I2Ccommon.o
- .debug_info    0x000013cd      0x4ec build/default/production/_ext/1544592837/printWriter.o
- .debug_info    0x000018b9      0x28e build/default/production/_ext/1544592837/outputStream.o
- .debug_info    0x00001b47     0x1454 build/default/production/_ext/637730607/pwmPic32.o
- .debug_info    0x00002f9b       0xd0 build/default/production/_ext/637730607/motorPwm.o
- .debug_info    0x0000306b     0x1806 build/default/production/_ext/1922645879/serial.o
- .debug_info    0x00004871     0x168f build/default/production/_ext/1922645879/serialOutputStream.o
- .debug_info    0x00005f00     0x1536 build/default/production/_ext/1041058175/led.o
- .debug_info    0x00007436     0x1465 build/default/production/_ext/1225983975/MCP9804.o
- .debug_info    0x0000889b     0x1274 build/default/production/_ext/1225983975/PCF8573.o
- .debug_info    0x00009b0f      0x36e build/default/production/_ext/1225983975/time.o
- .debug_info    0x00009e7d     0x1c9b build/default/production/_ext/649236794/lcd24064.o
- .debug_info    0x0000bb18     0x1406 build/default/production/_ext/649236794/lcdOutputStream.o
- .debug_info    0x0000cf1e      0x2e0 build/default/production/_ext/649236794/lcdProvider_24064.o
- .debug_info    0x0000d1fe     0x1b02 build/default/production/_ext/849511804/MainCEN.o
- .debug_info    0x0000ed00     0x135b build/default/production/_ext/760809394/menu.o
- .debug_info    0x0001005b      0x175 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
- .debug_info    0x000101d0       0xa4 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
- .debug_info    0x00010274       0xb1 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
- .debug_info    0x00010325       0xb3 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
- .debug_info    0x000103d8       0xde /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
- .debug_info    0x000104b6       0xb8 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
- .debug_info    0x0001056e       0xc0 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
- .debug_info    0x0001062e       0xda /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
- .debug_info    0x00010708       0xd2 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+ .debug_info    0x000013cd      0x599 build/default/production/_ext/1544592837/printWriter.o
+ .debug_info    0x00001966      0x28e build/default/production/_ext/1544592837/outputStream.o
+ .debug_info    0x00001bf4     0x1454 build/default/production/_ext/637730607/pwmPic32.o
+ .debug_info    0x00003048      0x352 build/default/production/_ext/637730607/motorPwm.o
+ .debug_info    0x0000339a     0x1806 build/default/production/_ext/1922645879/serial.o
+ .debug_info    0x00004ba0     0x168f build/default/production/_ext/1922645879/serialOutputStream.o
+ .debug_info    0x0000622f     0x1536 build/default/production/_ext/1041058175/led.o
+ .debug_info    0x00007765     0x1465 build/default/production/_ext/1225983975/MCP9804.o
+ .debug_info    0x00008bca     0x1274 build/default/production/_ext/1225983975/PCF8573.o
+ .debug_info    0x00009e3e      0x36e build/default/production/_ext/1225983975/time.o
+ .debug_info    0x0000a1ac     0x1c9b build/default/production/_ext/649236794/lcd24064.o
+ .debug_info    0x0000be47     0x1406 build/default/production/_ext/649236794/lcdOutputStream.o
+ .debug_info    0x0000d24d      0x2e0 build/default/production/_ext/649236794/lcdProvider_24064.o
+ .debug_info    0x0000d52d     0x1980 build/default/production/_ext/849511804/MainCEN.o
+ .debug_info    0x0000eead     0x135b build/default/production/_ext/760809394/menu.o
+ .debug_info    0x00010208      0x175 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+ .debug_info    0x0001037d       0xa4 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
+ .debug_info    0x00010421       0xb1 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
+ .debug_info    0x000104d2       0xb3 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
+ .debug_info    0x00010585       0xde /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x00010663       0xb8 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+ .debug_info    0x0001071b       0xc0 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+ .debug_info    0x000107db       0xda /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+ .debug_info    0x000108b5       0xd2 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_abbrev   0x00000000     0x1ac7
+.debug_abbrev   0x00000000     0x1bae
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x7e build/default/production/_ext/1309593678/delay.o
  .debug_abbrev  0x0000007e      0x1e1 build/default/production/_ext/637770267/I2Ccommon.o
- .debug_abbrev  0x0000025f       0xd0 build/default/production/_ext/1544592837/printWriter.o
- .debug_abbrev  0x0000032f       0xb2 build/default/production/_ext/1544592837/outputStream.o
- .debug_abbrev  0x000003e1      0x19b build/default/production/_ext/637730607/pwmPic32.o
- .debug_abbrev  0x0000057c       0x27 build/default/production/_ext/637730607/motorPwm.o
- .debug_abbrev  0x000005a3      0x24b build/default/production/_ext/1922645879/serial.o
- .debug_abbrev  0x000007ee      0x1f3 build/default/production/_ext/1922645879/serialOutputStream.o
- .debug_abbrev  0x000009e1      0x1ef build/default/production/_ext/1041058175/led.o
- .debug_abbrev  0x00000bd0      0x1e5 build/default/production/_ext/1225983975/MCP9804.o
- .debug_abbrev  0x00000db5      0x1bf build/default/production/_ext/1225983975/PCF8573.o
- .debug_abbrev  0x00000f74       0xf0 build/default/production/_ext/1225983975/time.o
- .debug_abbrev  0x00001064      0x298 build/default/production/_ext/649236794/lcd24064.o
- .debug_abbrev  0x000012fc      0x1dd build/default/production/_ext/649236794/lcdOutputStream.o
- .debug_abbrev  0x000014d9       0x70 build/default/production/_ext/649236794/lcdProvider_24064.o
- .debug_abbrev  0x00001549      0x247 build/default/production/_ext/849511804/MainCEN.o
- .debug_abbrev  0x00001790      0x1e1 build/default/production/_ext/760809394/menu.o
- .debug_abbrev  0x00001971       0x38 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
- .debug_abbrev  0x000019a9       0x25 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
- .debug_abbrev  0x000019ce       0x25 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
- .debug_abbrev  0x000019f3       0x25 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
- .debug_abbrev  0x00001a18       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
- .debug_abbrev  0x00001a3b       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
- .debug_abbrev  0x00001a5e       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
- .debug_abbrev  0x00001a81       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
- .debug_abbrev  0x00001aa4       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+ .debug_abbrev  0x0000025f       0xef build/default/production/_ext/1544592837/printWriter.o
+ .debug_abbrev  0x0000034e       0xb2 build/default/production/_ext/1544592837/outputStream.o
+ .debug_abbrev  0x00000400      0x19b build/default/production/_ext/637730607/pwmPic32.o
+ .debug_abbrev  0x0000059b       0xef build/default/production/_ext/637730607/motorPwm.o
+ .debug_abbrev  0x0000068a      0x24b build/default/production/_ext/1922645879/serial.o
+ .debug_abbrev  0x000008d5      0x1f3 build/default/production/_ext/1922645879/serialOutputStream.o
+ .debug_abbrev  0x00000ac8      0x1ef build/default/production/_ext/1041058175/led.o
+ .debug_abbrev  0x00000cb7      0x1e5 build/default/production/_ext/1225983975/MCP9804.o
+ .debug_abbrev  0x00000e9c      0x1bf build/default/production/_ext/1225983975/PCF8573.o
+ .debug_abbrev  0x0000105b       0xf0 build/default/production/_ext/1225983975/time.o
+ .debug_abbrev  0x0000114b      0x298 build/default/production/_ext/649236794/lcd24064.o
+ .debug_abbrev  0x000013e3      0x1dd build/default/production/_ext/649236794/lcdOutputStream.o
+ .debug_abbrev  0x000015c0       0x70 build/default/production/_ext/649236794/lcdProvider_24064.o
+ .debug_abbrev  0x00001630      0x247 build/default/production/_ext/849511804/MainCEN.o
+ .debug_abbrev  0x00001877      0x1e1 build/default/production/_ext/760809394/menu.o
+ .debug_abbrev  0x00001a58       0x38 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+ .debug_abbrev  0x00001a90       0x25 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
+ .debug_abbrev  0x00001ab5       0x25 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
+ .debug_abbrev  0x00001ada       0x25 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
+ .debug_abbrev  0x00001aff       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_abbrev  0x00001b22       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+ .debug_abbrev  0x00001b45       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+ .debug_abbrev  0x00001b68       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+ .debug_abbrev  0x00001b8b       0x23 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_line     0x00000000     0x1bda
+.debug_line     0x00000000     0x1c60
  *(.debug_line)
  .debug_line    0x00000000       0x90 build/default/production/_ext/1309593678/delay.o
  .debug_line    0x00000090      0x155 build/default/production/_ext/637770267/I2Ccommon.o
- .debug_line    0x000001e5       0xdf build/default/production/_ext/1544592837/printWriter.o
- .debug_line    0x000002c4       0x96 build/default/production/_ext/1544592837/outputStream.o
- .debug_line    0x0000035a      0x147 build/default/production/_ext/637730607/pwmPic32.o
- .debug_line    0x000004a1       0x7c build/default/production/_ext/637730607/motorPwm.o
- .debug_line    0x0000051d      0x1ae build/default/production/_ext/1922645879/serial.o
- .debug_line    0x000006cb      0x1f1 build/default/production/_ext/1922645879/serialOutputStream.o
- .debug_line    0x000008bc      0x1bc build/default/production/_ext/1041058175/led.o
- .debug_line    0x00000a78      0x18e build/default/production/_ext/1225983975/MCP9804.o
- .debug_line    0x00000c06      0x166 build/default/production/_ext/1225983975/PCF8573.o
- .debug_line    0x00000d6c       0xec build/default/production/_ext/1225983975/time.o
- .debug_line    0x00000e58      0x2e4 build/default/production/_ext/649236794/lcd24064.o
- .debug_line    0x0000113c      0x1ac build/default/production/_ext/649236794/lcdOutputStream.o
- .debug_line    0x000012e8       0xa2 build/default/production/_ext/649236794/lcdProvider_24064.o
- .debug_line    0x0000138a      0x22c build/default/production/_ext/849511804/MainCEN.o
- .debug_line    0x000015b6      0x19e build/default/production/_ext/760809394/menu.o
- .debug_line    0x00001754       0x62 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
- .debug_line    0x000017b6       0x6d /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
- .debug_line    0x00001823       0x74 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
- .debug_line    0x00001897       0x75 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
- .debug_line    0x0000190c       0x97 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
- .debug_line    0x000019a3       0x84 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
- .debug_line    0x00001a27       0x88 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
- .debug_line    0x00001aaf       0x95 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
- .debug_line    0x00001b44       0x96 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+ .debug_line    0x000001e5      0x102 build/default/production/_ext/1544592837/printWriter.o
+ .debug_line    0x000002e7       0x96 build/default/production/_ext/1544592837/outputStream.o
+ .debug_line    0x0000037d      0x149 build/default/production/_ext/637730607/pwmPic32.o
+ .debug_line    0x000004c6       0xdf build/default/production/_ext/637730607/motorPwm.o
+ .debug_line    0x000005a5      0x1ae build/default/production/_ext/1922645879/serial.o
+ .debug_line    0x00000753      0x1f1 build/default/production/_ext/1922645879/serialOutputStream.o
+ .debug_line    0x00000944      0x1bc build/default/production/_ext/1041058175/led.o
+ .debug_line    0x00000b00      0x18e build/default/production/_ext/1225983975/MCP9804.o
+ .debug_line    0x00000c8e      0x166 build/default/production/_ext/1225983975/PCF8573.o
+ .debug_line    0x00000df4       0xec build/default/production/_ext/1225983975/time.o
+ .debug_line    0x00000ee0      0x2e4 build/default/production/_ext/649236794/lcd24064.o
+ .debug_line    0x000011c4      0x1ac build/default/production/_ext/649236794/lcdOutputStream.o
+ .debug_line    0x00001370       0xa2 build/default/production/_ext/649236794/lcdProvider_24064.o
+ .debug_line    0x00001412      0x228 build/default/production/_ext/849511804/MainCEN.o
+ .debug_line    0x0000163a      0x1a0 build/default/production/_ext/760809394/menu.o
+ .debug_line    0x000017da       0x62 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+ .debug_line    0x0000183c       0x6d /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
+ .debug_line    0x000018a9       0x74 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
+ .debug_line    0x0000191d       0x75 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
+ .debug_line    0x00001992       0x97 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_line    0x00001a29       0x84 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+ .debug_line    0x00001aad       0x88 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+ .debug_line    0x00001b35       0x95 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+ .debug_line    0x00001bca       0x96 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
-.debug_frame    0x00000000      0xd70
+.debug_frame    0x00000000      0xdc4
  *(.debug_frame)
  .debug_frame   0x00000000       0x64 build/default/production/_ext/1309593678/delay.o
  .debug_frame   0x00000064       0x80 build/default/production/_ext/637770267/I2Ccommon.o
- .debug_frame   0x000000e4      0x160 build/default/production/_ext/1544592837/printWriter.o
- .debug_frame   0x00000244       0x2c build/default/production/_ext/1544592837/outputStream.o
- .debug_frame   0x00000270       0x2c build/default/production/_ext/637730607/pwmPic32.o
- .debug_frame   0x0000029c       0x2c build/default/production/_ext/637730607/motorPwm.o
- .debug_frame   0x000002c8       0x80 build/default/production/_ext/1922645879/serial.o
- .debug_frame   0x00000348      0x198 build/default/production/_ext/1922645879/serialOutputStream.o
- .debug_frame   0x000004e0      0x128 build/default/production/_ext/1041058175/led.o
- .debug_frame   0x00000608       0xd4 build/default/production/_ext/1225983975/MCP9804.o
- .debug_frame   0x000006dc       0x48 build/default/production/_ext/1225983975/PCF8573.o
- .debug_frame   0x00000724       0x48 build/default/production/_ext/1225983975/time.o
- .debug_frame   0x0000076c      0x25c build/default/production/_ext/649236794/lcd24064.o
- .debug_frame   0x000009c8       0x9c build/default/production/_ext/649236794/lcdOutputStream.o
- .debug_frame   0x00000a64       0xd4 build/default/production/_ext/649236794/lcdProvider_24064.o
- .debug_frame   0x00000b38       0x64 build/default/production/_ext/849511804/MainCEN.o
- .debug_frame   0x00000b9c       0x2c build/default/production/_ext/760809394/menu.o
- .debug_frame   0x00000bc8       0x90 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
- .debug_frame   0x00000c58       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
- .debug_frame   0x00000c78       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
- .debug_frame   0x00000c98       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
- .debug_frame   0x00000cc0       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
- .debug_frame   0x00000ce8       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
- .debug_frame   0x00000d08       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
- .debug_frame   0x00000d28       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
- .debug_frame   0x00000d50       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+ .debug_frame   0x000000e4      0x17c build/default/production/_ext/1544592837/printWriter.o
+ .debug_frame   0x00000260       0x2c build/default/production/_ext/1544592837/outputStream.o
+ .debug_frame   0x0000028c       0x2c build/default/production/_ext/637730607/pwmPic32.o
+ .debug_frame   0x000002b8       0x64 build/default/production/_ext/637730607/motorPwm.o
+ .debug_frame   0x0000031c       0x80 build/default/production/_ext/1922645879/serial.o
+ .debug_frame   0x0000039c      0x198 build/default/production/_ext/1922645879/serialOutputStream.o
+ .debug_frame   0x00000534      0x128 build/default/production/_ext/1041058175/led.o
+ .debug_frame   0x0000065c       0xd4 build/default/production/_ext/1225983975/MCP9804.o
+ .debug_frame   0x00000730       0x48 build/default/production/_ext/1225983975/PCF8573.o
+ .debug_frame   0x00000778       0x48 build/default/production/_ext/1225983975/time.o
+ .debug_frame   0x000007c0      0x25c build/default/production/_ext/649236794/lcd24064.o
+ .debug_frame   0x00000a1c       0x9c build/default/production/_ext/649236794/lcdOutputStream.o
+ .debug_frame   0x00000ab8       0xd4 build/default/production/_ext/649236794/lcdProvider_24064.o
+ .debug_frame   0x00000b8c       0x64 build/default/production/_ext/849511804/MainCEN.o
+ .debug_frame   0x00000bf0       0x2c build/default/production/_ext/760809394/menu.o
+ .debug_frame   0x00000c1c       0x90 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+ .debug_frame   0x00000cac       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
+ .debug_frame   0x00000ccc       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
+ .debug_frame   0x00000cec       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
+ .debug_frame   0x00000d14       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_frame   0x00000d3c       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+ .debug_frame   0x00000d5c       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+ .debug_frame   0x00000d7c       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+ .debug_frame   0x00000da4       0x20 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
 
 .debug_str      0x00000000      0xebb
  *(.debug_str)
@@ -1427,17 +1426,17 @@ END GROUP
  .debug_str     0x00000145       0x20 build/default/production/_ext/1544592837/printWriter.o
  .debug_str     0x00000165       0x3a build/default/production/_ext/1544592837/outputStream.o
  .debug_str     0x0000019f      0x142 build/default/production/_ext/637730607/pwmPic32.o
- .debug_str     0x000002e1        0x0 build/default/production/_ext/637730607/motorPwm.o
- .debug_str     0x000002e1      0x135 build/default/production/_ext/1922645879/serial.o
- .debug_str     0x00000416      0x15a build/default/production/_ext/1922645879/serialOutputStream.o
- .debug_str     0x00000570      0x153 build/default/production/_ext/1041058175/led.o
- .debug_str     0x000006c3      0x151 build/default/production/_ext/1225983975/MCP9804.o
- .debug_str     0x00000814      0x12f build/default/production/_ext/1225983975/PCF8573.o
- .debug_str     0x00000943        0xd build/default/production/_ext/1225983975/time.o
- .debug_str     0x00000950      0x16b build/default/production/_ext/649236794/lcd24064.o
- .debug_str     0x00000abb      0x149 build/default/production/_ext/649236794/lcdOutputStream.o
- .debug_str     0x00000c04        0x0 build/default/production/_ext/649236794/lcdProvider_24064.o
- .debug_str     0x00000c04      0x17b build/default/production/_ext/849511804/MainCEN.o
+ .debug_str     0x000002e1        0xa build/default/production/_ext/637730607/motorPwm.o
+ .debug_str     0x000002eb      0x135 build/default/production/_ext/1922645879/serial.o
+ .debug_str     0x00000420      0x15a build/default/production/_ext/1922645879/serialOutputStream.o
+ .debug_str     0x0000057a      0x153 build/default/production/_ext/1041058175/led.o
+ .debug_str     0x000006cd      0x151 build/default/production/_ext/1225983975/MCP9804.o
+ .debug_str     0x0000081e      0x12f build/default/production/_ext/1225983975/PCF8573.o
+ .debug_str     0x0000094d        0xd build/default/production/_ext/1225983975/time.o
+ .debug_str     0x0000095a      0x16b build/default/production/_ext/649236794/lcd24064.o
+ .debug_str     0x00000ac5      0x149 build/default/production/_ext/649236794/lcdOutputStream.o
+ .debug_str     0x00000c0e        0x0 build/default/production/_ext/649236794/lcdProvider_24064.o
+ .debug_str     0x00000c0e      0x171 build/default/production/_ext/849511804/MainCEN.o
  .debug_str     0x00000d7f      0x13c build/default/production/_ext/760809394/menu.o
  .debug_str     0x00000ebb        0x0 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
  .debug_str     0x00000ebb        0x0 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
@@ -1468,7 +1467,7 @@ END GROUP
  *(.debug_varnames)
 
 .debug_pubtypes
-                0x00000000      0xf23
+                0x00000000      0xf35
  *(.debug_pubtypes)
  .debug_pubtypes
                 0x00000000      0x104 build/default/production/_ext/637770267/I2Ccommon.o
@@ -1479,25 +1478,27 @@ END GROUP
  .debug_pubtypes
                 0x00000232       0xf9 build/default/production/_ext/637730607/pwmPic32.o
  .debug_pubtypes
-                0x0000032b      0x128 build/default/production/_ext/1922645879/serial.o
+                0x0000032b       0x24 build/default/production/_ext/637730607/motorPwm.o
  .debug_pubtypes
-                0x00000453      0x16c build/default/production/_ext/1922645879/serialOutputStream.o
+                0x0000034f      0x128 build/default/production/_ext/1922645879/serial.o
  .debug_pubtypes
-                0x000005bf      0x104 build/default/production/_ext/1041058175/led.o
+                0x00000477      0x16c build/default/production/_ext/1922645879/serialOutputStream.o
  .debug_pubtypes
-                0x000006c3       0xf1 build/default/production/_ext/1225983975/MCP9804.o
+                0x000005e3      0x104 build/default/production/_ext/1041058175/led.o
  .debug_pubtypes
-                0x000007b4       0xf3 build/default/production/_ext/1225983975/PCF8573.o
+                0x000006e7       0xf1 build/default/production/_ext/1225983975/MCP9804.o
  .debug_pubtypes
-                0x000008a7       0xa3 build/default/production/_ext/1225983975/time.o
+                0x000007d8       0xf3 build/default/production/_ext/1225983975/PCF8573.o
  .debug_pubtypes
-                0x0000094a      0x12f build/default/production/_ext/649236794/lcd24064.o
+                0x000008cb       0xa3 build/default/production/_ext/1225983975/time.o
  .debug_pubtypes
-                0x00000a79      0x16c build/default/production/_ext/649236794/lcdOutputStream.o
+                0x0000096e      0x12f build/default/production/_ext/649236794/lcd24064.o
  .debug_pubtypes
-                0x00000be5      0x1d2 build/default/production/_ext/849511804/MainCEN.o
+                0x00000a9d      0x16c build/default/production/_ext/649236794/lcdOutputStream.o
  .debug_pubtypes
-                0x00000db7      0x16c build/default/production/_ext/760809394/menu.o
+                0x00000c09      0x1c0 build/default/production/_ext/849511804/MainCEN.o
+ .debug_pubtypes
+                0x00000dc9      0x16c build/default/production/_ext/760809394/menu.o
 
 .debug_ranges   0x00000000       0x78
  *(.debug_ranges)
@@ -2201,7 +2202,7 @@ LOAD data_init
  .rodata        0x9d001290      0xa00 build/default/production/_ext/649236794/lcd24064.o
                 0x9d001290                logo
 
-.text           0x9d001c90     0x21a8
+.text           0x9d001c90     0x24c8
  .text          0x9d001c90      0x610 build/default/production/_ext/1041058175/led.o
                 0x9d001c90                Led0
                 0x9d001d20                Led1
@@ -2213,223 +2214,224 @@ LOAD data_init
                 0x9d002080                Led7
                 0x9d002110                AllLed07
                 0x9d002188                InitLed07
- .text          0x9d0022a0      0x42c build/default/production/_ext/1922645879/serialOutputStream.o
-                0x9d0022a0                OpenUart1
-                0x9d0022e4                OpenUart2
-                0x9d002328                OpenUart3
-                0x9d00236c                closeOutputStreamSerial1
-                0x9d0023a4                closeOutputStreamSerial2
-                0x9d0023dc                closeOutputStreamSerial3
-                0x9d002414                writeChar1
-                0x9d00245c                writeChar2
-                0x9d0024a4                writeChar3
-                0x9d0024ec                flushSerial
-                0x9d002510                initSerialOutputStream1
-                0x9d002574                initSerialOutputStream2
-                0x9d0025d8                initSerialOutputStream3
-                0x9d00263c                initSerialOutputStream
- .text          0x9d0026cc      0x3ec build/default/production/_ext/1544592837/printWriter.o
-                0x9d0026cc                append
-                0x9d002734                appendSeparator
-                0x9d002770                appendString
-                0x9d0027dc                appendCRLF
-                0x9d002828                appendStringCRLF
-                0x9d002874                appendCR
-                0x9d0028b0                appendLF
-                0x9d0028ec                appendHex
-                0x9d002964                internalAppendHex
-                0x9d0029e4                appendHex2
-                0x9d002a30                appendHex4
-                0x9d002a74                appendHex8
- .text          0x9d002ab8      0x3ec build/default/production/_ext/849511804/MainCEN.o
-                0x9d002ab8                Init
-                0x9d002b58                Setup
-                0x9d002b90                main
- .text          0x9d002ea4      0x3e0 build/default/production/_ext/1225983975/MCP9804.o
-                0x9d002ea4                setRegMCP9804
-                0x9d002f2c                setConfRegMCP9804
-                0x9d002f80                setTempUpperRegMCP9804
-                0x9d002fd4                setTempLowerRegMCP9804
-                0x9d003028                setTempCriticRegMCP9804
-                0x9d00307c                initRegMCP9804
-                0x9d003144                ReadTempAmbMCP9804
- .text          0x9d003284      0x2e8 build/default/production/_ext/1922645879/serial.o
-                0x9d003284                OpenUart
-                0x9d00333c                CloseUart
-                0x9d0033f0                WriteCharUart
-                0x9d0034e4                ReadCharUart
- .text          0x9d00356c      0x190 build/default/production/_ext/649236794/lcdProvider_24064.o
-                0x9d00356c                clearScreen
-                0x9d00359c                setCursorAtHome
-                0x9d0035cc                hideCursor
-                0x9d0035fc                showUnderlineCursor
-                0x9d00362c                setCursorPosition
-                0x9d00366c                setPixel
-                0x9d0036ac                line
- .text          0x9d0036fc      0x18c build/default/production/_ext/1225983975/PCF8573.o
-                0x9d0036fc                getTime_8573
-                0x9d0037cc                setTime_8573
- .text          0x9d003888      0x14c build/default/production/_ext/637770267/I2Ccommon.o
-                0x9d003888                OpenI2C
-                0x9d0038c4                WriteCharI2C
-                0x9d00390c                CloseI2C
-                0x9d003948                ReadCharI2C
- .text          0x9d0039d4      0x13c build/default/production/_ext/760809394/menu.o
-                0x9d0039d4                menu_P
- .text          0x9d003b10      0x128 build/default/production/_ext/649236794/lcdOutputStream.o
-                0x9d003b10                openLCD
-                0x9d003b48                closeLCD
-                0x9d003b6c                writeCharLCD
-                0x9d003bb0                flushLCD
-                0x9d003bd4                initLcdOutputStream
- .text          0x9d003c38      0x108 build/default/production/_ext/1225983975/time.o
-                0x9d003c38                getTime
-                0x9d003d10                setTime
- .text          0x9d003d40       0xf8 build/default/production/_ext/1309593678/delay.o
-                0x9d003d40                delayUs
-                0x9d003d60                delay100us
-                0x9d003dcc                delaymSec
+ .text          0x9d0022a0      0x57c build/default/production/_ext/1544592837/printWriter.o
+                0x9d0022a0                append
+                0x9d002308                appendSeparator
+                0x9d002344                appendString
+                0x9d0023b0                appendCRLF
+                0x9d0023fc                appendStringCRLF
+                0x9d002448                appendCR
+                0x9d002484                appendLF
+                0x9d0024c0                appendHex
+                0x9d002538                internalAppendHex
+                0x9d0025b8                appendHex2
+                0x9d002604                appendHex4
+                0x9d002648                appendHex8
+                0x9d00268c                appendDec
+ .text          0x9d00281c      0x42c build/default/production/_ext/1922645879/serialOutputStream.o
+                0x9d00281c                OpenUart1
+                0x9d002860                OpenUart2
+                0x9d0028a4                OpenUart3
+                0x9d0028e8                closeOutputStreamSerial1
+                0x9d002920                closeOutputStreamSerial2
+                0x9d002958                closeOutputStreamSerial3
+                0x9d002990                writeChar1
+                0x9d0029d8                writeChar2
+                0x9d002a20                writeChar3
+                0x9d002a68                flushSerial
+                0x9d002a8c                initSerialOutputStream1
+                0x9d002af0                initSerialOutputStream2
+                0x9d002b54                initSerialOutputStream3
+                0x9d002bb8                initSerialOutputStream
+ .text          0x9d002c48      0x3e0 build/default/production/_ext/1225983975/MCP9804.o
+                0x9d002c48                setRegMCP9804
+                0x9d002cd0                setConfRegMCP9804
+                0x9d002d24                setTempUpperRegMCP9804
+                0x9d002d78                setTempLowerRegMCP9804
+                0x9d002dcc                setTempCriticRegMCP9804
+                0x9d002e20                initRegMCP9804
+                0x9d002ee8                ReadTempAmbMCP9804
+ .text          0x9d003028      0x3bc build/default/production/_ext/849511804/MainCEN.o
+                0x9d003028                Init
+                0x9d0030c8                Setup
+                0x9d003100                main
+ .text          0x9d0033e4      0x2e8 build/default/production/_ext/1922645879/serial.o
+                0x9d0033e4                OpenUart
+                0x9d00349c                CloseUart
+                0x9d003550                WriteCharUart
+                0x9d003644                ReadCharUart
+ .text          0x9d0036cc      0x1a8 build/default/production/_ext/637730607/motorPwm.o
+                0x9d0036cc                initPwmForMotor
+                0x9d00370c                calcMot
+                0x9d003750                motor
+ .text          0x9d003874      0x190 build/default/production/_ext/649236794/lcdProvider_24064.o
+                0x9d003874                clearScreen
+                0x9d0038a4                setCursorAtHome
+                0x9d0038d4                hideCursor
+                0x9d003904                showUnderlineCursor
+                0x9d003934                setCursorPosition
+                0x9d003974                setPixel
+                0x9d0039b4                line
+ .text          0x9d003a04      0x18c build/default/production/_ext/1225983975/PCF8573.o
+                0x9d003a04                getTime_8573
+                0x9d003ad4                setTime_8573
+ .text          0x9d003b90      0x154 build/default/production/_ext/760809394/menu.o
+                0x9d003b90                menu_P
+ .text          0x9d003ce4      0x14c build/default/production/_ext/637770267/I2Ccommon.o
+                0x9d003ce4                OpenI2C
+                0x9d003d20                WriteCharI2C
+                0x9d003d68                CloseI2C
+                0x9d003da4                ReadCharI2C
+ .text          0x9d003e30      0x128 build/default/production/_ext/649236794/lcdOutputStream.o
+                0x9d003e30                openLCD
+                0x9d003e68                closeLCD
+                0x9d003e8c                writeCharLCD
+                0x9d003ed0                flushLCD
+                0x9d003ef4                initLcdOutputStream
+ .text          0x9d003f58      0x108 build/default/production/_ext/1225983975/time.o
+                0x9d003f58                getTime
+                0x9d004030                setTime
+ .text          0x9d004060       0xf8 build/default/production/_ext/1309593678/delay.o
+                0x9d004060                delayUs
+                0x9d004080                delay100us
+                0x9d0040ec                delaymSec
 
 .text.general_exception
-                0x9d003e38       0xdc
+                0x9d004158       0xdc
  .text.general_exception
-                0x9d003e38       0xdc /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(general-exception.o)
-                0x9d003e38                _general_exception_context
+                0x9d004158       0xdc /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(general-exception.o)
+                0x9d004158                _general_exception_context
 
-.text           0x9d003f14       0xc4
- .text          0x9d003f14       0xc4 build/default/production/_ext/637730607/pwmPic32.o
-                0x9d003f14                pwmInit
+.text           0x9d004234       0xc4
+ .text          0x9d004234       0xc4 build/default/production/_ext/637730607/pwmPic32.o
+                0x9d004234                pwmInit
 
 .text.UARTEnable
-                0x9d003fd8       0x80
+                0x9d0042f8       0x80
  .text.UARTEnable
-                0x9d003fd8       0x80 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
-                0x9d003fd8                UARTEnable
+                0x9d0042f8       0x80 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x9d0042f8                UARTEnable
 
-.text.IdleI2C1  0x9d004058       0x74
+.text.IdleI2C1  0x9d004378       0x74
  .text.IdleI2C1
-                0x9d004058       0x74 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
-                0x9d004058                IdleI2C1
+                0x9d004378       0x74 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(idle_i2c1_lib_legacy.o)
+                0x9d004378                IdleI2C1
 
-.text           0x9d0040cc       0x6c
- .text          0x9d0040cc       0x6c build/default/production/_ext/1544592837/outputStream.o
-                0x9d0040cc                initOutputStream
+.text           0x9d0043ec       0x6c
+ .text          0x9d0043ec       0x6c build/default/production/_ext/1544592837/outputStream.o
+                0x9d0043ec                initOutputStream
 
 .text.MasterWriteI2C1
-                0x9d004138       0x60
+                0x9d004458       0x60
  .text.MasterWriteI2C1
-                0x9d004138       0x60 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
-                0x9d004138                MasterWriteI2C1
+                0x9d004458       0x60 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_write_i2c1_lib_legacy.o)
+                0x9d004458                MasterWriteI2C1
 
 .text.UARTSetDataRate
-                0x9d004198       0x5c
+                0x9d0044b8       0x5c
  .text.UARTSetDataRate
-                0x9d004198       0x5c /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
-                0x9d004198                UARTSetDataRate
+                0x9d0044b8       0x5c /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x9d0044b8                UARTSetDataRate
 
-.rodata         0x9d0041f4       0x58
- .rodata        0x9d0041f4       0x58 build/default/production/_ext/849511804/MainCEN.o
+.rodata         0x9d004514       0x58
+ .rodata        0x9d004514       0x58 build/default/production/_ext/849511804/MainCEN.o
 
 .text.main_entry
-                0x9d00424c       0x4c
+                0x9d00456c       0x4c
  .text.main_entry
-                0x9d00424c       0x4c /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MX795F512H/crt0_mips32r2.o
-                0x9d004278                __crt0_exit
+                0x9d00456c       0x4c /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MX795F512H/crt0_mips32r2.o
+                0x9d004598                __crt0_exit
 
-.text           0x9d004298       0x44
- .text          0x9d004298       0x44 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(pic32_software_reset.o)
-                0x9d004298                __pic32_software_reset
+.text           0x9d0045b8       0x44
+ .text          0x9d0045b8       0x44 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(pic32_software_reset.o)
+                0x9d0045b8                __pic32_software_reset
 
 .text.UARTGetDataRate
-                0x9d0042dc       0x40
+                0x9d0045fc       0x40
  .text.UARTGetDataRate
-                0x9d0042dc       0x40 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
-                0x9d0042dc                UARTGetDataRate
+                0x9d0045fc       0x40 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x9d0045fc                UARTGetDataRate
 
 .text.MasterReadI2C1
-                0x9d00431c       0x40
+                0x9d00463c       0x40
  .text.MasterReadI2C1
-                0x9d00431c       0x40 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
-                0x9d00431c                MasterReadI2C1
+                0x9d00463c       0x40 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(master_read_i2c1_lib_legacy.o)
+                0x9d00463c                MasterReadI2C1
 
-.dinit          0x9d00435c       0x40
- .dinit         0x9d00435c       0x40 data_init
+.dinit          0x9d00467c       0x40
+ .dinit         0x9d00467c       0x40 data_init
 
 .text.UARTConfigure
-                0x9d00439c       0x3c
+                0x9d0046bc       0x3c
  .text.UARTConfigure
-                0x9d00439c       0x3c /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
-                0x9d00439c                UARTConfigure
+                0x9d0046bc       0x3c /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x9d0046bc                UARTConfigure
 
 .text.UARTSetAddress
-                0x9d0043d8       0x3c
+                0x9d0046f8       0x3c
  .text.UARTSetAddress
-                0x9d0043d8       0x3c /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
-                0x9d0043d8                UARTSetAddress
+                0x9d0046f8       0x3c /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x9d0046f8                UARTSetAddress
 
 .text.UARTWatchForAddress
-                0x9d004414       0x38
+                0x9d004734       0x38
  .text.UARTWatchForAddress
-                0x9d004414       0x38 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
-                0x9d004414                UARTWatchForAddress
+                0x9d004734       0x38 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x9d004734                UARTWatchForAddress
 
 .text._bootstrap_exception_handler
-                0x9d00444c       0x38
+                0x9d00476c       0x38
  .text._bootstrap_exception_handler
-                0x9d00444c       0x38 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
-                0x9d00444c                _bootstrap_exception_handler
+                0x9d00476c       0x38 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-bootstrap-exception-handler.o)
+                0x9d00476c                _bootstrap_exception_handler
 
 .text._general_exception_handler
-                0x9d004484       0x38
+                0x9d0047a4       0x38
  .text._general_exception_handler
-                0x9d004484       0x38 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
-                0x9d004484                _general_exception_handler
-
-.text           0x9d0044bc       0x34
- .text          0x9d0044bc       0x34 build/default/production/_ext/637730607/motorPwm.o
-                0x9d0044bc                initPwmForMotor
+                0x9d0047a4       0x38 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-general-exception-handler.o)
+                0x9d0047a4                _general_exception_handler
 
 .vector_default
-                0x9d0044f0       0x30
+                0x9d0047dc       0x30
  .vector_default
-                0x9d0044f0       0x30 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
-                0x9d0044f0                _DefaultInterrupt
+                0x9d0047dc       0x30 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(defaultinterrupt.o)
+                0x9d0047dc                _DefaultInterrupt
 
 .text.UARTSetFifoMode
-                0x9d004520       0x28
+                0x9d00480c       0x28
  .text.UARTSetFifoMode
-                0x9d004520       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
-                0x9d004520                UARTSetFifoMode
+                0x9d00480c       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x9d00480c                UARTSetFifoMode
 
 .text.UARTSetLineControl
-                0x9d004548       0x28
+                0x9d004834       0x28
  .text.UARTSetLineControl
-                0x9d004548       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
-                0x9d004548                UARTSetLineControl
+                0x9d004834       0x28 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x9d004834                UARTSetLineControl
 
-.rodata         0x9d004570       0x3c
- .rodata        0x9d004570       0x24 build/default/production/_ext/760809394/menu.o
- .rodata        0x9d004594       0x18 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
-                0x9d004594                uartReg
+.rodata         0x9d00485c       0x3c
+ .rodata        0x9d00485c       0x24 build/default/production/_ext/760809394/menu.o
+ .rodata        0x9d004880       0x18 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libmchp_peripheral_32MX795F512H.a(uart_lib.o)
+                0x9d004880                uartReg
 
-.text           0x9d0045ac       0x18
- .text          0x9d0045ac       0x18 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-nmi-handler.o)
-                0x9d0045ac                _nmi_handler
+.text           0x9d004898       0x18
+ .text          0x9d004898       0x18 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-nmi-handler.o)
+                0x9d004898                _nmi_handler
 
-.rodata         0x9d0045c4        0x8
- .rodata        0x9d0045c4        0x8 build/default/production/_ext/1225983975/time.o
+.rodata         0x9d0048b0        0x8
+ .rodata        0x9d0048b0        0x8 build/default/production/_ext/1225983975/time.o
 
 .text._on_reset
-                0x9d0045cc        0x8
+                0x9d0048b8        0x8
  .text._on_reset
-                0x9d0045cc        0x8 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
-                0x9d0045cc                _on_reset
+                0x9d0048b8        0x8 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-reset.o)
+                0x9d0048b8                _on_reset
 
 .text._on_bootstrap
-                0x9d0045d4        0x8
+                0x9d0048c0        0x8
  .text._on_bootstrap
-                0x9d0045d4        0x8 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
-                0x9d0045d4                _on_bootstrap
+                0x9d0048c0        0x8 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/libpic32.a(default-on-bootstrap.o)
+                0x9d0048c0                _on_bootstrap
 
 .text%z194      0x00000000        0x0
  .text          0x00000000        0x0 /opt/microchip/xc32/v1.30/bin/../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/debug-exception-return.o

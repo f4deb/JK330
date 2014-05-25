@@ -8,6 +8,11 @@
 #ifndef PWMPIC32_H
 #define	PWMPIC32_H
 
+#define DIR_MOT1 PORTDbits.RD6
+#define DIR_MOT2 PORTDbits.RD7
+
+
+
 // COMMON
 
 /**

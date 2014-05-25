@@ -86,10 +86,10 @@ int Temperature;
 
 // DEFINITION DES PORTS POUR L ENCODEUR HCTL-2032
 #define DATA_2032 PORTE
-#define RST_2032  PORTFbits.RF0
-#define OE_2032   PORTFbits.RF1
+#define RST_2032  PORTFbits.RF1
+#define OE_2032   PORTFbits.RF0
 #define XY_2032   PORTFbits.RF3
-#define SEL1_2032 PORTGbits.RG8
+#define SEL1_2032 PORTGbits.RG6
 #define SEL2_2032 PORTGbits.RG9
 /////////////////////////////////////////////////
 
@@ -153,18 +153,20 @@ int main(void) {
    appendString(outputStream, "Commande Moteurs :\r");
   
     initPwmForMotor();
-    PORTDbits.RD6 = 0 ;
-    PORTDbits.RD7 = 0 ;
-    OC1RS = (0x100);
-    OC2RS = (0x100);
 
+
+    //PORTDbits.RD6 = 1 ;
+    //PORTDbits.RD7 = 1 ;
+    //OC1RS = (0x100);
+    //OC2RS = (0x100);
+    motor(0x10F0);
 
 
     TRISE = 0xFF;    // PORTE [0..7] en entree
     TRISFbits.TRISF0 = 0;
     TRISFbits.TRISF1 = 0;
     TRISFbits.TRISF3 = 0;
-    TRISGbits.TRISG8 = 0;
+    TRISGbits.TRISG6 = 0;
     TRISGbits.TRISG9 = 0;
 
     hor.ti_hour=0x21;
@@ -173,13 +175,15 @@ int main(void) {
     hor.ti_month=0x05;
     setTime();
 
+
+
     while (1) {
         int coder32 = 0;
 
         outputStream = &debugoutputStream;
         RST_2032 = 1;   //disable Reset
         //select Axis to Read
-        XY_2032 = 1; // read Y
+        XY_2032 = 0; // read x
         OE_2032 = 0;
         
         // EN1 = 1 EN2=0  Hardware Select, place JUMPER on P7 as EN2
