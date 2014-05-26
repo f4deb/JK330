@@ -55,6 +55,7 @@
 
 #define SERIAL_PORT_DEBUG       1   //NUMERO DU PORT SERIE
 #define SERIAL_PORT_PC		2   //NUMERO DU PORT SERIE
+#define SERIAL_PORT_DATA        3   //NUMERO DU PORT SERIE
 
 
 
@@ -65,6 +66,8 @@
 static OutputStream pcoutputStream;
 
 static OutputStream debugoutputStream;
+
+static OutputStream dataoutputStream;
 
 OutputStream* outputStream;
 
@@ -82,17 +85,6 @@ int BCD10;
 #define NACK 0
 
 int Temperature;
-
-
-// DEFINITION DES PORTS POUR L ENCODEUR HCTL-2032
-#define DATA_2032 PORTE
-#define RST_2032  PORTFbits.RF1
-#define OE_2032   PORTFbits.RF0
-#define XY_2032   PORTFbits.RF3
-#define SEL1_2032 PORTGbits.RG6
-#define SEL2_2032 PORTGbits.RG9
-/////////////////////////////////////////////////
-
 
 
 /********************************************************************************************************************************
@@ -121,7 +113,16 @@ void Init(void) {
     //initSerialOutputStream2(outputStream);
     initSerialOutputStream(outputStream, SERIAL_PORT_PC);
     outputStream->openOutputStream(outputStream, 0);
+
+            //Initialise port serie PC
+    outputStream = &dataoutputStream;
+    //initSerialOutputStream2(outputStream);
+    initSerialOutputStream(outputStream, SERIAL_PORT_DATA);
+    outputStream->openOutputStream(outputStream, 0);
 }
+
+        //Initialise port serie data
+
 
 /************************************************************
  * setup														*
@@ -148,73 +149,37 @@ int main(void) {
    appendString(outputStream, "JK330 with PIC32...on UART PC\r");
    outputStream = &debugoutputStream;
    appendString(outputStream, "JK330 with PIC32...on UART DEBUG\r");
+   outputStream = &dataoutputStream;
+   appendString(outputStream, "JK330 with PIC32...on UART DATA\r");
    
 
    appendString(outputStream, "Commande Moteurs :\r");
   
     initPwmForMotor();
 
+    motor(0x1010);
 
-    //PORTDbits.RD6 = 1 ;
-    //PORTDbits.RD7 = 1 ;
-    //OC1RS = (0x100);
-    //OC2RS = (0x100);
-    motor(0x10F0);
+    initCoder();
 
-
-    TRISE = 0xFF;    // PORTE [0..7] en entree
-    TRISFbits.TRISF0 = 0;
-    TRISFbits.TRISF1 = 0;
-    TRISFbits.TRISF3 = 0;
-    TRISGbits.TRISG6 = 0;
-    TRISGbits.TRISG9 = 0;
 
     hor.ti_hour=0x21;
     hor.ti_min=0x32;
     hor.ti_day=0x06;
     hor.ti_month=0x05;
     setTime();
-
+    
 
 
     while (1) {
-        int coder32 = 0;
+
 
         outputStream = &debugoutputStream;
-        RST_2032 = 1;   //disable Reset
-        //select Axis to Read
-        XY_2032 = 0; // read x
-        OE_2032 = 0;
-        
-        // EN1 = 1 EN2=0  Hardware Select, place JUMPER on P7 as EN2
-        // MSB D4 read 8bits
-        coder32=0;
 
-        // D4 read 8bits
-        SEL1_2032 = 0;
-        SEL2_2032 = 1;
-        coder32 = DATA_2032;
-
-        // D3 read 8bits
-        SEL1_2032 = 1;
-        SEL2_2032 = 1;
-
-        coder32 = (coder32 << 8) | DATA_2032;
-
-        // D2 read 8bits
-        SEL1_2032 = 0;
-        SEL2_2032 = 0;
-        
-        coder32 = (coder32 << 8) | DATA_2032;
-        
-        // D1 read 8bits
-        SEL1_2032 = 1;
-        SEL2_2032 = 0;
-        coder32 = (coder32 << 8 ) | DATA_2032;
-
-        OE_2032 = 1;
-
-        appendHex8(outputStream,coder32);
+        appendString(outputStream,"Codeur X : ");
+        appendHex8(outputStream,coder(0));
+        append(outputStream,' ');
+        appendString(outputStream,"Codeur Y : ");
+        appendHex8(outputStream,coder(1));
         appendCR(outputStream);
         
         outputStream = &pcoutputStream;

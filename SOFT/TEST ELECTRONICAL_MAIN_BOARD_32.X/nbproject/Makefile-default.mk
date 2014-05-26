@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/pwm/pwmPic32.c ../common/pwm/motorPwm.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/PCF8573.c ../drivers/IO/time.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../mainCEN/MainCEN.c ../menu/menu.c
+SOURCEFILES_QUOTED_IF_SPACED=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/pwm/pwmPic32.c ../common/pwm/motorPwm.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/PCF8573.c ../drivers/IO/time.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../mainCEN/MainCEN.c ../menu/menu.c ../drivers/IO/HCTL2032.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/637730607/pwmPic32.o ${OBJECTDIR}/_ext/637730607/motorPwm.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/PCF8573.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/849511804/MainCEN.o ${OBJECTDIR}/_ext/760809394/menu.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1309593678/delay.o.d ${OBJECTDIR}/_ext/637770267/I2Ccommon.o.d ${OBJECTDIR}/_ext/1544592837/printWriter.o.d ${OBJECTDIR}/_ext/1544592837/outputStream.o.d ${OBJECTDIR}/_ext/637730607/pwmPic32.o.d ${OBJECTDIR}/_ext/637730607/motorPwm.o.d ${OBJECTDIR}/_ext/1922645879/serial.o.d ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d ${OBJECTDIR}/_ext/1041058175/led.o.d ${OBJECTDIR}/_ext/1225983975/MCP9804.o.d ${OBJECTDIR}/_ext/1225983975/PCF8573.o.d ${OBJECTDIR}/_ext/1225983975/time.o.d ${OBJECTDIR}/_ext/649236794/lcd24064.o.d ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d ${OBJECTDIR}/_ext/849511804/MainCEN.o.d ${OBJECTDIR}/_ext/760809394/menu.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/637730607/pwmPic32.o ${OBJECTDIR}/_ext/637730607/motorPwm.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/PCF8573.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/849511804/MainCEN.o ${OBJECTDIR}/_ext/760809394/menu.o ${OBJECTDIR}/_ext/1225983975/HCTL2032.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1309593678/delay.o.d ${OBJECTDIR}/_ext/637770267/I2Ccommon.o.d ${OBJECTDIR}/_ext/1544592837/printWriter.o.d ${OBJECTDIR}/_ext/1544592837/outputStream.o.d ${OBJECTDIR}/_ext/637730607/pwmPic32.o.d ${OBJECTDIR}/_ext/637730607/motorPwm.o.d ${OBJECTDIR}/_ext/1922645879/serial.o.d ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d ${OBJECTDIR}/_ext/1041058175/led.o.d ${OBJECTDIR}/_ext/1225983975/MCP9804.o.d ${OBJECTDIR}/_ext/1225983975/PCF8573.o.d ${OBJECTDIR}/_ext/1225983975/time.o.d ${OBJECTDIR}/_ext/649236794/lcd24064.o.d ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d ${OBJECTDIR}/_ext/849511804/MainCEN.o.d ${OBJECTDIR}/_ext/760809394/menu.o.d ${OBJECTDIR}/_ext/1225983975/HCTL2032.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/637730607/pwmPic32.o ${OBJECTDIR}/_ext/637730607/motorPwm.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/PCF8573.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/849511804/MainCEN.o ${OBJECTDIR}/_ext/760809394/menu.o
+OBJECTFILES=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/637730607/pwmPic32.o ${OBJECTDIR}/_ext/637730607/motorPwm.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/PCF8573.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/849511804/MainCEN.o ${OBJECTDIR}/_ext/760809394/menu.o ${OBJECTDIR}/_ext/1225983975/HCTL2032.o
 
 # Source Files
-SOURCEFILES=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/pwm/pwmPic32.c ../common/pwm/motorPwm.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/PCF8573.c ../drivers/IO/time.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../mainCEN/MainCEN.c ../menu/menu.c
+SOURCEFILES=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/pwm/pwmPic32.c ../common/pwm/motorPwm.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/PCF8573.c ../drivers/IO/time.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../mainCEN/MainCEN.c ../menu/menu.c ../drivers/IO/HCTL2032.c
 
 
 CFLAGS=
@@ -176,6 +176,11 @@ ${OBJECTDIR}/_ext/760809394/menu.o: ../menu/menu.c  nbproject/Makefile-${CND_CON
 	@${RM} ${OBJECTDIR}/_ext/760809394/menu.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/760809394/menu.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/760809394/menu.o.d" -o ${OBJECTDIR}/_ext/760809394/menu.o ../menu/menu.c   
 	
+${OBJECTDIR}/_ext/1225983975/HCTL2032.o: ../drivers/IO/HCTL2032.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/HCTL2032.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/HCTL2032.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1225983975/HCTL2032.o.d" -o ${OBJECTDIR}/_ext/1225983975/HCTL2032.o ../drivers/IO/HCTL2032.c   
+	
 else
 ${OBJECTDIR}/_ext/1309593678/delay.o: ../common/delay/delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/1309593678 
@@ -261,6 +266,11 @@ ${OBJECTDIR}/_ext/760809394/menu.o: ../menu/menu.c  nbproject/Makefile-${CND_CON
 	@${MKDIR} ${OBJECTDIR}/_ext/760809394 
 	@${RM} ${OBJECTDIR}/_ext/760809394/menu.o.d 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/760809394/menu.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/760809394/menu.o.d" -o ${OBJECTDIR}/_ext/760809394/menu.o ../menu/menu.c   
+	
+${OBJECTDIR}/_ext/1225983975/HCTL2032.o: ../drivers/IO/HCTL2032.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/HCTL2032.o.d 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/HCTL2032.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -I"../C:/Program Files (x86)/Microchip/MPLAB C32 Suite/pic32mx/include/peripheral/legacy" -I".." -I"../common/delay" -I"../common/serial" -I"../common" -I"../main" -I"../setup" -MMD -MF "${OBJECTDIR}/_ext/1225983975/HCTL2032.o.d" -o ${OBJECTDIR}/_ext/1225983975/HCTL2032.o ../drivers/IO/HCTL2032.c   
 	
 endif
 
