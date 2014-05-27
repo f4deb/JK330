@@ -119,6 +119,10 @@ void Init(void) {
     //initSerialOutputStream2(outputStream);
     initSerialOutputStream(outputStream, SERIAL_PORT_DATA);
     outputStream->openOutputStream(outputStream, 0);
+    
+    
+    initPwmForMotor();
+    initCoder();
 }
 
         //Initialise port serie data
@@ -139,27 +143,108 @@ void Setup() {
 
 }
 
+void waitC (OutputStream* outputStream){
+    appendString(outputStream, "Appuyer sur la touche <c>");
+    while (ReadCharUart(UART1) != 'c'){
+        //appendString(outputStream, "Appuyer sur la touche <c>");
+
+    }
+            appendCR(outputStream);
+}
 
 
 int main(void) {
     //    UINT32 actualClock;
     Setup();
     Init();
-   outputStream = &pcoutputStream;
-   appendString(outputStream, "JK330 with PIC32...on UART PC\r");
-   outputStream = &debugoutputStream;
-   appendString(outputStream, "JK330 with PIC32...on UART DEBUG\r");
-   outputStream = &dataoutputStream;
-   appendString(outputStream, "JK330 with PIC32...on UART DATA\r");
-   
+//   outputStream = &pcoutputStream;
+//   appendString(outputStream, "TEST MOTOR BOARD with PIC32...on UART PC\r");
+    outputStream = &debugoutputStream;
+    appendString(outputStream, "TEST MOTOR BOARD with PIC32...on UART DEBUG\r\r");
+//   outputStream = &dataoutputStream;
+//   appendString(outputStream, "TEST MOTOR BOARD with PIC32...on UART DATA\r");
+    
+    appendString(outputStream, "Debut de la sequence de test\r");
 
-   appendString(outputStream, "Commande Moteurs :\r");
-  
-    initPwmForMotor();
 
-    motor(0x1010);
 
-    initCoder();
+// TEST UART1
+    appendString(outputStream, "TEST UART1\r");
+       
+    waitC(outputStream);
+
+    appendString(outputStream, "** TEST UART1 OK **\r");
+    
+    appendString(outputStream, "Connectez le cable de test entre UART2 et UART3\r");
+    appendString(outputStream, "TEST UART2 et UART3\r");
+    waitC(outputStream);
+
+//TEST UART2 et 3
+
+    //DEBUG --> DATA
+    outputStream = &pcoutputStream;
+    append(outputStream,'2');
+    if (ReadCharUart(UART3) == '2'){
+    //DATA --> DEBUG
+        outputStream = &dataoutputStream;
+        append(outputStream,'3');
+        outputStream = &debugoutputStream;
+        if (ReadCharUart(UART2) == '3'){
+            appendString(outputStream,"** TEST UART2 et UART3 OK **\r");
+        }
+        else{
+            appendString(outputStream,"******** TEST UART2 et UART3 FAIL *********\r");
+        }
+    }
+
+
+// TEST MOTOR1
+    outputStream = &debugoutputStream;
+    appendString(outputStream,"TEST MOTOR 1\r");
+    appendString(outputStream,"Motor STOP ... Verifier que le motor1 est arrete\r");
+    waitC(outputStream);
+
+    int i=0;
+    char car = 0;
+    appendString(outputStream,"Verifier  l'acceleration du moteur 1 \r");
+    appendString(outputStream,"Appuyer sur la touche <c> pour continuer le test MOTOR1\r");
+    while (car != 'c'){
+
+        motor(i);
+        i++;
+        if  (i>=0x80){
+            i=0;
+        }
+        delaymSec(100);
+
+        if (UARTReceivedDataIsAvailable(UART1)){
+            car = ReadCharUart(UART1);
+        }
+    }
+    appendString(outputStream,"Changement du sens de rotation du motor1\r");
+    appendString(outputStream,"Appuuyer sur la touche <m> pour continuer le test MOTOR1\r");
+    i = 0;
+    while (car != 'm'){
+        motor(i);
+        i--;
+                i= i & 0x00FF;
+
+        if  (i == 0x7F){
+            i=0;
+        }
+        delaymSec(100);
+
+        if (UARTReceivedDataIsAvailable(UART1)){
+            car = ReadCharUart(UART1);
+        }
+    }
+    appendString(outputStream,"** Motor1 OK **");
+
+// TEST MOTOR1
+    outputStream = &debugoutputStream;
+    appendString(outputStream,"TEST MOTOR 2\r");
+    appendString(outputStream,"Motor STOP ... Verifier que le motor2 est arrete\r");
+    waitC(outputStream);
 
 
     hor.ti_hour=0x21;
@@ -175,6 +260,7 @@ int main(void) {
 
         outputStream = &debugoutputStream;
 
+
         appendString(outputStream,"Codeur X : ");
         appendHex8(outputStream,coder(0));
         append(outputStream,' ');
@@ -186,7 +272,7 @@ int main(void) {
         getTime(outputStream);
         appendCR(outputStream);
 
-        delaymSec(100);
+        delaymSec(1000);
     }
 }
 

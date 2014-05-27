@@ -32,8 +32,8 @@ int calcMot (int mot){
 /**
  * motor
  * Commande des deux moteurs
- * Octet de poid fort = moteur1
- * Octet de poid faible = moteur 2
+ * Octet de poid fort = moteur2
+ * Octet de poid faible = moteur1
  * 0 -> 0x7F Min->MAX
  * 0xFF -> 0x80 Min-> MAX
  * @param : mot	( 0x0011 )
