@@ -165,7 +165,12 @@ int main(void) {
 //   appendString(outputStream, "TEST MOTOR BOARD with PIC32...on UART DATA\r");
     
     appendString(outputStream, "Debut de la sequence de test\r");
-
+    
+    hor.ti_hour=0x21;
+    hor.ti_min=0x32;
+    hor.ti_day=0x06;
+    hor.ti_month=0x05;
+    setTime();
 
 
 // TEST UART1
@@ -201,7 +206,7 @@ int main(void) {
 // TEST MOTOR1
     outputStream = &debugoutputStream;
     appendString(outputStream,"TEST MOTOR 1\r");
-    appendString(outputStream,"Motor STOP ... Verifier que le motor1 est arrete\r");
+    appendString(outputStream,"Motors STOP ... Verifier que motor1 et motor2 sont arretes\r");
     waitC(outputStream);
 
     int i=0;
@@ -238,41 +243,89 @@ int main(void) {
             car = ReadCharUart(UART1);
         }
     }
-    appendString(outputStream,"** Motor1 OK **");
+    appendString(outputStream,"** Motor1 OK **\r");
 
-// TEST MOTOR1
-    outputStream = &debugoutputStream;
+// TEST MOTOR2
+   // outputStream = &debugoutputStream;
     appendString(outputStream,"TEST MOTOR 2\r");
-    appendString(outputStream,"Motor STOP ... Verifier que le motor2 est arrete\r");
+    appendString(outputStream,"Motors STOP ... Verifier que motor1 et motor2 sont arretes\r");
+    motor(0x0000);
     waitC(outputStream);
+    appendString(outputStream,"Verifier  l'acceleration du moteur 2 \r");
+    appendString(outputStream,"Appuyer sur la touche <c> pour continuer le test MOTOR2\r");
+    while (car != 'c'){
+
+        motor(i<<8);
+        i++;
+        if  (i>=0x80){
+            i=0;
+        }
+        delaymSec(100);
+
+        if (UARTReceivedDataIsAvailable(UART1)){
+            car = ReadCharUart(UART1);
+        }
+    }
+    appendString(outputStream,"Changement du sens de rotation du motor2\r");
+    appendString(outputStream,"Appuuyer sur la touche <m> pour continuer le test MOTOR2\r");
+    i = 0;
+    while (car != 'm'){
+        motor(i);
+        i=i-0100;
+                i= i & 0xFF00;
+
+        if  (i == 0x7F00){
+            i=0;
+        }
+        delaymSec(100);
+
+        if (UARTReceivedDataIsAvailable(UART1)){
+            car = ReadCharUart(UART1);
+        }
+    }
+    appendString(outputStream,"** Motor2 OK **\r");
+    motor(0x0000);
+
+    //TEST CODER1 et CODER2
 
 
-    hor.ti_hour=0x21;
-    hor.ti_min=0x32;
-    hor.ti_day=0x06;
-    hor.ti_month=0x05;
-    setTime();
-    
+    while (car != 'c') {
 
 
-    while (1) {
+ //       outputStream = &debugoutputStream;
 
-
-        outputStream = &debugoutputStream;
-
-
-        appendString(outputStream,"Codeur X : ");
+        appendString(outputStream,"TEST Codeur X : ");
         appendHex8(outputStream,coder(0));
         append(outputStream,' ');
-        appendString(outputStream,"Codeur Y : ");
+        appendString(outputStream,"TEST Codeur Y : ");
         appendHex8(outputStream,coder(1));
         appendCR(outputStream);
         
-        outputStream = &pcoutputStream;
+ //       outputStream = &pcoutputStream;
+        appendString(outputStream,"Appuyer sur <c> pour continuer ");
+//        getTime(outputStream);
+//        appendCR(outputStream);
+
+        delaymSec(500);
+        if (UARTReceivedDataIsAvailable(UART1)){
+            car = ReadCharUart(UART1);
+        }
+    }
+    appendCR(outputStream);
+    appendString(outputStream,"** TEST CODER X et CODER Y OK **");
+    appendCR(outputStream);
+// TEST I2C
+
+    while (car != 'i') {
+
+        appendString(outputStream,"Appuyer sur <c> pour continuer: TEST I2C   :");
         getTime(outputStream);
         appendCR(outputStream);
+        delaymSec(500);
 
-        delaymSec(1000);
+        if (UARTReceivedDataIsAvailable(UART1)){
+            car = ReadCharUart(UART1);
+        }
     }
 }
 
