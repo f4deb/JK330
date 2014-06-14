@@ -173,6 +173,20 @@ int main(void) {
     setTime();
 
 
+int  i = 0;
+       char car = 1;
+
+
+
+
+
+
+
+
+
+
+
+
 // TEST UART1
     appendString(outputStream, "TEST UART1\r");
        
@@ -209,8 +223,7 @@ int main(void) {
     appendString(outputStream,"Motors STOP ... Verifier que motor1 et motor2 sont arretes\r");
     waitC(outputStream);
 
-    int i=0;
-    char car = 0;
+
     appendString(outputStream,"Verifier  l'acceleration du moteur 1 \r");
     appendString(outputStream,"Appuyer sur la touche <c> pour continuer le test MOTOR1\r");
     while (car != 'c'){
@@ -286,6 +299,49 @@ int main(void) {
     appendString(outputStream,"** Motor2 OK **\r");
     motor(0x0000);
 
+    //TEST MOTOR1 et MOTOR2 ensemble
+    appendString(outputStream,"TEST MOTOR1 ET MOTOR2 ENSEMBLE\r");
+    appendString(outputStream,"Appuuyer sur la touche c> pour continuer le test MOTOR2\r");
+
+        unsigned int l=0xFFFF;
+    unsigned int j= 0x0101;
+    unsigned int k=1;
+//    char car = 1;
+    while (car != 'd'){
+
+        if (k == 0) {
+            l=l+j;
+        }
+        if (k == 1) {
+            l=l-j;
+        }
+        appendHex4(outputStream,l);
+        appendCR(outputStream);
+        motor(l);
+        if ((l == 0xFFFF) &&(k == 0)) {      //Correction overflow
+            l= 0x0000;
+        }
+        if ((l == 0x0000) &&(k == 1)) {      //Correction overflow
+            l= 0xFFFF;
+        }
+        if (l == 0x7F7F){
+            k = 1;      // decremente les deux moteurs
+        }
+
+        if (l == 0x8080){
+            k=0;     // incremente les deux moteurs
+        }
+        delaymSec(100);
+
+
+        if (UARTReceivedDataIsAvailable(UART1)){
+            car = ReadCharUart(UART1);
+        }
+    }
+    appendString(outputStream,"** Motor11 ET MOTOR2 OK **\r");
+    motor(0x0000);
+
+
     //TEST CODER1 et CODER2
 
 
@@ -327,6 +383,7 @@ int main(void) {
             car = ReadCharUart(UART1);
         }
     }
+    appendString(outputStream,"** TEST I2C OK **");
 }
 
 
