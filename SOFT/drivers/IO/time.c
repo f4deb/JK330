@@ -1,6 +1,6 @@
 
 #include "../IO/../../common/io/outputStream.h"
-#include "PCF8573.h"
+#include "PCF8563.h"
 #include "time.h"
 
 
@@ -13,19 +13,23 @@
 void getTime(OutputStream* outputStream ){
     // recupere l'huere et la date
 
-    getTime_8573();
+    getTime_8563();
     
     // l'affiche sur le flux de sortie
-    //setCursorPosition(0,29);
+    //setCursorPosition(2,20);
     appendHex2(outputStream, hor.ti_hour); //heure
     appendString(outputStream, ":");
     appendHex2(outputStream, hor.ti_min); //min
+    appendString(outputStream, ":");
+    appendHex2(outputStream, hor.ti_sec); //sec
 
     appendString(outputStream, " ");
     appendHex2(outputStream, hor.ti_day); //day
 
     append(outputStream, '/');
     appendHex2(outputStream, hor.ti_month); //month
+    append(outputStream, '/');
+    appendHex2(outputStream, hor.ti_year); //month
  
 }
 
@@ -36,5 +40,5 @@ void getTime(OutputStream* outputStream ){
  * @return : none
  **/
 void setTime(void){
-    setTime_8573();
+    setTime_8563();
 }

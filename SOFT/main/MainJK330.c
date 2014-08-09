@@ -15,7 +15,7 @@
 
 #include "../drivers/IO/MCP9804.h"
 
-#include "../drivers/IO/PCF8573.h"
+#include "../drivers/IO/PCF8563.h"
 #include "../drivers/IO/time.h"
 
 #include "../drivers/lcd/lcd24064.h"
@@ -27,6 +27,7 @@
 #include "../menu/menu.h"
 
 #include "../setup/clockConstants.h"
+//#include "drivers/IO/PCF8563.h"
 
 
 // definition des bits de configuration.
@@ -200,7 +201,7 @@ int main(void) {
    appendString(outputStream, "JK330 with PIC32...on UART DEBUG\r");
 
    outputStream = &debugoutputStream;
-   appendString(outputStream, "Lecture PCF8573pc\r");
+   appendString(outputStream, "Lecture Horloge \r");
    getTime(outputStream);
    
     clearScreen();
@@ -213,18 +214,20 @@ int main(void) {
     outputStream = &debugoutputStream;
 
 
-    hor.ti_hour=0x21;
-    hor.ti_min=0x34;
-    hor.ti_day=0x06;
-    hor.ti_month=0x05;
+    hor.ti_hour=0x14;
+    hor.ti_min=0x56;
+    hor.ti_sec=0x00;
+    hor.ti_day=0x09;
+    hor.ti_month=0x08;
+    hor.ti_year=0x14;
     //setTime();
     while (1) {
     outputStream = &lcdoutputStream;
-    setCursorPosition_24064(0,29);
+    setCursorPosition_24064(0,23);
     getTime(outputStream);
 
     
-    setCursorPosition_24064(0,25);
+    setCursorPosition_24064(0,19);
 
     appendDec(outputStream, ReadTempAmbMCP9804());
     append(outputStream,'C');

@@ -26,8 +26,8 @@
       </logicalFolder>
       <logicalFolder name="f10" displayName="driver.io" projectFiles="true">
         <itemPath>../drivers/IO/MCP9804.h</itemPath>
-        <itemPath>../drivers/IO/PCF8573.h</itemPath>
         <itemPath>../drivers/IO/time.h</itemPath>
+        <itemPath>../drivers/IO/PCF8563.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f7" displayName="driver.lcd" projectFiles="true">
         <itemPath>../drivers/lcd/lcd24064.h</itemPath>
@@ -72,8 +72,8 @@
       </logicalFolder>
       <logicalFolder name="f6" displayName="driver.io" projectFiles="true">
         <itemPath>../drivers/IO/MCP9804.c</itemPath>
-        <itemPath>../drivers/IO/PCF8573.c</itemPath>
         <itemPath>../drivers/IO/time.c</itemPath>
+        <itemPath>../drivers/IO/PCF8563.c</itemPath>
       </logicalFolder>
       <logicalFolder name="drivers.lcd" displayName="drivers.lcd" projectFiles="true">
         <itemPath>../drivers/lcd/lcd24064.c</itemPath>
@@ -108,7 +108,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>1.30</languageToolchainVersion>
+        <languageToolchainVersion>1.32</languageToolchainVersion>
         <platform>2</platform>
       </toolsSet>
       <compileType>
@@ -116,8 +116,11 @@
           <linkerLibItems>
           </linkerLibItems>
         </linkerTool>
+        <archiverTool>
+        </archiverTool>
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
       </compileType>
@@ -151,6 +154,8 @@
         <property key="use-cci" value="false"/>
         <property key="use-indirect-calls" value="false"/>
       </C32>
+      <C32-AR>
+      </C32-AR>
       <C32-AS>
         <property key="assembler-symbols" value=""/>
         <property key="enable-symbols" value="true"/>

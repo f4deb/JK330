@@ -14,8 +14,8 @@ void menu_P(OutputStream* outputStream){
     ClrGraphLCD_24064();
     // parti superieur
     line (0,8,239,8);
-    line (171,0,171,7);
-    line (147,0,147,7);
+    line (136,0,136,7);
+    line (110,0,110,7);
     setCursorPosition(0,0);
     appendString(outputStream,"F4DEB");
 
