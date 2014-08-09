@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/time.c ../drivers/IO/PCF8563.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../main/MainJK330.c ../menu/menu.c
+SOURCEFILES_QUOTED_IF_SPACED=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/time.c ../drivers/IO/PCF8563.c ../drivers/IO/EEPROM_I2C.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../main/MainJK330.c ../menu/menu.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/1225983975/PCF8563.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/760813400/MainJK330.o ${OBJECTDIR}/_ext/760809394/menu.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1309593678/delay.o.d ${OBJECTDIR}/_ext/637770267/I2Ccommon.o.d ${OBJECTDIR}/_ext/1544592837/printWriter.o.d ${OBJECTDIR}/_ext/1544592837/outputStream.o.d ${OBJECTDIR}/_ext/1922645879/serial.o.d ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d ${OBJECTDIR}/_ext/1041058175/led.o.d ${OBJECTDIR}/_ext/1225983975/MCP9804.o.d ${OBJECTDIR}/_ext/1225983975/time.o.d ${OBJECTDIR}/_ext/1225983975/PCF8563.o.d ${OBJECTDIR}/_ext/649236794/lcd24064.o.d ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d ${OBJECTDIR}/_ext/760813400/MainJK330.o.d ${OBJECTDIR}/_ext/760809394/menu.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/1225983975/PCF8563.o ${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/760813400/MainJK330.o ${OBJECTDIR}/_ext/760809394/menu.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1309593678/delay.o.d ${OBJECTDIR}/_ext/637770267/I2Ccommon.o.d ${OBJECTDIR}/_ext/1544592837/printWriter.o.d ${OBJECTDIR}/_ext/1544592837/outputStream.o.d ${OBJECTDIR}/_ext/1922645879/serial.o.d ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o.d ${OBJECTDIR}/_ext/1041058175/led.o.d ${OBJECTDIR}/_ext/1225983975/MCP9804.o.d ${OBJECTDIR}/_ext/1225983975/time.o.d ${OBJECTDIR}/_ext/1225983975/PCF8563.o.d ${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o.d ${OBJECTDIR}/_ext/649236794/lcd24064.o.d ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o.d ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o.d ${OBJECTDIR}/_ext/760813400/MainJK330.o.d ${OBJECTDIR}/_ext/760809394/menu.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/1225983975/PCF8563.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/760813400/MainJK330.o ${OBJECTDIR}/_ext/760809394/menu.o
+OBJECTFILES=${OBJECTDIR}/_ext/1309593678/delay.o ${OBJECTDIR}/_ext/637770267/I2Ccommon.o ${OBJECTDIR}/_ext/1544592837/printWriter.o ${OBJECTDIR}/_ext/1544592837/outputStream.o ${OBJECTDIR}/_ext/1922645879/serial.o ${OBJECTDIR}/_ext/1922645879/serialOutputStream.o ${OBJECTDIR}/_ext/1041058175/led.o ${OBJECTDIR}/_ext/1225983975/MCP9804.o ${OBJECTDIR}/_ext/1225983975/time.o ${OBJECTDIR}/_ext/1225983975/PCF8563.o ${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o ${OBJECTDIR}/_ext/649236794/lcd24064.o ${OBJECTDIR}/_ext/649236794/lcdOutputStream.o ${OBJECTDIR}/_ext/649236794/lcdProvider_24064.o ${OBJECTDIR}/_ext/760813400/MainJK330.o ${OBJECTDIR}/_ext/760809394/menu.o
 
 # Source Files
-SOURCEFILES=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/time.c ../drivers/IO/PCF8563.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../main/MainJK330.c ../menu/menu.c
+SOURCEFILES=../common/delay/delay.c ../common/I2C/I2Ccommon.c ../common/io/printWriter.c ../common/io/outputStream.c ../common/serial/serial.c ../common/serial/serialOutputStream.c ../device/led/led.c ../drivers/IO/MCP9804.c ../drivers/IO/time.c ../drivers/IO/PCF8563.c ../drivers/IO/EEPROM_I2C.c ../drivers/lcd/lcd24064.c ../drivers/lcd/lcdOutputStream.c ../drivers/lcd/lcdProvider_24064.c ../main/MainJK330.c ../menu/menu.c
 
 
 CFLAGS=
@@ -151,6 +151,12 @@ ${OBJECTDIR}/_ext/1225983975/PCF8563.o: ../drivers/IO/PCF8563.c  nbproject/Makef
 	@${RM} ${OBJECTDIR}/_ext/1225983975/PCF8563.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/PCF8563.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I".." -MMD -MF "${OBJECTDIR}/_ext/1225983975/PCF8563.o.d" -o ${OBJECTDIR}/_ext/1225983975/PCF8563.o ../drivers/IO/PCF8563.c   
 	
+${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o: ../drivers/IO/EEPROM_I2C.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I".." -MMD -MF "${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o.d" -o ${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o ../drivers/IO/EEPROM_I2C.c   
+	
 ${OBJECTDIR}/_ext/649236794/lcd24064.o: ../drivers/lcd/lcd24064.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/649236794 
 	@${RM} ${OBJECTDIR}/_ext/649236794/lcd24064.o.d 
@@ -241,6 +247,12 @@ ${OBJECTDIR}/_ext/1225983975/PCF8563.o: ../drivers/IO/PCF8563.c  nbproject/Makef
 	@${RM} ${OBJECTDIR}/_ext/1225983975/PCF8563.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1225983975/PCF8563.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/PCF8563.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I".." -MMD -MF "${OBJECTDIR}/_ext/1225983975/PCF8563.o.d" -o ${OBJECTDIR}/_ext/1225983975/PCF8563.o ../drivers/IO/PCF8563.c   
+	
+${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o: ../drivers/IO/EEPROM_I2C.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/1225983975 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I".." -MMD -MF "${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o.d" -o ${OBJECTDIR}/_ext/1225983975/EEPROM_I2C.o ../drivers/IO/EEPROM_I2C.c   
 	
 ${OBJECTDIR}/_ext/649236794/lcd24064.o: ../drivers/lcd/lcd24064.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/649236794 

@@ -8,8 +8,8 @@
 #ifndef PCF8563_H
 #define	PCF8563_H
 
-#define PCF8563_0_W 0xA2
-#define PCF8563_0_R 0xA3
+#define PCF8563_W 0xA2
+#define PCF8563_R 0xA3
 
 struct Horloge {
     int ti_hour;

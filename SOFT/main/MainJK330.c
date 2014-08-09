@@ -15,6 +15,7 @@
 
 #include "../drivers/IO/MCP9804.h"
 
+#include "../drivers/IO/EEPROM_I2C.h"
 #include "../drivers/IO/PCF8563.h"
 #include "../drivers/IO/time.h"
 
@@ -167,8 +168,7 @@ void Init(void) {
 
 
     // Initialise le capteur de temperature MCP9804
-        initRegMCP9804 (0x00,0x18,0x01,0xE0,0x01,0x40,0x02,0x40); // 30C,20C,34C
-
+    initRegMCP9804 (0x00,0x18,0x01,0xE0,0x01,0x40,0x02,0x40); // 30C,20C,34C
 }
 
 /************************************************************
@@ -203,6 +203,7 @@ int main(void) {
    outputStream = &debugoutputStream;
    appendString(outputStream, "Lecture Horloge \r");
    getTime(outputStream);
+   appendCR(outputStream);
    
     clearScreen();
     setCursorAtHome();
@@ -211,7 +212,20 @@ int main(void) {
     outputStream = &lcdoutputStream;
     menu_P(&lcdoutputStream);
 
+
     outputStream = &debugoutputStream;
+
+
+    //Effectue un test sur l'eeprom ecriture/lecture
+
+    //ecriture
+ //   eepromI2CWrite (0x02,0x33);
+    eepromI2CWrite (0x03,0x66);
+
+   // appendHex2( outputStream, eepromI2CRead (0x02));
+    appendHex2( outputStream, eepromI2CRead (0x03));
+
+    //lecture
 
 
     hor.ti_hour=0x14;

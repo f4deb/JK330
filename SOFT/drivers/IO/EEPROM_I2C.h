@@ -1,9 +1,12 @@
 #ifndef EEPROM_I2C_H
 #define	EEPROM_I2C_H
 
-void eepromI2CWrite (int adress,UINT32 EepromI2CDataWrite);
+#define ST24C16_W 0xA0
+#define ST24C16_R 0xA1
 
-UINT32 eepromI2CRead (int adress);
+void eepromI2CWrite (int adress,int EepromI2CDataWrite);
+
+int eepromI2CRead (int adress);
 
 #endif
 

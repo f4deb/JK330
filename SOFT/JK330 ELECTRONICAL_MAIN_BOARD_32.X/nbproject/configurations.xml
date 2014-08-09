@@ -28,6 +28,7 @@
         <itemPath>../drivers/IO/MCP9804.h</itemPath>
         <itemPath>../drivers/IO/time.h</itemPath>
         <itemPath>../drivers/IO/PCF8563.h</itemPath>
+        <itemPath>../drivers/IO/EEPROM_I2C.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f7" displayName="driver.lcd" projectFiles="true">
         <itemPath>../drivers/lcd/lcd24064.h</itemPath>
@@ -74,6 +75,7 @@
         <itemPath>../drivers/IO/MCP9804.c</itemPath>
         <itemPath>../drivers/IO/time.c</itemPath>
         <itemPath>../drivers/IO/PCF8563.c</itemPath>
+        <itemPath>../drivers/IO/EEPROM_I2C.c</itemPath>
       </logicalFolder>
       <logicalFolder name="drivers.lcd" displayName="drivers.lcd" projectFiles="true">
         <itemPath>../drivers/lcd/lcd24064.c</itemPath>

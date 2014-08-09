@@ -11,10 +11,10 @@
  **/
 void getTime_8563 (void){
     OpenI2C();
-    WriteCharI2C(PCF8563_0_W);
+    WriteCharI2C(PCF8563_W);
     WriteCharI2C(0x02);
     OpenI2C();
-    WriteCharI2C(PCF8563_0_R);
+    WriteCharI2C(PCF8563_R);
     hor.ti_sec = ReadCharI2C(ACK) & 0b01111111;
     hor.ti_min = ReadCharI2C(ACK) & 0b01111111;
     hor.ti_hour = ReadCharI2C(ACK) & 0b00111111;
@@ -27,7 +27,7 @@ void getTime_8563 (void){
 
 void setTime_8563 (void){
     OpenI2C();
-    WriteCharI2C(PCF8563_0_W);
+    WriteCharI2C(PCF8563_W);
     WriteCharI2C(0x02);
     WriteCharI2C(hor.ti_sec);
     WriteCharI2C(hor.ti_min);
@@ -43,7 +43,7 @@ void setTime_8563 (void){
 }
 
 /*    OpenI2C();
-    WriteCharI2C(PCF8563_0_W);
+    WriteCharI2C(PCF8563_W);
     WriteCharI2C(0x00);
     WriteCharI2C(hor.ti_hour);
     WriteCharI2C(hor.ti_min);

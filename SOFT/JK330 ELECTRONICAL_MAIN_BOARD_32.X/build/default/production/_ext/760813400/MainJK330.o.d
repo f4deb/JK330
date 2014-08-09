@@ -8,9 +8,10 @@ build/default/production/_ext/760813400/MainJK330.o:  \
  ../main/../common/serial/serialOutputStream.h  \
  ../main/../device/led/led.h  \
 ../main/../drivers/IO/MCP9804.h  \
- ../main/../drivers/IO/PCF8563.h  \
-../main/../drivers/IO/time.h  \
- ../main/../drivers/lcd/lcd24064.h  \
+ ../main/../drivers/IO/EEPROM_I2C.h  \
+../main/../drivers/IO/PCF8563.h  \
+ ../main/../drivers/IO/time.h  \
+../main/../drivers/lcd/lcd24064.h  \
  ../main/../drivers/lcd/lcdOutputStream.h  \
  ../main/../drivers/lcd/lcdProvider_24064.h  \
 ../main/../menu/menu.h  \
