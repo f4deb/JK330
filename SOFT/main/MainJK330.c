@@ -219,11 +219,35 @@ int main(void) {
     //Effectue un test sur l'eeprom ecriture/lecture
 
     //ecriture
- //   eepromI2CWrite (0x02,0x33);
-    eepromI2CWrite (0x03,0x66);
+    
+    eepromI2CWrite (0x04,0x00);
+    eepromI2CWrite (0x05,0x00);
+    
+ //   eepromI2CWrite (0x00,0x15);
 
-   // appendHex2( outputStream, eepromI2CRead (0x02));
+    appendHex2( outputStream, eepromI2CRead (0x00));
+        eepromI2CWrite (0x05,0x00);
+    appendHex2( outputStream, eepromI2CRead (0x01));
+    appendHex2( outputStream, eepromI2CRead (0x02));
     appendHex2( outputStream, eepromI2CRead (0x03));
+    appendHex2( outputStream, eepromI2CRead (0x04));
+    appendHex2( outputStream, eepromI2CRead (0x05));
+    appendHex2( outputStream, eepromI2CRead (0x06));
+    appendHex2( outputStream, eepromI2CRead (0x07));
+    appendHex2( outputStream, eepromI2CRead (0x08));
+    appendHex2( outputStream, eepromI2CRead (0x09));
+    appendHex2( outputStream, eepromI2CRead (0x0A));
+    appendHex2( outputStream, eepromI2CRead (0x0B));
+    appendHex2( outputStream, eepromI2CRead (0x0C));
+    appendHex2( outputStream, eepromI2CRead (0x0D));
+    appendHex2( outputStream, eepromI2CRead (0x0E));
+    appendHex2( outputStream, eepromI2CRead (0x0F));
+    appendCR(outputStream);
+    appendHex2( outputStream, eepromI2CRead (0x10));
+    appendCR(outputStream);
+    appendCR(outputStream);
+
+
 
     //lecture
 
@@ -234,7 +258,7 @@ int main(void) {
     hor.ti_day=0x09;
     hor.ti_month=0x08;
     hor.ti_year=0x14;
-    //setTime();
+  //  setTime();
     while (1) {
     outputStream = &lcdoutputStream;
     setCursorPosition_24064(0,23);
