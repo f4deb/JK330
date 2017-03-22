@@ -1,6 +1,6 @@
-update=sam. 22 mars 2014 22:21:06 CET
+update=dim. 03 janv. 2016 14:18:21 CET
 version=1
-last_client=pcbnew
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -8,19 +8,6 @@ NetIExt=net
 EquName1=devcms
 [general]
 version=1
-[eeschema]
-version=1
-LibDir=../../git-f4deb-cen-electronic-library
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
-[eeschema/libraries]
-LibName1=power
-LibName2=CEN-SCHEMA
-LibName3=analog_switches
-LibName4=opto
 [pcbnew]
 version=1
 LastNetListRead=INTERFACE SON.net
@@ -59,3 +46,12 @@ LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
 LibName17=/media/f4deb/travail/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-PCB
+[eeschema]
+version=1
+LibDir=../../git-f4deb-cen-electronic-library
+[eeschema/libraries]
+LibName1=INTERFACE SON-rescue
+LibName2=power
+LibName3=analog_switches
+LibName4=opto
+LibName5=/usr/share/kicad/modules/packages3d/git-f4deb-cen-electronic-library/CEN-SCHEMA

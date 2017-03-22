@@ -1,6 +1,6 @@
-update=sam. 08 mars 2014 21:38:13 CET
+update=dim. 17 avril 2016 12:00:49 CEST
 version=1
-last_client=cvpcb
+last_client=kicad
 [pcbnew]
 version=1
 LastNetListRead=
@@ -41,19 +41,15 @@ LibName17=/media/f4deb/travail/electronique/git-f4deb/git-f4deb-cen-electronic-l
 LibDir=
 [general]
 version=1
-[eeschema]
-version=1
-LibDir=
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
-[eeschema/libraries]
-LibName1=power
-LibName2=/media/f4deb/travail/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-SCHEMA
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[eeschema]
+version=1
+LibDir=
+[eeschema/libraries]
+LibName1=PCF8574T-rescue
+LibName2=power
+LibName3=/media/f4deb/travail/electronique/git-f4deb/git-f4deb-cen-electronic-library/CEN-SCHEMA

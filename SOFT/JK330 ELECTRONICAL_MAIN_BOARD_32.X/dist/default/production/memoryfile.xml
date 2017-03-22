@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project>                                  
+  <executable name="dist/default/production/JK330_ELECTRONICAL_MAIN_BOARD_32.X.production.elf">                 
+    <memory name="program">                 
+      <units>bytes</units>                 
+      <length>531968</length>                 
+      <used>20368</used>                     
+      <free>511600</free>                     
+    </memory>                              
+    <memory name="data">              
+      <units>bytes</units>                 
+      <length>131072</length>                 
+      <used>172</used>                     
+      <free>130900</free>                     
+    </memory>                              
+  </executable>                            
+</project>                                 
